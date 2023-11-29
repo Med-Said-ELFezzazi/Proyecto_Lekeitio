@@ -11,4 +11,12 @@
         android:layout_height="wrap_content"
         android:text="Atividad1" />
 
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="volver"
+        android:onClick="volver"
+        />
+
 </LinearLayout>

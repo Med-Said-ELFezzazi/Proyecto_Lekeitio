@@ -13,7 +13,7 @@ import androidx.core.view.isVisible
 class MapaActivity : AppCompatActivity() {
 
     lateinit var btnsiguienteActividad: Button
-    val array: Array<String> = arrayOf("actividad1", "actividad2" , "actividad3", "actividad4", "actividad5", "actividad6", "actividad7")
+    val arrayActividades: Array<String> = arrayOf("actividad1", "actividad2" , "actividad3", "actividad4", "actividad5", "actividad6", "actividad7")
     lateinit var lblInstruccion : TextView
 
     @SuppressLint("MissingInflatedId")
@@ -39,8 +39,22 @@ class MapaActivity : AppCompatActivity() {
      */
     fun pasarActividades(view: View) {
         var intent = Intent(this, Act1Activity::class.java)
-        startActivity(intent)
+        startActivityForResult(intent, 1234)
 
+
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == 1234 && resultCode == RESULT_OK) {
+            // Obtener el resultado de la actividad anterior
+            val resultado = data?.getIntExtra("RESULTADO", 0)
+
+            btnsiguienteActividad.isVisible = false
+            lblInstruccion.isVisible = true
+            lblInstruccion.setText(resultado.toString())
+        }
     }
 
 }
