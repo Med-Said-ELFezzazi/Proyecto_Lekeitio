@@ -1,6 +1,7 @@
 package com.example.proyecto_lekeitio
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -26,12 +27,20 @@ class MapaActivity : AppCompatActivity() {
         btnsiguienteActividad = findViewById(R.id.btnsiguienteActividad)
         btnsiguienteActividad.isVisible = false
     }
-
-    fun pasarActividades(view: View) {}
     fun mostrarDatos(view: View) {
         lblInstruccion.isVisible = false
         btnsiguienteActividad.isVisible = true
 
 
     }
+
+    /**
+     * Metodo para pasar entre actividades
+     */
+    fun pasarActividades(view: View) {
+        var intent = Intent(this, Act1Activity::class.java)
+        startActivity(intent)
+
+    }
+
 }
