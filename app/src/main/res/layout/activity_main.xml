@@ -5,49 +5,62 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#9CDCFB"
+    android:padding="8sp">
 
     <!-- sp para q se adapte a la pantalla -->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:onClick="inciar"
-        android:layout_marginBottom="400sp">
+        android:gravity="center">
 
+        <!--
         <ImageView
             android:id="@+id/logo"
             android:layout_width="40sp"
             android:layout_height="40sp"
-            android:src="@drawable/escudo_de_lekeitio_svg" />
+            android:src="@mipmap/ic_barco_trans_round" /> -->
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=" Patrimonio de Lekeitio"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.634"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.085" />
+            android:text="@string/patrimonio_lekeitio"
+            android:textSize="35sp"
+            android:textColor="@color/black"/>
+
+        <!--
+        <ImageView
+            android:id="@+id/logo2"
+            android:layout_width="40sp"
+            android:layout_height="40sp"
+            android:src="@mipmap/ic_barco_trans_round" /> -->
 
     </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="500sp"
+        android:src="@drawable/logo_barco" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center">
+        android:gravity="center"
+        android:layout_marginBottom="20sp">
 
         <Button
             android:id="@+id/btnIniciar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="70sp"
+            android:backgroundTint="#0776AE"
             android:onClick="iniciar"
-            android:text="Iniciar" />
+            android:text="Hasiera"
+            android:textSize="35sp"
+            android:textAlignment="center"/>
 
     </LinearLayout>
 
