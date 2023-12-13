@@ -12,9 +12,9 @@
         android:id="@+id/lblTituloMapa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Titulo"
+        android:text="Mapa de Lekeitio"
         android:layout_marginBottom="150sp"
-        android:textSize="50sp"/>
+        android:textSize="45sp"/>
 
 
     <ImageView
@@ -38,6 +38,10 @@
         android:text="Botón"
         android:onClick="pasarActividades"
         android:id="@+id/btnsiguienteActividad"/>
+
+
+
+
 
 
 </LinearLayout>

@@ -13,6 +13,18 @@
         android:theme="@style/Theme.Proyecto_Lekeitio"
         tools:targetApi="31">
         <activity
+            android:name=".Act3Juego"
+            android:exported="false" />
+        <activity
+            android:name=".Act3Video"
+            android:exported="false" />
+        <activity
+            android:name=".Act3Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Act2Activity"
+            android:exported="false" />
+        <activity
             android:name=".Act1Activity"
             android:exported="false" />
         <activity

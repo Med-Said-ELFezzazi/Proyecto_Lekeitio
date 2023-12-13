@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Act3Video"
+    android:orientation="vertical"
+    android:background="#9CDCFB"
+    android:id="@+id/contenedor_fragment_act3">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20sp"
+        android:layout_gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Video Kaxarranka"
+            android:textSize="35sp"
+            android:layout_marginBottom="65sp"
+            android:layout_gravity="center" />
+
+    </LinearLayout>
+
+
+    <VideoView
+        android:id="@+id/videoKaxarranka"
+        android:layout_width="380sp"
+        android:layout_height="428dp"
+        android:layout_gravity="center" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Siguiente"
+        android:id="@+id/btnSiguienteJuego"
+        android:layout_gravity="center"
+        android:layout_marginTop="55sp"
+        android:onClick="siguienteJuego"/>
+
+</LinearLayout>
