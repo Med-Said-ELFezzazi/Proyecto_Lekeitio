@@ -4,20 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
     tools:context=".Act1Activity">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/frActividad1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30sp">
     </androidx.fragment.app.FragmentContainerView>
 
-
-    <!--<Button
-        android:layout_width="wrap_content"
+    <Button
+        android:layout_width="200sp"
         android:layout_height="wrap_content"
-        android:text="volver"
-        android:onClick="volver"
-        />-->
+        android:text="Siguiente"
+        />
 
 </LinearLayout>
