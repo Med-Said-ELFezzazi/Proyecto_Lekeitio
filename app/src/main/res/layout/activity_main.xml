@@ -15,28 +15,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center">
-
-        <!--
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_width="40sp"
-            android:layout_height="40sp"
-            android:src="@mipmap/ic_barco_trans_round" /> -->
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/patrimonio_lekeitio"
             android:textSize="35sp"
             android:textColor="@color/black"/>
-
-        <!--
-        <ImageView
-            android:id="@+id/logo2"
-            android:layout_width="40sp"
-            android:layout_height="40sp"
-            android:src="@mipmap/ic_barco_trans_round" /> -->
-
     </LinearLayout>
 
     <ImageView
