@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
+    android:background="#9CDCFB"
     tools:context=".Act1Activity">
 
     <TextView
@@ -24,8 +25,7 @@
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/frActividad1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
+            android:layout_height="wrap_content">
         </androidx.fragment.app.FragmentContainerView>
     </LinearLayout>
 
@@ -33,7 +33,6 @@
         android:layout_width="200sp"
         android:layout_height="wrap_content"
         android:text="@string/siguiente"
-        android:onClick="siguiente"
-        />
+        android:onClick="siguiente"/>
 
 </LinearLayout>

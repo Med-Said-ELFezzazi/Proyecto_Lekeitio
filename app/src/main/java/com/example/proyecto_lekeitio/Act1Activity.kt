@@ -1,12 +1,8 @@
 package com.example.proyecto_lekeitio
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.ImageView
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentContainerView
 import androidx.fragment.app.FragmentManager
 
 class Act1Activity : AppCompatActivity() {
