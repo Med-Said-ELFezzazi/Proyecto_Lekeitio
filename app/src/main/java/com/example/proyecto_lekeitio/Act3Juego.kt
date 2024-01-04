@@ -8,6 +8,7 @@ import android.text.Html
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.view.isVisible
 
@@ -70,21 +71,24 @@ class Act3Juego : AppCompatActivity() {
     }
 
     fun imagenSeleccionada(view: View) {
+        val imageView = view as ImageView
         when (view.id) {
             R.id.imagen1, R.id.imagen3 -> {
                 txtFotoSeleccionda.setText("Seleccion incorrecta!")
                 txtFotoSeleccionda.setTextColor(resources.getColor(R.color.rojo))
+                imageView.setBackgroundResource(R.drawable.borde_rojo)
             }
-
 
             R.id.imagen2 -> {
                 if (respuestaCorrecta == "pandereta") {
                     txtFotoSeleccionda.setText("Muy bien correcto")
                     txtFotoSeleccionda.setTextColor(resources.getColor(R.color.verde))
+                    imageView.setBackgroundResource(R.drawable.borde_verde)
                     btnSiguiente.isVisible = true
                 } else {
                     txtFotoSeleccionda.setText("Seleccion incorrecta!")
                     txtFotoSeleccionda.setTextColor(resources.getColor(R.color.rojo))
+                    imageView.setBackgroundResource(R.drawable.borde_rojo)
                 }
             }
 
@@ -92,12 +96,15 @@ class Act3Juego : AppCompatActivity() {
                 if (respuestaCorrecta == "silbido") {
                     txtFotoSeleccionda.setText("Muy bien correcto")
                     txtFotoSeleccionda.setTextColor(resources.getColor(R.color.verde))
+                    imageView.setBackgroundResource(R.drawable.borde_verde)
                     btnSiguiente.isVisible = true
                 } else {
                     txtFotoSeleccionda.setText("Seleccion incorrecta!")
                     txtFotoSeleccionda.setTextColor(resources.getColor(R.color.rojo))
+                    imageView.setBackgroundResource(R.drawable.borde_rojo)
                 }
             }
         }
     }
+
 }
