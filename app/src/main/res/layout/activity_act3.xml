@@ -46,6 +46,14 @@
         android:text="Play"
         android:onClick="playAudio"/>
 
+    <SeekBar
+        android:id="@+id/seekBarAudio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"/>
+
     <Button
         android:id="@+id/btnSiguienteVideo"
         android:layout_width="138dp"
