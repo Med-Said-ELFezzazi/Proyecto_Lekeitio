@@ -1,8 +1,14 @@
 package com.example.proyecto_lekeitio
 
+import android.content.ClipData
+import android.content.res.Resources
+import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MotionEvent
 import android.view.View
+import android.view.View.OnDragListener
+import android.view.View.OnTouchListener
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -55,8 +61,9 @@ class Act1PuzzleActivity : AppCompatActivity() {
         esp8 = findViewById(R.id.esp8)
         esp9 = findViewById(R.id.esp9)
 
-
-
+        // Ocultar botón siguiente
+        btnMapa.visibility = View.INVISIBLE
+        
     }
 
     fun siguiente(view: View) {
