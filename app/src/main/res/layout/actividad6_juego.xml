@@ -1,0 +1,30 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <GridLayout
+        android:id="@+id/gridLayout_word_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:rowCount="5"
+        android:columnCount="5"
+        android:alignmentMode="alignMargins"
+        android:padding="16dp"
+        android:layout_centerInParent="true">
+
+        <!-- Aquí añadirías los TextViews de forma dinámica en tu código Kotlin -->
+
+    </GridLayout>
+
+    <Button
+        android:id="@+id/button_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Siguiente"
+        android:layout_below="@id/gridLayout_word_search"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:enabled="false" />
+
+</RelativeLayout>
