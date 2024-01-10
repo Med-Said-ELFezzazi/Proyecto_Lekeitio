@@ -1,0 +1,29 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_enabled="false">
+        <shape>
+            <solid android:color="#D3D3D3"/> <!-- Color del fondo para estado deshabilitado -->
+            <corners android:radius="2dp"/> <!-- Esquinas redondeadas -->
+            <size android:height="1dp"/> <!-- Altura del fondo -->
+        </shape>
+    </item>
+    <item>
+        <layer-list>
+            <item android:id="@android:id/background">
+                <shape>
+                    <solid android:color="#D3D3D3"/> <!-- Color del fondo -->
+                    <corners android:radius="2dp"/>
+                    <size android:height="1dp"/> <!-- Altura del fondo -->
+                </shape>
+            </item>
+            <item android:id="@android:id/progress">
+                <clip>
+                    <shape>
+                        <solid android:color="#00008B"/> <!-- Color de progreso -->
+                        <corners android:radius="2dp"/>
+                        <size android:height="1dp"/> <!-- Altura del progreso -->
+                    </shape>
+                </clip>
+            </item>
+        </layer-list>
+    </item>
+</selector>

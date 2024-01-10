@@ -31,17 +31,17 @@ class Act3Activity : AppCompatActivity() {
     private lateinit var seekBarAudio: SeekBar
     private val handler = Handler()
 
+    private var estabaPlayAntes: Boolean = false //Variable para controlar el estado del audio (play/pause)
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_act3)
 
+        //El audio querido
         mp = MediaPlayer.create(this, R.raw.kaxarranka)
 
-        btnPlayAudio = findViewById(R.id.btnPlayAudio)
         btnSiguienteVideo = findViewById(R.id.btnSiguienteVideo)
-
         btnSiguienteVideo.isVisible = false //poner el bóton soguiente invisible al principio
 
         imgPlayAudio = findViewById(R.id.imgPlayAudio)
@@ -49,9 +49,10 @@ class Act3Activity : AppCompatActivity() {
         btnSiguienteVideo = findViewById(R.id.btnSiguienteVideo)
 
         seekBarAudio.max = mp.duration
-        btnSiguienteVideo.isVisible = false
 
-
+        /**
+         * Actualiza el SeekBar para reflejar la posición actual del audio.
+         */
         val updateSeekBar: Runnable = object : Runnable {
             override fun run() {
                 if (mp.isPlaying) {
@@ -62,7 +63,7 @@ class Act3Activity : AppCompatActivity() {
         }
 
 
-
+        //Funcionamiento del bóton del audio
         imgPlayAudio.setOnClickListener {
             if (mp.isPlaying) {
                 // Si el audio está reproduciéndose, pausarlo
@@ -85,41 +86,45 @@ class Act3Activity : AppCompatActivity() {
             btnSiguienteVideo.isVisible = true
         }
         seekBarAudio.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            //Cuando el progreso se cambia
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 if (fromUser) {
                     mp.seekTo(progress)
                 }
             }
 
+            //Cuando el user esta arrastrando la barra
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
-                // Opcional
+                // Guarda el estado de reproducción y pausa si está en reproducción
+                estabaPlayAntes = mp.isPlaying
+                if (estabaPlayAntes) {      //si esta en play
+                    mp.pause()              // Pausar el audio
+                }
             }
 
+            //Cuando el user suelta la barra
             override fun onStopTrackingTouch(seekBar: SeekBar?) {
-                // Opcional
+                if (estabaPlayAntes) {
+                    mp.start()
+                    handler.postDelayed(updateSeekBar, 0)
+                }
             }
         })
 
     }
 
 
-    override fun onDestroy() {
+    override fun onDestroy() {      //ESOS DOS METODOS CREO Q NO SON NECESARIOS LO QUE HACEN ES PLAY Y PAUSE EL AUDIO
         super.onDestroy()
         // Liberar recursos del MediaPlayer al destruir la actividad (parar el audio)
         mp.release()
     }
 
-    fun playAudio(view: View) {
-        mp.start()
-        Toast.makeText(this,"Play",Toast.LENGTH_SHORT).show()
-    }
-
-
     fun pasarAlVideo(view: View) {
         //Depués de hacer click en siguiente , el audio debe parar
         mp.release()
         //Pasar a la siguiente pantalla
-        var intent = Intent(this,Act3Video::class.java)
+        var intent = Intent(this,Act3Juego::class.java)
         startActivityForResult(intent, 5678)
     }
 

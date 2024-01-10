@@ -37,7 +37,7 @@
         android:textSize="17sp"
         android:textStyle="italic" />
 
-
+<!--
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -45,34 +45,33 @@
         android:layout_gravity="center"
         android:layout_marginTop="40sp"
         android:text="Play"
-        android:onClick="playAudio"/>
+        android:onClick="playAudio"/>  -->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
+
         <ImageView
-            android:layout_marginTop="25dp"
             android:id="@+id/imgPlayAudio"
-            android:layout_width="120dp"
+            android:layout_width="78dp"
             android:layout_height="60dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="25dp"
             android:onClick="playAudio"
-            android:src="@drawable/play_debujo"
-            />
+            android:src="@drawable/play_debujo" />
+
 
         <SeekBar
             android:id="@+id/seekBarAudio"
-            android:layout_width="234dp"
-            android:layout_height="64dp"
-            android:layout_weight="1"
-            android:layout_marginLeft="16dp"
+            style="@style/CustomSeekBarStyle"
+            android:layout_width="0dp"
+            android:layout_height="66dp"
             android:layout_marginTop="20sp"
-            android:layout_marginRight="16dp"
-            android:progressTint="#000000"
-            android:thumbTint="#000000"/>
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"/>
 
     </LinearLayout>
-
 
     <Button
         android:id="@+id/btnSiguienteVideo"
@@ -82,6 +81,7 @@
         android:onClick="pasarAlVideo"
         android:text="Siguiente"
         android:layout_marginTop="-100dp"/>
+
 
 
 </LinearLayout>
