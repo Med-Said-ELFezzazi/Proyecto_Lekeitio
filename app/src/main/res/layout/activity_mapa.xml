@@ -21,8 +21,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/imgMapa"
-        android:src="@drawable/mapa1"
         android:layout_marginBottom="50sp"
+        android:src="@mipmap/mapita"
         android:onClick="mostrarDatos" />
 
     <TextView
