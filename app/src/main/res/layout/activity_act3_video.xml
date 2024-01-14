@@ -12,32 +12,55 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="20sp"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        android:layout_marginTop="20sp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Video Kaxarranka"
             android:textSize="35sp"
-            android:layout_marginBottom="65sp"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
 
     </LinearLayout>
 
 
-    <VideoView
-        android:id="@+id/videoKaxarranka"
-        android:layout_width="380sp"
-        android:layout_height="428dp"
-        android:layout_gravity="center" />
-
-    <Button
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Siguiente"
-        android:id="@+id/btnSiguienteJuego"
+        android:orientation="vertical"
         android:layout_gravity="center"
-        android:layout_marginTop="55sp"
-        android:onClick="siguienteJuego"/>
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/txtAtencion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Atento con el video"
+            android:layout_gravity="center"
+            android:visibility="invisible"
+            android:textColor="#FF0000"
+            android:layout_marginBottom="25dp"/>
+
+
+        <VideoView
+            android:id="@+id/videoKaxarranka"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            />
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Siguiente"
+            android:id="@+id/btnSiguienteJuego"
+            android:layout_gravity="center"
+            android:layout_marginTop="55sp"
+            android:onClick="siguienteJuego"/>
+    </LinearLayout>
+
+
 
 </LinearLayout>

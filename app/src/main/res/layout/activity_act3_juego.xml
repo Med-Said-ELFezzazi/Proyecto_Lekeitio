@@ -18,10 +18,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="La actividad"
-            android:textSize="35sp"
+            android:textSize="40sp"
             android:layout_marginTop="10sp"
             android:layout_gravity="center"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
 
     </LinearLayout>
 
@@ -32,6 +33,16 @@
         android:gravity="center"
         android:orientation="vertical">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pregunta número 1"
+            android:textStyle="italic"
+            android:textSize="25dp"
+            android:textColor="#00008B"
+            android:gravity="center"
+            android:id="@+id/txtNumPregunta"
+            android:padding="10dp" />
 
         <EditText
             android:id="@+id/cuadradoVacio"

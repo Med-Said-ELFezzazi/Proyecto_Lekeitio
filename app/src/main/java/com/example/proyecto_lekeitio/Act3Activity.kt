@@ -124,8 +124,10 @@ class Act3Activity : AppCompatActivity() {
         //Depués de hacer click en siguiente , el audio debe parar
         mp.release()
         //Pasar a la siguiente pantalla
-        var intent = Intent(this,Act3Juego::class.java)
+        var intent = Intent(this,Act3Video::class.java)
         startActivityForResult(intent, 5678)
+
+        //Acabar con esa pantalla EXIT
     }
 
 }
