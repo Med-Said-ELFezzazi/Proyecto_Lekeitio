@@ -127,7 +127,8 @@ class Act3Activity : AppCompatActivity() {
         var intent = Intent(this,Act3Video::class.java)
         startActivityForResult(intent, 5678)
 
-        //Acabar con esa pantalla EXIT
+        //Acabar con esa pantalla
+        finish()
     }
 
 }

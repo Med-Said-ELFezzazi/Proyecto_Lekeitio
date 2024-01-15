@@ -25,7 +25,7 @@
                     txtAtencion.visibility = View.VISIBLE
                 }
                 // Reprograma el Runnable para ejecutarse cada segundo
-                handler.postDelayed(this, 1000) // Cambia cada segundo
+                handler.postDelayed(this, 2500) // Cambia cada segundo
             }
         }
 
@@ -68,5 +68,9 @@
         fun siguienteJuego(view: View) {
             var intent = Intent(this,Act3Juego::class.java)
             startActivityForResult(intent, 5678)
+
+            //Acabar con esa pantalla
+            finish()
+
         }
     }
