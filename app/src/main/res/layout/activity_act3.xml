@@ -27,14 +27,12 @@
 
     <TextView
         android:layout_width="361dp"
-        android:layout_height="364dp"
+        android:layout_height="342dp"
         android:layout_gravity="center"
         android:layout_marginTop="35sp"
-        android:text="En un rincón del universo, las estrellas susurran secretos cósmicos mientras las hormigas trabajan incansablemente bajo la mirada curiosa de un gato dormido.
-        \nEn algún lugar, un científico loco está inventando una máquina para traducir los sueños de los pájaros, mientras un pianista callejero improvisa una sinfonía en medio del bullicio urbano.
-        \nEn el mundo de la moda, los calcetines desparejados se han convertido en la última tendencia, desafiando las normas establecidas.
-        \nUn grupo de pingüinos decide organizar una fiesta en la Antártida, con auroras boreales como luces de discoteca. Mientras tanto, en una biblioteca perdida en el tiempo, los libros intercambian historias en susurros de tinta."
-        android:textSize="17sp"
+        android:text="El festival local 'San Pedro Kaxarranka' es un evento cultural único, donde se celebra una danza tradicional sobre un arca de pescadores, simbolizando la historia y la comunidad del pueblo. La naturaleza se muestra en todo su esplendor en la isla de San Nicolás, un pequeño paraíso accesible solo durante la marea baja.
+        \n La gastronomía local es un reflejo del mar, con platos de pescado fresco y pintxos que deleitan a los visitantes con su autenticidad y sabor."
+        android:textSize="20dp"
         android:textStyle="italic" />
 
 <!--

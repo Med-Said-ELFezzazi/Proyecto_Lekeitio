@@ -81,6 +81,12 @@ class Act3Juego : AppCompatActivity() {
             cuadradoVacio.isCursorVisible = false
 
             btnSiguiente.isVisible=false
+
+            txtFotoSeleccionda.setText("")          //quitar el texto indicativo al pasar a la segunda pregunta
+
+            resetBorders()                          //quitar el borde colorado al pasar al segunda pregunta
+
+            btnSiguiente.setText("Finalizar")      //Cambiar el nombre del bóton a finalizar
         }
     }
 
@@ -108,8 +114,18 @@ class Act3Juego : AppCompatActivity() {
         mpIncorrecto.start()
     }
 
+    /**
+     * Metodo que quita el borde de respuesta (rojo/verde)
+     */
+    private fun resetBorders() {
+        val imageViews = listOf(R.id.imagen1, R.id.imagen2, R.id.imagen3, R.id.imagen4)
+        imageViews.forEach { id ->
+            findViewById<ImageView>(id).setBackgroundResource(0) // Quita cualquier borde
+        }
+    }
+
     fun imagenSeleccionada(view: View) {
-        //resetBorders()      //quitar el borde colorado de la primera eleccion
+        resetBorders()      //quitar el borde colorado de la eleccion anterior un vez pulsado la seguiente foto
         val imageView = view as ImageView
         when (view.id) {
             R.id.imagen1, R.id.imagen3 -> {
@@ -123,10 +139,10 @@ class Act3Juego : AppCompatActivity() {
             R.id.imagen4 -> {
                 if (respuestaCorrecta == "silbido") {
                     txtFotoSeleccionda.setText("Muy bien correcto")
-                    txtFotoSeleccionda.setTextColor(resources.getColor(R.color.verde))
-                    imageView.setBackgroundResource(R.drawable.borde_verde)
-                    btnSiguiente.isVisible = true
+                    txtFotoSeleccionda.setTextColor(resources.getColor(R.color.verde))  //texto en verde
+                    imageView.setBackgroundResource(R.drawable.borde_verde)   //borde verde
                     lanzarAudioCorrecto()                 //audio
+                    btnSiguiente.isVisible = true         //poner visible el bóton siguiente
                 } else {
                     txtFotoSeleccionda.setText("Seleccion incorrecta!")
                     txtFotoSeleccionda.setTextColor(resources.getColor(R.color.rojo))
@@ -150,16 +166,6 @@ class Act3Juego : AppCompatActivity() {
                     lanzarAudioIncorrecto()
                 }
             }
-        }
-    }
-
-    /**
-     * Metodo que quita el borde de respuesta (rojo/verde)
-     */
-    private fun resetBorders() {
-        val imageViews = listOf(R.id.imagen1, R.id.imagen2, R.id.imagen3, R.id.imagen4)
-        imageViews.forEach { id ->
-            findViewById<ImageView>(id).setBackgroundResource(0) // Quita cualquier borde
         }
     }
 }
