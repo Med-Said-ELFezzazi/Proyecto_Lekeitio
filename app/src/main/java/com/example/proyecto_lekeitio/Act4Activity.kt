@@ -1,11 +1,117 @@
 package com.example.proyecto_lekeitio
 
+import android.annotation.SuppressLint
+import android.content.Intent
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.view.View
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.SeekBar
+import android.widget.Toast
+import androidx.core.view.isVisible
 
 class Act4Activity : AppCompatActivity() {
+
+    private lateinit var mp: MediaPlayer
+    private lateinit var btnSiguiente: Button
+
+    private lateinit var imgPlayAudio: ImageView
+    private lateinit var seekBarAudio: SeekBar
+    private val handler = Handler()
+
+    private var estabaPlayAntes: Boolean = false //Variable para controlar el estado del audio (play/pause)
+
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_act4)
+
+        //El audio querido
+        mp = MediaPlayer.create(this, R.raw.aitxitxia_makurra)
+
+        btnSiguiente = findViewById(R.id.btnSiguiente)
+        imgPlayAudio = findViewById(R.id.imgPlayAudio)
+        seekBarAudio = findViewById(R.id.seekBarAudio)
+
+        btnSiguiente.isVisible = false //poner el bóton soguiente invisible al principio
+
+        seekBarAudio.max = mp.duration
+
+        /**
+         * Actualiza el SeekBar para reflejar la posición actual del audio.
+         */
+        val updateSeekBar: Runnable = object : Runnable {
+            override fun run() {
+                if (mp.isPlaying) {
+                    seekBarAudio.progress = mp.currentPosition
+                    handler.postDelayed(this, 1000)
+                }
+            }
+        }
+
+        //Funcionamiento del bóton del audio
+        imgPlayAudio.setOnClickListener {
+            if (mp.isPlaying) {
+                // Si el audio está reproduciéndose, pausarlo
+                mp.pause()
+
+                imgPlayAudio.setImageResource(R.drawable.play_debujo) // Cambiar a imagen de play
+                handler.removeCallbacks(updateSeekBar)
+
+                Toast.makeText(this, "Pause", Toast.LENGTH_SHORT).show()
+            } else {
+                // Si el audio no está reproduciéndose, iniciarlo o reanudarlo
+                mp.start()
+
+                imgPlayAudio.setImageResource(R.drawable.pause_debujo) // Cambiar a imagen de pause
+                handler.postDelayed(updateSeekBar, 0)
+
+                Toast.makeText(this, "Play", Toast.LENGTH_SHORT).show()
+            }
+            // Actualizar la visibilidad del botón btnSiguienteVideo según el estado de reproducción
+            btnSiguiente.isVisible = true
+        }
+        seekBarAudio.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            //Cuando el progreso se cambia
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                if (fromUser) {
+                    mp.seekTo(progress)
+                }
+            }
+
+            //Cuando el user esta arrastrando la barra
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+                // Guarda el estado de reproducción y pausa si está en reproducción
+                estabaPlayAntes = mp.isPlaying
+                if (estabaPlayAntes) {      //si esta en play
+                    mp.pause()              // Pausar el audio
+                }
+            }
+
+            //Cuando el user suelta la barra
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+                if (estabaPlayAntes) {
+                    mp.start()
+                    handler.postDelayed(updateSeekBar, 0)
+                }
+            }
+        })
     }
+
+    /**
+     * Metodo que lleva a la siguiente pantalla 'la actividad4'
+     */
+    fun pasarAlJuego(view: View) {
+        //Depués de hacer click en siguiente , el audio debe parar
+        mp.release()
+        //Pasar a la siguiente pantalla
+        var intent = Intent(this,Act4Juego::class.java)
+        startActivityForResult(intent, 456)
+        //Acabar con esa pantalla
+        finish()
+    }
+
 }

@@ -46,7 +46,6 @@ class Act3Activity : AppCompatActivity() {
 
         imgPlayAudio = findViewById(R.id.imgPlayAudio)
         seekBarAudio = findViewById(R.id.seekBarAudio)
-        btnSiguienteVideo = findViewById(R.id.btnSiguienteVideo)
 
         seekBarAudio.max = mp.duration
 
