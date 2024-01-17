@@ -10,6 +10,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.SeekBar
+import android.widget.TextView
 import android.widget.Toast
 import androidx.core.view.isVisible
 
@@ -24,13 +25,17 @@ class Act4Activity : AppCompatActivity() {
 
     private var estabaPlayAntes: Boolean = false //Variable para controlar el estado del audio (play/pause)
 
+
+    private lateinit var txtTiempoActual: TextView      //textviews de la duracion de reproducción
+    private lateinit var txtTiempoTotal: TextView
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_act4)
 
         //El audio querido
-        mp = MediaPlayer.create(this, R.raw.aitxitxia_makurra)
+        mp = MediaPlayer.create(this, R.raw.saregileak)
 
         btnSiguiente = findViewById(R.id.btnSiguiente)
         imgPlayAudio = findViewById(R.id.imgPlayAudio)
@@ -41,12 +46,32 @@ class Act4Activity : AppCompatActivity() {
         seekBarAudio.max = mp.duration
 
         /**
-         * Actualiza el SeekBar para reflejar la posición actual del audio.
+         * Actualiza el SeekBar para reflejar la posición actual del audio
          */
+       /* val updateSeekBar: Runnable = object : Runnable {
+            override fun run() {
+                if (mp.isPlaying) {
+                    seekBarAudio.progress = mp.currentPosition
+                    handler.postDelayed(this, 1000)
+                }
+            }
+        } */
+
+
+        //Funcionamiento de tiempo de reporducción
+        txtTiempoActual = findViewById(R.id.currentTimeTextView)
+        txtTiempoTotal = findViewById(R.id.totalTimeTextView)
+
+        /**
+         * Actualiza el SeekBar para reflejar la posición actual del audio
+         */
+        txtTiempoTotal.text =  formateoTiempo(mp.duration)
         val updateSeekBar: Runnable = object : Runnable {
             override fun run() {
                 if (mp.isPlaying) {
                     seekBarAudio.progress = mp.currentPosition
+                    // actualizar el tiempo en el text view
+                    txtTiempoActual.text = formateoTiempo(mp.currentPosition)
                     handler.postDelayed(this, 1000)
                 }
             }
@@ -99,6 +124,16 @@ class Act4Activity : AppCompatActivity() {
                 }
             }
         })
+
+    }
+
+    /**
+     * Metodo que ajusta el tiempo en minutos y segundos
+     */
+    fun formateoTiempo(milliseconds: Int): String {
+        val minutes = (milliseconds / 1000) / 60
+        val seconds = (milliseconds / 1000) % 60
+        return String.format("%d:%02d", minutes, seconds)
     }
 
     /**
