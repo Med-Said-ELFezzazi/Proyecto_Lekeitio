@@ -38,7 +38,7 @@ class MapaActivity : AppCompatActivity() {
      * Metodo para pasar entre actividades
      */
     fun pasarActividades(view: View) {
-        var intent = Intent(this, Act1Activity::class.java)
+        var intent = Intent(this, EnunAct5Activity::class.java)
         startActivityForResult(intent, 1234)
 
 
