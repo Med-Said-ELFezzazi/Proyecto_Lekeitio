@@ -1,9 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MapaActivity">
+    tools:context=".MapaActivity"
+    android:orientation="vertical"
+    android:padding="10sp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/lblTituloMapa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="150sp"
+        android:textSize="50sp"/>
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imgMapa"
+        android:src="@drawable/mapa1"
+        android:layout_marginBottom="50sp"
+        android:onClick="mostrarDatos" />
+
+    <TextView
+        android:id="@+id/lblInstruccion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Instruccion de pulsar el marcador"
+        android:layout_marginBottom="50sp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Botón"
+        android:onClick="pasarActividades"
+        android:id="@+id/btnsiguienteActividad"/>
+
+
+</LinearLayout>
