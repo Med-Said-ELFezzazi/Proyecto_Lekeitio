@@ -39,6 +39,7 @@
             android:layout_height="wrap_content"
             android:text="@string/jarraitu"
             android:textSize="25sp"
+            android:onClick="siguiente"
             />
     </LinearLayout>
 
