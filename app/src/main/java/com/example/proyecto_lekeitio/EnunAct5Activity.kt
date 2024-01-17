@@ -12,7 +12,7 @@ class EnunAct5Activity : AppCompatActivity() {
     }
 
     fun siguiente(view: View) {
-        var intent = Intent(this, MapaActivity::class.java)
+        var intent = Intent(this, VideoAct5Activity::class.java)
         startActivity(intent)
         finish()
     }
