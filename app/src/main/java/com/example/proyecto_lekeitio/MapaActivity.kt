@@ -40,8 +40,6 @@ class MapaActivity : AppCompatActivity() {
     fun pasarActividades(view: View) {
         var intent = Intent(this, EnunAct5Activity::class.java)
         startActivityForResult(intent, 1234)
-
-
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

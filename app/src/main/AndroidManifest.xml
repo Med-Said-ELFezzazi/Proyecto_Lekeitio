@@ -16,10 +16,10 @@
             android:name=".Pregunta1Act5Activity"
             android:exported="false" />
         <activity
-            android:name=".VideoAct5Activity"
+            android:name=".Act1PuzzleActivity"
             android:exported="false" />
         <activity
-            android:name=".EnunAct5Activity"
+            android:name=".Act1EnunActivity"
             android:exported="false" />
         <activity
             android:name=".MapaActivity"
