@@ -16,6 +16,9 @@
             android:name=".Pregunta1Act5Activity"
             android:exported="false" />
         <activity
+            android:name=".EnunAct5Activity"
+            android:exported="false" />
+        <activity
             android:name=".Act1PuzzleActivity"
             android:exported="false" />
         <activity
