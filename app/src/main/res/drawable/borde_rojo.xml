@@ -1,5 +1,4 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <solid android:color="#00FFFFFF"/> <!-- color de fondo transparente -->
     <stroke android:width="4dp" android:color="#FF0000"/> <!-- color rojo para el borde -->
-    <size android:width="500dp" android:height="500dp"/> <!-- ancho de 100dp y altura de 200dp -->
 </shape>

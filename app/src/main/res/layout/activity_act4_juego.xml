@@ -39,10 +39,11 @@
     <!-- pregunta 1 -->
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="45dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="2dp"
+        android:background="@drawable/borders">
 
         <TextView
             android:id="@+id/txtPregunta1"
@@ -54,9 +55,7 @@
             android:textColor="#000000"
             android:textSize="18dp"
             android:textStyle="bold"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="6dp"
-            android:background="@drawable/borders"/>
+            />
     </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
@@ -168,12 +167,13 @@
 
     <!-- 3-->
     <LinearLayout
-        android:layout_width="375dp"
+        android:layout_width="366dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:background="@drawable/borders"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="2dp">
 
         <TextView
             android:id="@+id/txtPregunta3"
@@ -375,5 +375,6 @@
             />
 
     </LinearLayout>
+
 
 </LinearLayout>

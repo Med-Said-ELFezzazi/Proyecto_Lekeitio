@@ -35,7 +35,7 @@ class Act4Juego : AppCompatActivity() {
     private lateinit var txtPregunta4: TextView
     private lateinit var txtPregunta5: TextView
 
-    private lateinit var txtRslt: TextView
+    //private lateinit var txtRslt: TextView
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -68,7 +68,7 @@ class Act4Juego : AppCompatActivity() {
         txtPregunta4 = findViewById(R.id.txtPregunta4)
         txtPregunta5 = findViewById(R.id.txtPregunta5)
 
-        txtRslt = findViewById(R.id.txtRslt)
+       // txtRslt = findViewById(R.id.txtRslt)
 
         //Definir un listener para cada RadioGroup
         val listenerGrupos = RadioGroup.OnCheckedChangeListener { group, checkedId ->
