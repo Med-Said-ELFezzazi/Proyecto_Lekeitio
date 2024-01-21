@@ -15,7 +15,7 @@
         android:layout_gravity="center"
         android:orientation="vertical"
         android:layout_marginTop="-10dp"
-        android:layout_marginBottom="-15dp">
+        android:layout_marginBottom="-20dp">
 
 
         <TextView
@@ -24,7 +24,7 @@
             android:layout_marginBottom="25dp"
             android:gravity="center"
             android:padding="10dp"
-            android:text="Verdadero / Falso"
+            android:text="EGIA / GEZURRA"
             android:textColor="#00008B"
             android:textSize="35dp"
             android:textStyle="italic" />
@@ -36,27 +36,72 @@
 
     </LinearLayout>
 
+    <!-- pregunta 1 -->
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:layout_gravity="center"
-        android:padding="2dp"
-        android:background="@drawable/borders"
-        android:orientation="horizontal"
-        android:layout_marginBottom="40dp">
+        android:gravity="center"
+        android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/txtPregunta1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Eskuz egindako lanbidea da."
-            android:textColor="#000000"
             android:gravity="center"
             android:padding="7dp"
+            android:text="Eskuz egindako lanbidea da."
+            android:textColor="#000000"
             android:textSize="18dp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="6dp"
+            android:background="@drawable/borders"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="7dp">
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/rgP1">
 
+            <RadioButton
+                android:id="@+id/btnP1Verdadero"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/boton_verde"
+                android:button="@null"
+                android:gravity="center"
+                android:text="EGIA"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="italic" />
+
+            <RadioButton
+                android:id="@+id/btnP1Falso"
+                android:layout_width="90dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/boton_rojo"
+                android:button="@null"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="GEZURRA"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="italic" />
+
+        </RadioGroup>
     </LinearLayout>
 
+
+    <!-- pregunta 2 -->
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -64,9 +109,10 @@
         android:padding="2dp"
         android:background="@drawable/borders"
         android:orientation="horizontal"
-        android:layout_marginBottom="40dp">
+        android:layout_marginTop="10dp">
 
         <TextView
+            android:id="@+id/txtPregunta2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Gizonezkoak lanbidea da."
@@ -77,17 +123,60 @@
             android:textStyle="bold"/>
 
     </LinearLayout>
-    <!-- 3-->
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:padding="2dp"
-        android:background="@drawable/borders"
         android:orientation="horizontal"
-        android:layout_marginBottom="40dp">
+        android:layout_gravity="center"
+        android:layout_marginTop="7dp">
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/rgP2">
+
+            <RadioButton
+                android:id="@+id/btnP2Verdadero"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/boton_verde"
+                android:button="@null"
+                android:gravity="center"
+                android:text="EGIA"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="italic" />
+
+            <RadioButton
+                android:id="@+id/btnP2Falso"
+                android:layout_width="90dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/boton_rojo"
+                android:button="@null"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="GEZURRA"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="italic" />
+
+        </RadioGroup>
+    </LinearLayout>
+
+    <!-- 3-->
+    <LinearLayout
+        android:layout_width="375dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/borders"
+        android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/txtPregunta3"
             android:layout_width="393dp"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -98,7 +187,47 @@
             android:textStyle="bold" />
 
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="7dp">
+        <RadioGroup
+            android:id="@+id/rgP3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
+            <RadioButton
+                android:id="@+id/btnP3Verdadero"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/boton_verde"
+                android:button="@null"
+                android:gravity="center"
+                android:text="EGIA"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="italic" />
+
+            <RadioButton
+                android:id="@+id/btnP3Falso"
+                android:layout_width="90dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/boton_rojo"
+                android:button="@null"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="GEZURRA"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="italic" />
+
+        </RadioGroup>
+    </LinearLayout>
 
     <!-- 4-->
     <LinearLayout
@@ -108,9 +237,10 @@
         android:padding="2dp"
         android:background="@drawable/borders"
         android:orientation="horizontal"
-        android:layout_marginBottom="40dp">
+        android:layout_marginTop="10dp">
 
         <TextView
+            android:id="@+id/txtPregunta4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Saregileen lana kostaldeko tradizioa da."
@@ -121,6 +251,48 @@
             android:textStyle="bold"/>
 
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="7dp">
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/rgP4">
+
+            <RadioButton
+                android:id="@+id/btnP4Verdadero"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/boton_verde"
+                android:button="@null"
+                android:gravity="center"
+                android:text="EGIA"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="italic" />
+
+            <RadioButton
+                android:id="@+id/btnP4Falso"
+                android:layout_width="90dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/boton_rojo"
+                android:button="@null"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="GEZURRA"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="italic" />
+
+        </RadioGroup>
+    </LinearLayout>
 
     <!-- 5-->
     <LinearLayout
@@ -130,9 +302,10 @@
         android:padding="2dp"
         android:background="@drawable/borders"
         android:orientation="horizontal"
-        android:layout_marginBottom="60dp">
+        android:layout_marginTop="10dp">
 
         <TextView
+            android:id="@+id/txtPregunta5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Barkuen barnealdean lan egiten zuten."
@@ -143,25 +316,63 @@
             android:textStyle="bold"/>
 
     </LinearLayout>
-
-    <!-- 6-->
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:layout_gravity="center"
-        android:padding="2dp"
-        android:background="@drawable/borders"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="match_parent"
+        android:layout_marginTop="7dp">
+        <RadioGroup
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Lekeitioko andren iraganeko ohiko lanbidea zen."
-            android:textColor="#000000"
-            android:gravity="center"
-            android:padding="10dp"
-            android:textSize="18dp"
-            android:textStyle="bold"/>
+            android:orientation="horizontal"
+            android:id="@+id/rgP5">
+
+            <RadioButton
+                android:id="@+id/btnP5Verdadero"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/boton_verde"
+                android:button="@null"
+                android:gravity="center"
+                android:text="EGIA"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="italic" />
+
+            <RadioButton
+                android:id="@+id/btnP5Falso"
+                android:layout_width="90dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/boton_rojo"
+                android:button="@null"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="GEZURRA"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="italic" />
+
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Erantzunak egiaztatu"
+            android:id="@+id/btnComprobar"
+            android:textSize="15dp"
+            android:visibility="invisible"
+            />
 
     </LinearLayout>
 

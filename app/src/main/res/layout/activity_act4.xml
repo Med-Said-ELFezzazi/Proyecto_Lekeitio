@@ -31,14 +31,14 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="314dp"
+        android:layout_height="300dp"
         android:layout_gravity="center"
         android:background="@drawable/borders"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="361dp"
-            android:layout_height="321dp"
+            android:layout_height="300dp"
             android:layout_gravity="center"
             android:gravity="center"
             android:text="Tchatxo Kaia Kaia, en el encantador pueblo de Lekeitio en el País Vasco, es un lugar donde la tradición marítima y la belleza costera convergen.
@@ -53,6 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:layout_marginBottom="-5dp"
             android:layout_marginTop="10dp">
 
             <!--
@@ -119,31 +120,32 @@
         <ImageView
             android:id="@+id/imgPlayAudio"
             android:layout_width="186dp"
-            android:layout_height="91dp"
+            android:layout_height="81dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginBottom="31dp"
+            android:layout_marginBottom="34dp"
             android:onClick="playAudio"
             android:src="@drawable/play_debujo" />
 
 
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_marginBottom="30dp"
         android:gravity="center"
         android:layout_gravity="top">
 
         <Button
             android:id="@+id/btnSiguiente"
             android:layout_width="110dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="30dp"
             android:onClick="pasarAlJuego"
             android:text="Siguiente" />
     </LinearLayout>
+
 
 
 
