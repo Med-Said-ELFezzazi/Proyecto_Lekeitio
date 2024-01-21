@@ -1,16 +1,13 @@
 package com.example.proyecto_lekeitio
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.LinearLayout
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
-import androidx.core.view.isVisible
+import androidx.appcompat.app.AppCompatActivity
 
 class Act4Juego : AppCompatActivity() {
 
@@ -37,6 +34,8 @@ class Act4Juego : AppCompatActivity() {
     private lateinit var txtPregunta3: TextView
     private lateinit var txtPregunta4: TextView
     private lateinit var txtPregunta5: TextView
+
+    private lateinit var txtRslt: TextView
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -68,6 +67,8 @@ class Act4Juego : AppCompatActivity() {
         txtPregunta3 = findViewById(R.id.txtPregunta3)
         txtPregunta4 = findViewById(R.id.txtPregunta4)
         txtPregunta5 = findViewById(R.id.txtPregunta5)
+
+        txtRslt = findViewById(R.id.txtRslt)
 
         //Definir un listener para cada RadioGroup
         val listenerGrupos = RadioGroup.OnCheckedChangeListener { group, checkedId ->
@@ -110,8 +111,8 @@ class Act4Juego : AppCompatActivity() {
             actualizarFondoPregunta(txtPregunta4, R.id.btnP4Verdadero, rgP4.checkedRadioButtonId)
             actualizarFondoPregunta(txtPregunta5, R.id.btnP5Falso, rgP5.checkedRadioButtonId)
 
-            //Toast.makeText(this, "Correctas: $contadorCorrectas Incorrectas: $contadorIncorrectas", Toast.LENGTH_SHORT).show()
-            mostrarResultado(contadorCorrectas, contadorIncorrectas)
+            Toast.makeText(this, "Correctas: $contadorCorrectas Incorrectas: $contadorIncorrectas", Toast.LENGTH_SHORT).show()
+            //mostrarResultado(contadorCorrectas)
         }
     }
 
@@ -178,8 +179,29 @@ class Act4Juego : AppCompatActivity() {
                 rgP5.checkedRadioButtonId != -1
     }
 
-    private fun mostrarResultado(contadorCorrectas: Int, contadorIncorrectas: Int) {
-        val builder = AlertDialog.Builder(this)
+   /* private fun mostrarResultado(contadorCorrectas: Int) {
+        val alertDialogBuilder = android.app.AlertDialog.Builder(this)
+        alertDialogBuilder.setTitle("")
+        alertDialogBuilder.setMessage("")
+
+        /*if (contadorCorrectas >= 2) {
+
+        }*/
+        val view: View = layoutInflater.inflate(R.layout.activity_act4_enhorabuena, null)
+        alertDialogBuilder.setView(view)
+
+       // txtRslt.setText(contadorCorrectas)
+
+
+        alertDialogBuilder.setCancelable(false)
+        alertDialogBuilder.show()
+
+    }*/
+
+
+
+
+      /*  val builder = AlertDialog.Builder(this)
         builder.setTitle("Resultado del Ejercicio")
 
         // Mensaje personalizado
@@ -187,19 +209,21 @@ class Act4Juego : AppCompatActivity() {
         builder.setMessage(mensaje)
 
         // Si quieres agregar una imagen estática
-        builder.setIcon(R.drawable.violin)
+        //builder.setIcon(R.drawable.violin)
 
         // Para agregar una imagen GIF (requiere Glide u otra librería)
-        // val imageView = ImageView(this)
-        // Glide.with(this).load(R.drawable.tu_gif).into(imageView)
-        // builder.setView(imageView)
+        val imageView = ImageView(this)
+        //Glide.with(this).load(R.drawable.gif_enhorabuena).into(imageView)
+        Glide.with(this).asGif().load(R.drawable.gif_enhorabuena).into(imageView)
+        builder.setView(imageView)
 
         builder.setPositiveButton("OK") { dialog, which ->
             // Acción al presionar el botón OK
         }
 
         val dialog: AlertDialog = builder.create()
-        dialog.show()
-    }
+        dialog.show()*/
+
+
 
 }
