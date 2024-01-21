@@ -1,13 +1,18 @@
 package com.example.proyecto_lekeitio
 
 import android.annotation.SuppressLint
+import android.app.AlertDialog
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
+import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import com.bumptech.glide.Glide
 
 class Act4Juego : AppCompatActivity() {
 
@@ -35,7 +40,6 @@ class Act4Juego : AppCompatActivity() {
     private lateinit var txtPregunta4: TextView
     private lateinit var txtPregunta5: TextView
 
-    //private lateinit var txtRslt: TextView
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -67,8 +71,6 @@ class Act4Juego : AppCompatActivity() {
         txtPregunta3 = findViewById(R.id.txtPregunta3)
         txtPregunta4 = findViewById(R.id.txtPregunta4)
         txtPregunta5 = findViewById(R.id.txtPregunta5)
-
-       // txtRslt = findViewById(R.id.txtRslt)
 
         //Definir un listener para cada RadioGroup
         val listenerGrupos = RadioGroup.OnCheckedChangeListener { group, checkedId ->
@@ -111,8 +113,8 @@ class Act4Juego : AppCompatActivity() {
             actualizarFondoPregunta(txtPregunta4, R.id.btnP4Verdadero, rgP4.checkedRadioButtonId)
             actualizarFondoPregunta(txtPregunta5, R.id.btnP5Falso, rgP5.checkedRadioButtonId)
 
-            Toast.makeText(this, "Correctas: $contadorCorrectas Incorrectas: $contadorIncorrectas", Toast.LENGTH_SHORT).show()
-            //mostrarResultado(contadorCorrectas)
+            //Toast.makeText(this, "Correctas: $contadorCorrectas Incorrectas: $contadorIncorrectas", Toast.LENGTH_SHORT).show()
+            mostrarVentanaResultado(contadorCorrectas)
         }
     }
 
@@ -179,51 +181,48 @@ class Act4Juego : AppCompatActivity() {
                 rgP5.checkedRadioButtonId != -1
     }
 
-   /* private fun mostrarResultado(contadorCorrectas: Int) {
-        val alertDialogBuilder = android.app.AlertDialog.Builder(this)
-        alertDialogBuilder.setTitle("")
-        alertDialogBuilder.setMessage("")
 
-        /*if (contadorCorrectas >= 2) {
-
-        }*/
+    @SuppressLint("MissingInflatedId")
+    private fun mostrarVentanaResultado(contadorCorrectas: Int) {
+        val alertDialogBuilder = AlertDialog.Builder(this)
         val view: View = layoutInflater.inflate(R.layout.activity_act4_enhorabuena, null)
+
+        //Encuentra el TextView dentro de la vista inflada
+        val txtRslt: TextView = view.findViewById(R.id.txtRslt)
+        txtRslt.text = "Zure puntuazioa hau da: $contadorCorrectas/5"   //Tu puntuación es
+
+        //Encuentra la foto GIF
+        val fotoGif: pl.droidsonroids.gif.GifImageView = view.findViewById(R.id.fotoGIF)
+
+        //Encuentra el texto de observación
+        val txtObservacion: TextView = view.findViewById(R.id.txtObservacion)
+
+        //Cargar el GIF y poner el texto de animo basado en la puntuación
+        if (contadorCorrectas <= 2) {
+            Glide.with(this).load(R.drawable.gif_perdon).into(fotoGif) //GIF
+            txtObservacion.setText("Barkatu")  //Lo siento
+            txtObservacion.setTextColor(ContextCompat.getColor(this, R.color.rojo))
+        } else if (contadorCorrectas <= 4) {
+            Glide.with(this).load(R.drawable.gif_aplausos).into(fotoGif)
+            txtObservacion.setText("Oso ondo")  //Múy bien
+            txtObservacion.setTextColor(ContextCompat.getColor(this, R.color.azul))
+        } else {
+            Glide.with(this).load(R.drawable.gif_enhorabuena).into(fotoGif)
+            txtObservacion.setText("ZORIONAK!")   //ENHORABUENA!
+            //txtObservacion viene en color verde.
+        }
+
+        //Encontrar el layout del titulo custimazado para poner en la alerta
+        val customTitleView = layoutInflater.inflate(R.layout.custom_titulo_alerta, null)
         alertDialogBuilder.setView(view)
+        alertDialogBuilder.setCustomTitle(customTitleView) //titulo Resultado
 
-       // txtRslt.setText(contadorCorrectas)
-
+        // Configura el botón OK en el AlertDialog
+        alertDialogBuilder.setPositiveButton("OK") { dialog, _ ->
+            dialog.dismiss()
+        }
 
         alertDialogBuilder.setCancelable(false)
         alertDialogBuilder.show()
-
-    }*/
-
-
-
-
-      /*  val builder = AlertDialog.Builder(this)
-        builder.setTitle("Resultado del Ejercicio")
-
-        // Mensaje personalizado
-        val mensaje = "Enhorabuena!\nCorrectas: $contadorCorrectas\nIncorrectas: $contadorIncorrectas"
-        builder.setMessage(mensaje)
-
-        // Si quieres agregar una imagen estática
-        //builder.setIcon(R.drawable.violin)
-
-        // Para agregar una imagen GIF (requiere Glide u otra librería)
-        val imageView = ImageView(this)
-        //Glide.with(this).load(R.drawable.gif_enhorabuena).into(imageView)
-        Glide.with(this).asGif().load(R.drawable.gif_enhorabuena).into(imageView)
-        builder.setView(imageView)
-
-        builder.setPositiveButton("OK") { dialog, which ->
-            // Acción al presionar el botón OK
-        }
-
-        val dialog: AlertDialog = builder.create()
-        dialog.show()*/
-
-
-
+    }
 }
