@@ -9,6 +9,7 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isVisible
 
 class Act4Juego : AppCompatActivity() {
@@ -92,10 +93,25 @@ class Act4Juego : AppCompatActivity() {
         rgP4.setOnCheckedChangeListener(listenerGrupos)
         rgP5.setOnCheckedChangeListener(listenerGrupos)
 
+        //Al hacer click en el bóton comprobar respuestas
         btnComprobar.setOnClickListener {
+            val numeroTotalPreguntas = 5
             val contadorCorrectas = calcularRespuestasCorrectas()
-            val contadorIncorrectas = 5 - contadorCorrectas
-            Toast.makeText(this, "Correctas: $contadorCorrectas Incorrectas: $contadorIncorrectas", Toast.LENGTH_SHORT).show()
+            val contadorIncorrectas = numeroTotalPreguntas - contadorCorrectas
+            //Poner las preguntas rodeadas con un color según el respondido
+            //Pregunta1:>verdadero
+            //Pregunta2:>falso
+            //Pregunta3:>verdadero
+            //Pregunta4:>verdadero
+            //Pregunta5:>false
+            actualizarFondoPregunta(txtPregunta1, R.id.btnP1Verdadero, rgP1.checkedRadioButtonId)
+            actualizarFondoPregunta(txtPregunta2, R.id.btnP2Falso, rgP2.checkedRadioButtonId)
+            actualizarFondoPregunta(txtPregunta3, R.id.btnP3Verdadero, rgP3.checkedRadioButtonId)
+            actualizarFondoPregunta(txtPregunta4, R.id.btnP4Verdadero, rgP4.checkedRadioButtonId)
+            actualizarFondoPregunta(txtPregunta5, R.id.btnP5Falso, rgP5.checkedRadioButtonId)
+
+            //Toast.makeText(this, "Correctas: $contadorCorrectas Incorrectas: $contadorIncorrectas", Toast.LENGTH_SHORT).show()
+            mostrarResultado(contadorCorrectas, contadorIncorrectas)
         }
     }
 
@@ -112,7 +128,27 @@ class Act4Juego : AppCompatActivity() {
         }
     }
 
+    /**
+     * Metodo para cambiar las esquinas de la pregunta
+     */
+    private fun actualizarFondoPregunta(textView: TextView, respuestaCorrectaId: Int, respuestaSeleccionadaId: Int) {
+        if (respuestaSeleccionadaId == respuestaCorrectaId) {
+            textView.setBackgroundResource(R.drawable.borders_verde_esquinas)
+        } else {
+            textView.setBackgroundResource(R.drawable.borders_rojo_esquinas)
+        }
+    }
+
+
+    /**
+     * Metodo que cuenta el número de las respuestas correctas
+     */
     private fun calcularRespuestasCorrectas(): Int {
+        //Pregunta1:>verdadero
+        //Pregunta2:>falso
+        //Pregunta3:>verdadero
+        //Pregunta4:>verdadero
+        //Pregunta5:>false
         var contador = 0
         if (rgP1.checkedRadioButtonId == R.id.btnP1Verdadero){
             contador++
@@ -141,4 +177,29 @@ class Act4Juego : AppCompatActivity() {
                 rgP4.checkedRadioButtonId != -1 &&
                 rgP5.checkedRadioButtonId != -1
     }
+
+    private fun mostrarResultado(contadorCorrectas: Int, contadorIncorrectas: Int) {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Resultado del Ejercicio")
+
+        // Mensaje personalizado
+        val mensaje = "Enhorabuena!\nCorrectas: $contadorCorrectas\nIncorrectas: $contadorIncorrectas"
+        builder.setMessage(mensaje)
+
+        // Si quieres agregar una imagen estática
+        builder.setIcon(R.drawable.violin)
+
+        // Para agregar una imagen GIF (requiere Glide u otra librería)
+        // val imageView = ImageView(this)
+        // Glide.with(this).load(R.drawable.tu_gif).into(imageView)
+        // builder.setView(imageView)
+
+        builder.setPositiveButton("OK") { dialog, which ->
+            // Acción al presionar el botón OK
+        }
+
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
+    }
+
 }
