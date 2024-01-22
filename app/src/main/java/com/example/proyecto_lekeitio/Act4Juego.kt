@@ -17,6 +17,8 @@ import com.bumptech.glide.Glide
 class Act4Juego : AppCompatActivity() {
 
     private lateinit var btnComprobar: Button
+    private lateinit var btnFinalizar: Button
+
     private lateinit var btnP1Verdadero: RadioButton
     private lateinit var btnP2Verdadero: RadioButton
     private lateinit var btnP3Verdadero: RadioButton
@@ -54,6 +56,8 @@ class Act4Juego : AppCompatActivity() {
 
         //Bótones de respuestas
         btnComprobar = findViewById(R.id.btnComprobar)
+        btnFinalizar = findViewById(R.id.btnFinalizar)
+
         btnP1Verdadero = findViewById(R.id.btnP1Verdadero)
         btnP2Verdadero = findViewById(R.id.btnP2Verdadero)
         btnP3Verdadero = findViewById(R.id.btnP3Verdadero)
@@ -142,7 +146,6 @@ class Act4Juego : AppCompatActivity() {
         }
     }
 
-
     /**
      * Metodo que cuenta el número de las respuestas correctas
      */
@@ -181,7 +184,9 @@ class Act4Juego : AppCompatActivity() {
                 rgP5.checkedRadioButtonId != -1
     }
 
-
+    /**
+     * Metodo que abre una ventana de alerta mostrando el resultado del juego con fotos GIF según la nota sacada
+     */
     @SuppressLint("MissingInflatedId")
     private fun mostrarVentanaResultado(contadorCorrectas: Int) {
         val alertDialogBuilder = AlertDialog.Builder(this)
@@ -220,6 +225,9 @@ class Act4Juego : AppCompatActivity() {
         // Configura el botón OK en el AlertDialog
         alertDialogBuilder.setPositiveButton("OK") { dialog, _ ->
             dialog.dismiss()
+            //poner el bóton comprobar invisible y habilitar el bóton finalizar 'volver al mapa'
+            btnComprobar.visibility = Button.INVISIBLE
+            btnFinalizar.visibility = Button.VISIBLE
         }
 
         alertDialogBuilder.setCancelable(false)

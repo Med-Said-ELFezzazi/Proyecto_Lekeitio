@@ -177,7 +177,7 @@
 
         <TextView
             android:id="@+id/txtPregunta3"
-            android:layout_width="393dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:padding="5dp"
@@ -361,7 +361,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:layout_gravity="center"
         android:layout_marginTop="20dp">
 
@@ -372,7 +372,17 @@
             android:id="@+id/btnComprobar"
             android:textSize="15dp"
             android:visibility="invisible"
+            android:backgroundTint="#0776AE"
             />
+
+        <Button
+            android:id="@+id/btnFinalizar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#0776AE"
+            android:text="Amaitu"
+            android:textSize="15dp"
+            android:visibility="invisible" />
 
     </LinearLayout>
 
