@@ -12,14 +12,39 @@
         android:textSize="24sp"
         android:padding="16dp" />
 
-    <Button
-        android:id="@+id/button_play_audio"
-        android:layout_width="wrap_content"
+    <!-- Botones para controlar la reproducción del audio -->
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Reproducir Audio"
+        android:orientation="horizontal"
         android:layout_below="@id/textview_titulo"
-        android:layout_centerHorizontal="true"
-        android:onClick="playAudio" />
+        android:id="@+id/layoutBtnAudio"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/button_play_audio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reproducir" />
+
+        <Button
+            android:id="@+id/button_pause_audio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Parar" />
+
+        <Button
+            android:id="@+id/button_stop_audio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Empezar de 0" />
+    </LinearLayout>
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layoutBtnAudio" />
 
     <TextView
         android:id="@+id/textview_explanation"
@@ -27,7 +52,7 @@
         android:layout_height="wrap_content"
         android:text="Texto explicativo aquí..."
         android:padding="16dp"
-        android:layout_below="@id/button_play_audio" />
+        android:layout_below="@id/seekBar" />
 
     <Button
         android:id="@+id/btnSopaDeLetras"
@@ -37,7 +62,6 @@
         android:layout_below="@id/textview_explanation"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="24dp"
-        android:onClick="pasarASopaDeLetras"
         android:enabled="false" />
 
 </RelativeLayout>
