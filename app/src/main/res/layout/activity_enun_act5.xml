@@ -22,14 +22,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="500sp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/EnunAct5"
         android:textSize="25sp"
-        android:layout_marginBottom="50sp"
-        android:onClick="mostrarVideo"/>
+        android:layout_marginBottom="100sp" />
 
         <Button
             android:id="@+id/videoAct5"

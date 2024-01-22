@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="#9CDCFB"
-    tools:context=".Act1PuzzleActivity">
+    tools:context=".Act1PuzzleActivity"    >
 
     <LinearLayout
         android:layout_width="match_parent"
