@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20sp"
+    tools:context=".EnunAct5Activity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100sp"
+        android:gravity="center_horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/antzarrak"
+            android:textSize="50sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="500sp"
+        android:orientation="vertical"
+        android:gravity="center">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/EnunAct5"
+        android:textSize="25sp"
+        android:layout_marginBottom="100sp" />
+
+        <Button
+            android:id="@+id/videoAct5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bideoa"
+            android:onClick="mostrarVideo"
+            android:textSize="30sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100sp"
+        android:gravity="center"
+        >
+        <Button
+            android:id="@+id/btnSiguienteAct5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/jarraitu"
+            android:textSize="25sp"
+            android:onClick="siguiente"
+            />
+    </LinearLayout>
+
+</LinearLayout>

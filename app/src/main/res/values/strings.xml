@@ -1,3 +1,36 @@
 <resources>
     <string name="app_name">Proyecto_Lekeitio</string>
+    <string name="antzarrak">ANTZARRAK</string>
+    <string name="EnunAct5">Lekeition egiten den antzar jaia ikasleek ezagutzeko, bideo bat ikusiko dute antzar jaia nolakoa den ezagutzeko. Behin hori eginda, egun honen inguruko galdera batzuk erantzungo dituzte.</string>
+    <string name="hurrengoa">Hurrengoa</string>
+    <string name="jarraitu">Jarraitu</string>
+    <string name="bideoa">BIDEOA</string>
+    <string name="patrimonio_lekeitio">Lekeitioko ondarea</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="lekeitioko_eliza">Lekeitioko Eliza</string>
+    <string name="siguiente">Siguiente</string>
+    <string name="enunciadoAct1Parte1">Jarduera hau lehenengoa izango da eta Lekeitioko elizarekin harremanduta egongo da. Lehenik eta behin, elizaren inguruarekiko informazio orokorra biltzen duen testu bat irakurriko dute.</string>
+    <string name="enunciadoAct1Parte2">Behin hori eginda, Lekeitioko elizaren inguruko jarduera bat garatuko dute. Eliza lantzeko jaduera honen helburua puzzle bat osatzea da. Horretarako, hainbat pieza bereiziko dira eta ikasleek denen artean elkartu beharko dituzte, lortuko duten irudia, elizaren kanpoaldeko irudi bat izanik.</string>
+    <string name="bot_n">Botón</string>
+    <string name="Act5Preg1">1. Ze egunetan ospatzen da?</string>
+    <string name="Act5Preg2">2. Zein animali da ospakizunaren protagonista?</string>
+    <string name="Act5Preg2Res1">Antzarrak</string>
+    <string name="Act5Pre2Res2">Beltxarga</string>
+    <string name="Act5Pre2Res3">Amiamokoa</string>
+    <string name="Act5Pre3">3. Egun honetan nola jazten dira herritarrak?</string>
+    <string name="Act5Pre3Res1">Baserritarrez</string>
+    <string name="Act5Pre3Res2">Dantzariz</string>
+    <string name="Act5Pre3Res3">Mahoiz</string>
+    <string name="Act5Pre4">4. GAUR EGUN erabiltzen den animalia nolakoa da?</string>
+    <string name="Act5Pre4Res1">Gomazkoa</string>
+    <string name="Act5Pre4Res2">Plastikozkoa</string>
+    <string name="Act5Pre4Res3">Benetakoa</string>
+    <string name="Act5Pre5">5. Koadrillak erabilitako ontziei nola esaten zaie?</string>
+    <string name="Act5Pre5Res1">Belaontzia</string>
+    <string name="Act5Pre5Res2">Txalupa</string>
+    <string name="Act5Pre5Res3">Bidaiari-ontzi</string>
+    <string name="Act5Pre1Res1">Irailak 1</string>
+    <string name="Act5Pre1Res2">Abuztuak 5</string>
+    <string name="Act5Pre1Res3">Irailak 5</string>
 </resources>
