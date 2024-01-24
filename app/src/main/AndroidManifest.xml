@@ -40,9 +40,15 @@
         <activity
             android:name=".Act3Activity"
             android:exported="false" />
-<!--        <activity-->
-<!--            android:name=".Act2Activity"-->
-<!--            android:exported="false" />-->
+        <activity
+           android:name=".Actividad2"
+           android:exported="false" />
+        <activity
+            android:name=".Actividad6"
+            android:exported="false" />
+        <activity
+            android:name=".Actividad6SopaDeLetras"
+            android:exported="false" />
         <activity
             android:name=".Act1Activity"
             android:exported="false" />

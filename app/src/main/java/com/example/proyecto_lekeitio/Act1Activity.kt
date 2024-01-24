@@ -8,7 +8,7 @@ import android.view.View
 class Act1Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_act1)
+        setContentView(R.layout.activity_act1_enun)
     }
 
     fun volver(view: View) {

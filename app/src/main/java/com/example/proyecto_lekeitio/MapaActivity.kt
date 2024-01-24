@@ -12,10 +12,8 @@ import androidx.core.view.isVisible
 
 class MapaActivity : AppCompatActivity() {
 
+    private var contador: Int = 1
 
-    @SuppressLint("MissingInflatedId")
-
-    private var contador: Int = 3
 
     lateinit var btnsiguienteActividad: Button
    // val arrayActividades: Array<String> = arrayOf("actividad1", "actividad2" , "actividad3", "actividad4", "actividad5", "actividad6", "actividad7")
@@ -42,25 +40,19 @@ class MapaActivity : AppCompatActivity() {
      * Metodo para pasar entre actividades
      */
     fun pasarActividades(view: View) {
-        var intent : Intent = Intent(this,Act3Activity::class.java)
-        if (contador == 4) {
-            intent = Intent(this,Act4Activity::class.java)
+        when (contador) {
+            1 -> intent = Intent(this, Act1EnunActivity::class.java)
+            2 -> intent = Intent(this, Actividad2::class.java)
+            3 -> intent = Intent(this, Act3Activity::class.java)
+            4 -> intent = Intent(this, Act4Activity::class.java)
+            5 -> intent = Intent(this, EnunAct5Activity::class.java)
+            6 -> intent = Intent(this, Actividad6::class.java)
+            else -> {
+                contador = 1
+                intent = Intent(this, Act1EnunActivity::class.java)
+            }
         }
         contador++
         startActivity(intent)
     }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-
-        if (requestCode == 1234 && resultCode == RESULT_OK) {
-            // Obtener el resultado de la actividad anterior
-            val resultado = data?.getIntExtra("RESULTADO", 0)
-
-            btnsiguienteActividad.isVisible = false
-            lblInstruccion.isVisible = true
-            lblInstruccion.setText(resultado.toString())
-        }
-    }
-
 }

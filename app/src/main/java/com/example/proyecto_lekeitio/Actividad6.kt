@@ -79,6 +79,7 @@ class Actividad6 : AppCompatActivity() {
     private fun goToWordSearchActivity() {
         val intent = Intent(this, Actividad6SopaDeLetras::class.java)
         startActivity(intent)
+        finish()
     }
 
     private fun playAudio() {

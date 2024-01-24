@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun iniciar(view: View) {
-        var intent = Intent(this, Act1PuzzleActivity::class.java)
+        var intent = Intent(this, MapaActivity::class.java)
         startActivity(intent)
     }
 }

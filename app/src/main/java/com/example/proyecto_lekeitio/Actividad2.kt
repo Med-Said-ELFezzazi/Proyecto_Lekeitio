@@ -19,7 +19,7 @@ class Actividad2 : AppCompatActivity() {
     private lateinit var audioSeekBar: SeekBar
     private lateinit var resetButton: Button
     private lateinit var checkButton: Button
-    private lateinit var nextButton: Button
+    private lateinit var btnSiguiente: Button
 
     data class ButtonState(val buttonId: Int, var isPressed: Boolean, var position: Int, var isCorrectlySelected: Boolean = false)
 
@@ -48,13 +48,13 @@ class Actividad2 : AppCompatActivity() {
         val frasesLayout = findViewById<LinearLayout>(R.id.frasesLayout)
         resetButton = findViewById(R.id.btnReiniciar)
         checkButton = findViewById(R.id.btnComprobar)
-        nextButton = findViewById(R.id.btnSiguiente)
+        btnSiguiente = findViewById(R.id.btnSiguiente)
 
         // Ocultar elementos inicialmente
         frasesLayout.visibility = View.GONE
         resetButton.visibility = View.GONE
         checkButton.visibility = View.GONE
-        nextButton.visibility = View.GONE
+        btnSiguiente.visibility = View.GONE
 
         initializeButtonStates()
         setupPhraseButtonListeners()
@@ -110,15 +110,13 @@ class Actividad2 : AppCompatActivity() {
         // Listener para el botón de comprobar
         checkButton.setOnClickListener {
             if (checkOrder()) {
-                nextButton.visibility = View.VISIBLE
-            } else {
-                // Opcional: Mensaje de error o lógica adicional
+                btnSiguiente.visibility = View.VISIBLE
             }
         }
 
         // Listener para el botón siguiente
-        nextButton.setOnClickListener {
-            // Aquí va la lógica para ir a la siguiente pantalla o actividad
+        btnSiguiente.setOnClickListener {
+            finish()
         }
     }
 
@@ -134,7 +132,7 @@ class Actividad2 : AppCompatActivity() {
             }
         }
         // Ocultar el botón "Siguiente" si es necesario
-        nextButton.visibility = View.GONE
+        btnSiguiente.visibility = View.GONE
     }
 
 

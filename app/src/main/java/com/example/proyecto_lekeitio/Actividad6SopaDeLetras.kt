@@ -32,6 +32,8 @@ class Actividad6SopaDeLetras : AppCompatActivity() {
         "MAIALEN" to "..... Lujanbio"
     )
     private lateinit var textViewClues: TextView
+    private val foundWords = mutableSetOf<String>()
+
 
     private var selectedWord = StringBuilder()
 
@@ -45,22 +47,32 @@ class Actividad6SopaDeLetras : AppCompatActivity() {
         setupWordSearchGrid()
         textViewClues = findViewById(R.id.textViewClues)
         updateCluesDisplay()
+        buttonNext.isEnabled = true
+
+        buttonNext.setOnClickListener {
+            finish()
+        }
     }
 
     private fun checkWord() {
-        if (selectedWord.toString() in wordsToClues.keys) {
-            // Actualiza la pista con la palabra encontrada
-            wordsToClues[selectedWord.toString()] = selectedWord.toString()
+        val word = selectedWord.toString()
+        if (word in wordsToClues.keys) {
+            foundWords.add(word)
+            wordsToClues[word] = word // Update the clue with the found word
 
-            // Actualiza el TextView de pistas
+            // Update the TextView for clues
             updateCluesDisplay()
 
+            // Clear the selected word for new selection
             selectedWord.clear()
-            if (wordsToClues.keys.all { it in words }) {
+
+            // Enable the Next button if all words are found
+            if (foundWords.size == wordsToClues.size) {
                 buttonNext.isEnabled = true
             }
         }
     }
+
 
     private fun updateCluesDisplay() {
         val cluesText = wordsToClues.values.joinToString("\n")

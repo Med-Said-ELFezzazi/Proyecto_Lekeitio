@@ -13,7 +13,7 @@ class Act1EnunActivity : AppCompatActivity() {
 
     fun siguiente(view: View) {
         val intent = Intent(this, Act1PuzzleActivity::class.java)
-        startActivityForResult(intent, 1234)
+        startActivity(intent)
         finish()
     }
 
