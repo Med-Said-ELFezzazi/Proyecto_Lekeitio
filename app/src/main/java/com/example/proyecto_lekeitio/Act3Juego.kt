@@ -15,6 +15,8 @@ import androidx.core.view.isVisible
 
 class Act3Juego : AppCompatActivity() {
 
+    private var contador: Int = 0
+
     private lateinit var cuadradoVacio: EditText
     private lateinit var btnSiguiente: Button
     private lateinit var txtFotoSeleccionda: TextView
@@ -62,6 +64,9 @@ class Act3Juego : AppCompatActivity() {
         mpIncorrecto = MediaPlayer.create(this, R.raw.wrong_answer)
 
         btnSiguiente.setOnClickListener {
+            if (contador == 2) {
+                finish()
+            }
 //            respuestaCorrecta = "pandereta"
             if (respuestaCorrecta == "silbido") {
                 respuestaCorrecta = "pandereta"
@@ -87,6 +92,7 @@ class Act3Juego : AppCompatActivity() {
             resetBorders()                          //quitar el borde colorado al pasar al segunda pregunta
 
             btnSiguiente.setText("Finalizar")      //Cambiar el nombre del bóton a finalizar
+
         }
     }
 
@@ -143,6 +149,7 @@ class Act3Juego : AppCompatActivity() {
                     imageView.setBackgroundResource(R.drawable.borde_verde)   //borde verde
                     lanzarAudioCorrecto()                 //audio
                     btnSiguiente.isVisible = true         //poner visible el bóton siguiente
+                    contador++
                 } else {
                     txtFotoSeleccionda.setText("Seleccion incorrecta!")
                     txtFotoSeleccionda.setTextColor(resources.getColor(R.color.rojo))
@@ -159,6 +166,7 @@ class Act3Juego : AppCompatActivity() {
                     imageView.setBackgroundResource(R.drawable.borde_verde)
                     btnSiguiente.isVisible = true
                     lanzarAudioCorrecto()
+                    contador++
                 } else {
                     txtFotoSeleccionda.setText("Seleccion incorrecta!")
                     txtFotoSeleccionda.setTextColor(resources.getColor(R.color.rojo))
@@ -167,5 +175,9 @@ class Act3Juego : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    fun volverMapa(view: View) {
+        finish()
     }
 }

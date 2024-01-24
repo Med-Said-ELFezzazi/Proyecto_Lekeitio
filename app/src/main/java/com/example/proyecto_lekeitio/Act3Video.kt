@@ -67,7 +67,7 @@
         // Método para a la siguiente actividad
         fun siguienteJuego(view: View) {
             var intent = Intent(this,Act3Juego::class.java)
-            startActivityForResult(intent, 5678)
+            startActivity(intent)
 
             //Acabar con esa pantalla
             finish()

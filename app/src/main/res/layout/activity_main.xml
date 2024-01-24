@@ -39,10 +39,17 @@
 
     </LinearLayout>
 
-    <ImageView
+<!--    <ImageView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="500sp"-->
+<!--        android:src="@drawable/logo_barco" />-->
+
+    <pl.droidsonroids.gif.GifImageView
         android:layout_width="match_parent"
         android:layout_height="500sp"
-        android:src="@drawable/logo_barco" />
+        android:src="@drawable/barco_gif"
+        tools:ignore="MissingClass" />
+
 
 
     <LinearLayout
@@ -68,7 +75,7 @@
         android:id="@+id/lblAutores"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Joseba , Mohamed, Jonathan"
+        android:text="Hecho por: Joseba , Mohamed said, Jonathan"
         android:textAlignment="center" />
 
 </LinearLayout>

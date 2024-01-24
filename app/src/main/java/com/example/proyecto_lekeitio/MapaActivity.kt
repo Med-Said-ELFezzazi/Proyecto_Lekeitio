@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.core.view.isVisible
 
 class MapaActivity : AppCompatActivity() {
+    private var contador: Int = 3
 
     lateinit var btnsiguienteActividad: Button
    // val arrayActividades: Array<String> = arrayOf("actividad1", "actividad2" , "actividad3", "actividad4", "actividad5", "actividad6", "actividad7")
@@ -35,9 +36,12 @@ class MapaActivity : AppCompatActivity() {
      * Metodo para pasar entre actividades
      */
     fun pasarActividades(view: View) {
-        var intent = Intent(this,Act4Activity::class.java)
-        startActivityForResult(intent, 123)
-
+        var intent : Intent = Intent(this,Act3Activity::class.java)
+        if (contador == 4) {
+            intent = Intent(this,Act4Activity::class.java)
+        }
+        contador++
+        startActivity(intent)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

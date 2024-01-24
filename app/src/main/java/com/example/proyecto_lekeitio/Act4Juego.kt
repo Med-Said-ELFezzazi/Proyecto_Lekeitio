@@ -233,4 +233,9 @@ class Act4Juego : AppCompatActivity() {
         alertDialogBuilder.setCancelable(false)
         alertDialogBuilder.show()
     }
+
+    //Cuando se hacer click en finalizar se cierra la pantalla y vuelve al mapa
+    fun volverAlmapa(view: View) {
+        finish()
+    }
 }

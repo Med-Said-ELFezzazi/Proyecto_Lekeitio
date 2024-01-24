@@ -41,7 +41,7 @@ class Act4Activity : AppCompatActivity() {
         imgPlayAudio = findViewById(R.id.imgPlayAudio)
         seekBarAudio = findViewById(R.id.seekBarAudio)
 
-        //btnSiguiente.isVisible = false //poner el bóton soguiente invisible al principio
+        //btnSiguiente.isVisible = false //poner el botón soguiente invisible al principio
 
         seekBarAudio.max = mp.duration
 
@@ -114,6 +114,7 @@ class Act4Activity : AppCompatActivity() {
         //cuando se reproduce el audio hasta el final
         mp.setOnCompletionListener {
             // Habilitar el botón Siguiente cuando el audio termine
+            imgPlayAudio.setImageResource(R.drawable.play_debujo)
             btnSiguiente.isVisible = true
         }
         btnSiguiente.setOnClickListener{

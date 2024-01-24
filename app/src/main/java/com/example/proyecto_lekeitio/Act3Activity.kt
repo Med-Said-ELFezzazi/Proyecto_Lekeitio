@@ -124,7 +124,7 @@ class Act3Activity : AppCompatActivity() {
         mp.release()
         //Pasar a la siguiente pantalla
         var intent = Intent(this,Act3Video::class.java)
-        startActivityForResult(intent, 5678)
+        startActivity(intent)
 
         //Acabar con esa pantalla
         finish()

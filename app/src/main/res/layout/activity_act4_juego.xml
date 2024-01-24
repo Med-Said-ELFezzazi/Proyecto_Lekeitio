@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Act4Juego"
-    android:background="#9CDCFB"
+    android:background="@drawable/foto_fondo_2"
     android:orientation="vertical">
 
 
@@ -382,7 +382,8 @@
             android:backgroundTint="#0776AE"
             android:text="Amaitu"
             android:textSize="15dp"
-            android:visibility="invisible" />
+            android:visibility="invisible"
+            android:onClick="volverAlmapa"/>
 
     </LinearLayout>
 
