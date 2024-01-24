@@ -143,7 +143,8 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="30dp"
             android:onClick="pasarAlJuego"
-            android:text="Siguiente" />
+            android:text="Siguiente"
+            android:visibility="invisible"/>
     </LinearLayout>
 
 

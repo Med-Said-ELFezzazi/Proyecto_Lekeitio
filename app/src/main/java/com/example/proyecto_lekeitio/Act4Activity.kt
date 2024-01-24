@@ -41,22 +41,9 @@ class Act4Activity : AppCompatActivity() {
         imgPlayAudio = findViewById(R.id.imgPlayAudio)
         seekBarAudio = findViewById(R.id.seekBarAudio)
 
-        btnSiguiente.isVisible = false //poner el bóton soguiente invisible al principio
+        //btnSiguiente.isVisible = false //poner el bóton soguiente invisible al principio
 
         seekBarAudio.max = mp.duration
-
-        /**
-         * Actualiza el SeekBar para reflejar la posición actual del audio
-         */
-       /* val updateSeekBar: Runnable = object : Runnable {
-            override fun run() {
-                if (mp.isPlaying) {
-                    seekBarAudio.progress = mp.currentPosition
-                    handler.postDelayed(this, 1000)
-                }
-            }
-        } */
-
 
         //Funcionamiento de tiempo de reporducción
         txtTiempoActual = findViewById(R.id.currentTimeTextView)
@@ -85,8 +72,7 @@ class Act4Activity : AppCompatActivity() {
 
                 imgPlayAudio.setImageResource(R.drawable.play_debujo) // Cambiar a imagen de play
                 handler.removeCallbacks(updateSeekBar)
-
-                Toast.makeText(this, "Pause", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this, "Pause", Toast.LENGTH_SHORT).show()
             } else {
                 // Si el audio no está reproduciéndose, iniciarlo o reanudarlo
                 mp.start()
@@ -94,10 +80,10 @@ class Act4Activity : AppCompatActivity() {
                 imgPlayAudio.setImageResource(R.drawable.pause_debujo) // Cambiar a imagen de pause
                 handler.postDelayed(updateSeekBar, 0)
 
-                Toast.makeText(this, "Play", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this, "Play", Toast.LENGTH_SHORT).show()
             }
             // Actualizar la visibilidad del botón btnSiguienteVideo según el estado de reproducción
-            btnSiguiente.isVisible = true
+            //btnSiguiente.isVisible = true
         }
         seekBarAudio.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             //Cuando el progreso se cambia
@@ -125,6 +111,15 @@ class Act4Activity : AppCompatActivity() {
             }
         })
 
+        //cuando se reproduce el audio hasta el final
+        mp.setOnCompletionListener {
+            // Habilitar el botón Siguiente cuando el audio termine
+            btnSiguiente.isVisible = true
+        }
+        btnSiguiente.setOnClickListener{
+            pasarAlJuego()
+        }
+
     }
 
     /**
@@ -138,14 +133,15 @@ class Act4Activity : AppCompatActivity() {
 
     /**
      * Metodo que lleva a la siguiente pantalla 'la actividad4'
+     * y detiene el audio si está en reproducción.
      */
-    fun pasarAlJuego(view: View) {
-        //Depués de hacer click en siguiente , el audio debe parar
-        mp.release()
-        //Pasar a la siguiente pantalla
-        var intent = Intent(this,Act4Juego::class.java)
-        startActivityForResult(intent, 456)
-        //Acabar con esa pantalla
+    private fun pasarAlJuego() {
+       // mp.release()  Eso me generaria errors
+        // Pasar a la siguiente pantalla
+        val intent = Intent(this, Act4Juego::class.java)
+        startActivity(intent)
+
+        // Finalizar la actividad actual
         finish()
     }
 

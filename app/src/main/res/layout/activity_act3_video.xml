@@ -48,6 +48,8 @@
             android:id="@+id/videoKaxarranka"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_marginTop="200dp"
+            android:padding="10dp"
             />
 
 
