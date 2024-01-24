@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/foto_fondo_2"
+    android:orientation="vertical"
+    tools:context=".Act4Activity">
+
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Actividad 4"
+        android:layout_gravity="center"
+        android:textSize="35sp"
+        android:layout_marginTop="5sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5sp"
+        android:text="Tchatxo Kaia Kaia"
+        android:textStyle="italic"
+        android:layout_marginBottom="27dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:layout_gravity="center"
+        android:background="@drawable/borders"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="361dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Tchatxo Kaia Kaia, en el encantador pueblo de Lekeitio en el País Vasco, es un lugar donde la tradición marítima y la belleza costera convergen.
+        \n\nEste pintoresco rincón, conocido por sus coloridas embarcaciones y vistas al mar, es un punto de encuentro clave para locales y visitantes, reflejando la armoniosa relación del pueblo con el océano y su rica cultura vasca."
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="italic" />
+    </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="-5dp"
+            android:layout_marginTop="10dp">
+
+            <!--
+            <ImageView
+                android:id="@+id/imgPlayAudio"
+                android:layout_width="78dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="25dp"
+                android:onClick="playAudio"
+                android:src="@drawable/play_debujo" />  -->
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="97dp"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/currentTimeTextView"
+                    android:layout_width="61dp"
+                    android:layout_height="90dp"
+                    android:gravity="center"
+                    android:text="0:00"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <SeekBar
+                    android:id="@+id/seekBarAudio"
+                    style="@style/CustomSeekBarStyle"
+                    android:layout_width="260dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="20sp"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/totalTimeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="61dp"
+                    android:text="0:00"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+
+
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="393dp"
+        android:layout_height="81dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/imgPlayAudio"
+            android:layout_width="186dp"
+            android:layout_height="81dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="34dp"
+            android:onClick="playAudio"
+            android:src="@drawable/play_debujo" />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="30dp"
+        android:gravity="center"
+        android:layout_gravity="top">
+
+        <Button
+            android:id="@+id/btnSiguiente"
+            android:layout_width="110dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="30dp"
+            android:onClick="pasarAlJuego"
+            android:text="Siguiente"
+            android:visibility="invisible"/>
+    </LinearLayout>
+
+
+
+
+
+
+<!--
+    <Button
+        android:id="@+id/btnSiguiente"
+        android:layout_width="138dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:onClick="pasarAlJuego"
+        android:text="Siguiente"
+        android:layout_marginTop="-100dp"/> -->
+
+
+
+
+</LinearLayout>

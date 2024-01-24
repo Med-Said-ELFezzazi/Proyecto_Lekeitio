@@ -23,6 +23,28 @@
             android:exported="false" />
         <activity
             android:name=".Act1EnunActivity"
+            android:exported="false"/>
+
+        <activity
+            android:name=".Act4Juego"
+            android:exported="false" />
+        <activity
+            android:name=".Act4Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Act3Juego"
+            android:exported="false" />
+        <activity
+            android:name=".Act3Video"
+            android:exported="false" />
+        <activity
+            android:name=".Act3Activity"
+            android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".Act2Activity"-->
+<!--            android:exported="false" />-->
+        <activity
+            android:name=".Act1Activity"
             android:exported="false" />
         <activity
             android:name=".MapaActivity"
@@ -32,7 +54,6 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

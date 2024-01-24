@@ -12,11 +12,16 @@ import androidx.core.view.isVisible
 
 class MapaActivity : AppCompatActivity() {
 
-    lateinit var btnsiguienteActividad: Button
-    val arrayActividades: Array<String> = arrayOf("actividad1", "actividad2" , "actividad3", "actividad4", "actividad5", "actividad6", "actividad7")
-    lateinit var lblInstruccion : TextView
 
     @SuppressLint("MissingInflatedId")
+
+    private var contador: Int = 3
+
+    lateinit var btnsiguienteActividad: Button
+   // val arrayActividades: Array<String> = arrayOf("actividad1", "actividad2" , "actividad3", "actividad4", "actividad5", "actividad6", "actividad7")
+    lateinit var lblInstruccion : TextView
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mapa)
@@ -31,15 +36,18 @@ class MapaActivity : AppCompatActivity() {
         lblInstruccion.isVisible = false
         btnsiguienteActividad.isVisible = true
 
-
     }
 
     /**
      * Metodo para pasar entre actividades
      */
     fun pasarActividades(view: View) {
-        val intent = Intent(this, EnunAct5Activity::class.java)
-        startActivityForResult(intent, 1234)
+        var intent : Intent = Intent(this,Act3Activity::class.java)
+        if (contador == 4) {
+            intent = Intent(this,Act4Activity::class.java)
+        }
+        contador++
+        startActivity(intent)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

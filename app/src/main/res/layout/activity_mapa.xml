@@ -6,22 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".MapaActivity"
     android:orientation="vertical"
+    android:background="@drawable/foto_fondo_2"
     android:padding="10sp">
 
     <TextView
         android:id="@+id/lblTituloMapa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Mapa de Lekeitio"
         android:layout_marginBottom="150sp"
-        android:textSize="50sp"/>
-
+        android:textSize="45sp"/>
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/imgMapa"
-        android:src="@drawable/mapa1"
         android:layout_marginBottom="50sp"
+        android:src="@mipmap/mapita"
         android:onClick="mostrarDatos" />
 
     <TextView
@@ -37,6 +38,5 @@
         android:text="@string/bot_n"
         android:onClick="pasarActividades"
         android:id="@+id/btnsiguienteActividad"/>
-
-
+    
 </LinearLayout>

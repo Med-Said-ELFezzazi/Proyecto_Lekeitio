@@ -6,8 +6,6 @@
     <string name="jarraitu">Jarraitu</string>
     <string name="bideoa">BIDEOA</string>
     <string name="patrimonio_lekeitio">Lekeitioko ondarea</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="lekeitioko_eliza">Lekeitioko Eliza</string>
     <string name="siguiente">Siguiente</string>
     <string name="enunciadoAct1Parte1">Jarduera hau lehenengoa izango da eta Lekeitioko elizarekin harremanduta egongo da. Lehenik eta behin, elizaren inguruarekiko informazio orokorra biltzen duen testu bat irakurriko dute.</string>
