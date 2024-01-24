@@ -39,7 +39,7 @@ class Act1PuzzleActivity : AppCompatActivity() {
     private lateinit var esp8 : LinearLayout
     private lateinit var esp9 : LinearLayout
     private var bSeleccionado : Boolean = false
-    private var nContador : Int=0
+    private var bCorrecto : Boolean = true
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -110,36 +110,60 @@ class Act1PuzzleActivity : AppCompatActivity() {
         img.isEnabled = false
         img.isClickable = false
         img.alpha = 0.7F
-        nContador++
-        if (nContador == 9){btnMapa.isVisible = true}
         return img
     }
 
-    /**
-     * Comprueba si cada ImageView contiene el drawable correcto. Si es así, ejecutará el método
-     * respuestaCorrecta(ImageView).
-     */
-    private fun comprobarPosiciones(){
-        if(img1.drawable.equals(dra[0])) {img1 = respuestaCorrecta(img1)}
-        if(img2.drawable.equals(dra[1])) {img2 = respuestaCorrecta(img2)}
-        if(img3.drawable.equals(dra[2])) {img3 = respuestaCorrecta(img3)}
-        if(img4.drawable.equals(dra[3])) {img4 = respuestaCorrecta(img4)}
-        if(img5.drawable.equals(dra[4])) {img5 = respuestaCorrecta(img5)}
-        if(img6.drawable.equals(dra[5])) {img6 = respuestaCorrecta(img6)}
-        if(img7.drawable.equals(dra[6])) {img7 = respuestaCorrecta(img7)}
-        if(img8.drawable.equals(dra[7])) {img8 = respuestaCorrecta(img8)}
-        if(img9.drawable.equals(dra[8])) {img9 = respuestaCorrecta(img9)}
+    private fun comprobarImagenes(){
+        bCorrecto = true
+        if (!img1.drawable.equals(dra[0])){
+            bCorrecto = false
+        }
+        if (!img2.drawable.equals(dra[1])){
+            bCorrecto = false
+        }
+        if (!img3.drawable.equals(dra[2])){
+            bCorrecto = false
+        }
+        if (!img4.drawable.equals(dra[3])){
+            bCorrecto = false
+        }
+        if (!img5.drawable.equals(dra[4])){
+            bCorrecto = false
+        }
+        if (!img6.drawable.equals(dra[5])) {
+            bCorrecto = false
+        }
+        if (!img7.drawable.equals(dra[6])){
+            bCorrecto = false
+        }
+        if (!img8.drawable.equals(dra[7])){
+            bCorrecto = false
+        }
+        if (!img9.drawable.equals(dra[8])){
+            bCorrecto = false
+        }
+        if (bCorrecto){
+            btnMapa.isVisible = true
+            respuestaCorrecta(img1)
+            respuestaCorrecta(img2)
+            respuestaCorrecta(img3)
+            respuestaCorrecta(img4)
+            respuestaCorrecta(img5)
+            respuestaCorrecta(img6)
+            respuestaCorrecta(img7)
+            respuestaCorrecta(img8)
+            respuestaCorrecta(img9)
+        }
     }
-
     // METODOS ONCLICK DE LOS TEXTVIEW \\
     fun imagen1(view: View) {
         if (!bSeleccionado) {
             seleccionarImagen(img1)
         } else{
             cambiarImagen(iSeleccionado,img1)
-            comprobarPosiciones()
+            if(img1.drawable.equals(dra[0])) {img1 = respuestaCorrecta(img1)}
         }
-
+        comprobarImagenes()
     }
 
     fun imagen2(view: View) {
@@ -147,9 +171,10 @@ class Act1PuzzleActivity : AppCompatActivity() {
             seleccionarImagen(img2)
         } else{
             cambiarImagen(iSeleccionado,img2)
-            comprobarPosiciones()
-        }
 
+            if(img2.drawable.equals(dra[1])) {img2 = respuestaCorrecta(img2)}
+        }
+        comprobarImagenes()
     }
 
     fun imagen3(view: View) {
@@ -157,9 +182,9 @@ class Act1PuzzleActivity : AppCompatActivity() {
             seleccionarImagen(img3)
         } else{
             cambiarImagen(iSeleccionado,img3)
-            comprobarPosiciones()
+            if(img3.drawable.equals(dra[2])) {img3 = respuestaCorrecta(img3)}
         }
-
+        comprobarImagenes()
     }
 
     fun imagen4(view: View) {
@@ -167,9 +192,9 @@ class Act1PuzzleActivity : AppCompatActivity() {
             seleccionarImagen(img4)
         } else{
             cambiarImagen(iSeleccionado,img4)
-            comprobarPosiciones()
+            if(img4.drawable.equals(dra[3])) {img4 = respuestaCorrecta(img4)}
         }
-
+        comprobarImagenes()
     }
 
     fun imagen5(view: View) {
@@ -177,9 +202,9 @@ class Act1PuzzleActivity : AppCompatActivity() {
             seleccionarImagen(img5)
         } else{
             cambiarImagen(iSeleccionado,img5)
-            comprobarPosiciones()
+            if(img5.drawable.equals(dra[4])) {img5 = respuestaCorrecta(img5)}
         }
-
+        comprobarImagenes()
     }
 
     fun imagen6(view: View) {
@@ -187,9 +212,9 @@ class Act1PuzzleActivity : AppCompatActivity() {
             seleccionarImagen(img6)
         } else{
             cambiarImagen(iSeleccionado,img6)
-            comprobarPosiciones()
+            if(img6.drawable.equals(dra[5])) {img6 = respuestaCorrecta(img6)}
         }
-
+        comprobarImagenes()
     }
 
     fun imagen7(view: View) {
@@ -197,9 +222,9 @@ class Act1PuzzleActivity : AppCompatActivity() {
             seleccionarImagen(img7)
         } else{
             cambiarImagen(iSeleccionado,img7)
-            comprobarPosiciones()
+            if(img7.drawable.equals(dra[6])) {img7 = respuestaCorrecta(img7)}
         }
-
+        comprobarImagenes()
     }
 
     fun imagen8(view: View) {
@@ -207,9 +232,9 @@ class Act1PuzzleActivity : AppCompatActivity() {
             seleccionarImagen(img8)
         } else{
             cambiarImagen(iSeleccionado,img8)
-            comprobarPosiciones()
+            if(img8.drawable.equals(dra[7])) {img8 = respuestaCorrecta(img8)}
         }
-
+        comprobarImagenes()
     }
 
     fun imagen9(view: View) {
@@ -217,8 +242,8 @@ class Act1PuzzleActivity : AppCompatActivity() {
             seleccionarImagen(img9)
         } else{
             cambiarImagen(iSeleccionado,img9)
-            comprobarPosiciones()
+            if(img9.drawable.equals(dra[8])) {img9 = respuestaCorrecta(img9)}
         }
-
+        comprobarImagenes()
     }
 }
