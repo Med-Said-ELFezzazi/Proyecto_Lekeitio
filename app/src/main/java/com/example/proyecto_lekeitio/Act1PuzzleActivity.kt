@@ -29,15 +29,6 @@ class Act1PuzzleActivity : AppCompatActivity() {
     private lateinit var img8 : ImageView
     private lateinit var img9 : ImageView
     private lateinit var iSeleccionado : ImageView
-    private lateinit var esp1 : LinearLayout
-    private lateinit var esp2 : LinearLayout
-    private lateinit var esp3 : LinearLayout
-    private lateinit var esp4 : LinearLayout
-    private lateinit var esp5 : LinearLayout
-    private lateinit var esp6 : LinearLayout
-    private lateinit var esp7 : LinearLayout
-    private lateinit var esp8 : LinearLayout
-    private lateinit var esp9 : LinearLayout
     private var bSeleccionado : Boolean = false
     private var bCorrecto : Boolean = true
 
