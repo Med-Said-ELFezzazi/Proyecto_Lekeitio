@@ -1,5 +1,6 @@
 package com.example.proyecto_lekeitio
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.Gravity
@@ -50,7 +51,10 @@ class Actividad6SopaDeLetras : AppCompatActivity() {
         buttonNext.isEnabled = true
 
         buttonNext.setOnClickListener {
-            finish()
+            //Pasar a la pantalla final
+            intent = Intent(this, PantallaFinal::class.java)
+            startActivity(intent)
+            finish()        // Y acabara con la pantalla de la actividad
         }
     }
 

@@ -11,12 +11,13 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:orientation="vertical"
-        android:layout_marginTop="25dp">
+        android:layout_marginTop="65dp"
+        >
 
         <pl.droidsonroids.gif.GifImageView
             android:id="@+id/fotoGIFfelicitaciones"
-            android:layout_width="match_parent"
-            android:layout_height="130dp"
+            android:layout_width="384dp"
+            android:layout_height="400dp"
             android:src="@drawable/gif_felicitacion" />
 
         <!--La traduccion : Buen trabajo felicidades campeón -->
@@ -26,8 +27,9 @@
             android:layout_marginTop="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:text="Lan ona zorionak txapeldun"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:text="Lan ona zorionak txapeldun!"
             android:textColor="@color/azul"
             />
 
@@ -38,7 +40,7 @@
             android:layout_height="match_parent"
             android:text="Itzuli mapara"
             android:layout_marginTop="20dp"
-            android:textSize="15dp"
+            android:textSize="20dp"
             android:id="@+id/btnVolverMapa" />
     </LinearLayout>
 
