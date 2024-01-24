@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Proyecto_Lekeitio"
         tools:targetApi="31">
         <activity
+            android:name=".PantallaFinal"
+            android:exported="false" />
+        <activity
             android:name=".Pregunta1Act5Activity"
             android:exported="false" />
         <activity
@@ -23,8 +26,7 @@
             android:exported="false" />
         <activity
             android:name=".Act1EnunActivity"
-            android:exported="false"/>
-
+            android:exported="false" />
         <activity
             android:name=".Act4Juego"
             android:exported="false" />
@@ -41,8 +43,8 @@
             android:name=".Act3Activity"
             android:exported="false" />
         <activity
-           android:name=".Actividad2"
-           android:exported="false" />
+            android:name=".Actividad2"
+            android:exported="false" />
         <activity
             android:name=".Actividad6"
             android:exported="false" />
@@ -60,6 +62,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

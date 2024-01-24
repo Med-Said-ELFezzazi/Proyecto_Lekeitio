@@ -10,7 +10,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginTop="25dp">
 
         <pl.droidsonroids.gif.GifImageView
             android:id="@+id/fotoGIFfelicitaciones"
@@ -29,6 +30,16 @@
             android:text="Lan ona zorionak txapeldun"
             android:textColor="@color/azul"
             />
+
+        <Button
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Itzuli mapara"
+            android:layout_marginTop="20dp"
+            android:textSize="15dp"
+            android:id="@+id/btnVolverMapa" />
     </LinearLayout>
 
 </LinearLayout>
