@@ -82,7 +82,7 @@ class Act1PuzzleActivity : AppCompatActivity() {
      */
     private fun seleccionarImagen(img: ImageView) {
         iSeleccionado = img;
-        bSeleccionado = true
+        this.bSeleccionado = true
         img.isEnabled= false
     }
 
@@ -137,8 +137,9 @@ class Act1PuzzleActivity : AppCompatActivity() {
             seleccionarImagen(img1)
         } else{
             cambiarImagen(iSeleccionado,img1)
+            comprobarPosiciones()
         }
-        comprobarPosiciones()
+
     }
 
     fun imagen2(view: View) {
@@ -146,8 +147,9 @@ class Act1PuzzleActivity : AppCompatActivity() {
             seleccionarImagen(img2)
         } else{
             cambiarImagen(iSeleccionado,img2)
+            comprobarPosiciones()
         }
-        comprobarPosiciones()
+
     }
 
     fun imagen3(view: View) {
@@ -155,8 +157,9 @@ class Act1PuzzleActivity : AppCompatActivity() {
             seleccionarImagen(img3)
         } else{
             cambiarImagen(iSeleccionado,img3)
+            comprobarPosiciones()
         }
-        comprobarPosiciones()
+
     }
 
     fun imagen4(view: View) {
@@ -164,8 +167,9 @@ class Act1PuzzleActivity : AppCompatActivity() {
             seleccionarImagen(img4)
         } else{
             cambiarImagen(iSeleccionado,img4)
+            comprobarPosiciones()
         }
-        comprobarPosiciones()
+
     }
 
     fun imagen5(view: View) {
@@ -173,8 +177,9 @@ class Act1PuzzleActivity : AppCompatActivity() {
             seleccionarImagen(img5)
         } else{
             cambiarImagen(iSeleccionado,img5)
+            comprobarPosiciones()
         }
-        comprobarPosiciones()
+
     }
 
     fun imagen6(view: View) {
@@ -182,8 +187,9 @@ class Act1PuzzleActivity : AppCompatActivity() {
             seleccionarImagen(img6)
         } else{
             cambiarImagen(iSeleccionado,img6)
+            comprobarPosiciones()
         }
-        comprobarPosiciones()
+
     }
 
     fun imagen7(view: View) {
@@ -191,8 +197,9 @@ class Act1PuzzleActivity : AppCompatActivity() {
             seleccionarImagen(img7)
         } else{
             cambiarImagen(iSeleccionado,img7)
+            comprobarPosiciones()
         }
-        comprobarPosiciones()
+
     }
 
     fun imagen8(view: View) {
@@ -200,8 +207,9 @@ class Act1PuzzleActivity : AppCompatActivity() {
             seleccionarImagen(img8)
         } else{
             cambiarImagen(iSeleccionado,img8)
+            comprobarPosiciones()
         }
-        comprobarPosiciones()
+
     }
 
     fun imagen9(view: View) {
@@ -209,7 +217,8 @@ class Act1PuzzleActivity : AppCompatActivity() {
             seleccionarImagen(img9)
         } else{
             cambiarImagen(iSeleccionado,img9)
+            comprobarPosiciones()
         }
-        comprobarPosiciones()
+
     }
 }
