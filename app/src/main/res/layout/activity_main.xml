@@ -27,7 +27,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/patrimonio_lekeitio"
-            android:textSize="35sp"
+            android:textSize="43dp"
+            android:textStyle="bold"
             android:textColor="@color/black"/>
 
     </LinearLayout>
@@ -67,7 +68,7 @@
             android:id="@+id/btnIniciar"
             android:layout_width="match_parent"
             android:layout_height="70sp"
-            android:backgroundTint="#0776AE"
+            android:backgroundTint="#00008B"
             android:onClick="iniciar"
             android:text="Hasiera"
             android:textSize="35sp"

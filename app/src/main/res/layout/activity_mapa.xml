@@ -10,12 +10,14 @@
     android:padding="10sp">
 
     <TextView
+        android:gravity="center"
         android:id="@+id/lblTituloMapa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Mapa de Lekeitio"
+        android:text="Lekeitio Mapa"
+        android:textColor="@color/black"
         android:layout_marginBottom="150sp"
-        android:textSize="45sp"/>
+        android:textSize="55dp"/>
 
     <ImageView
         android:layout_width="match_parent"
@@ -32,11 +34,13 @@
         android:text="Instruccion de pulsar el marcador"
         android:layout_marginBottom="50sp"/>
 
+    <!-- Nombre del botón luego hay que ponerlo en euskera-->
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/bot_n"
         android:onClick="pasarActividades"
+        android:backgroundTint="#00008B"
         android:id="@+id/btnsiguienteActividad"/>
 
 </LinearLayout>
