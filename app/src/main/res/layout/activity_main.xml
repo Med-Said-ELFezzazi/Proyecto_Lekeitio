@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
-    android:background="#9CDCFB"
+    android:background="@drawable/foto_fondo_2"
     android:padding="8sp">
 
     <!-- sp para q se adapte a la pantalla -->
@@ -28,8 +28,8 @@
             android:layout_height="wrap_content"
             android:text="@string/patrimonio_lekeitio"
             android:textSize="43dp"
-            android:textStyle="bold"
-            android:textColor="@color/black"/>
+            android:textColor="#00008B"
+            android:textStyle="bold"/>
 
     </LinearLayout>
 
@@ -53,9 +53,6 @@
         android:layout_height="500sp"
         android:src="@drawable/barco_gif"
         tools:ignore="MissingClass" />
-
-
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -81,6 +78,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Hecho por: Joseba , Mohamed said, Jonathan"
+        android:backgroundTint="#00008B"
+        android:textStyle="bold"
         android:textAlignment="center" />
 
 </LinearLayout>

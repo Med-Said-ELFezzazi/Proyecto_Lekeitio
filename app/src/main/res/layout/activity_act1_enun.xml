@@ -6,29 +6,21 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="#9CDCFB"
+    android:background="@drawable/foto_fondo_2"
     tools:context=".Act1EnunActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="10sp"
-        android:layout_marginBottom="20sp">
-        <ImageView
-            android:id="@+id/imgVolver"
-            android:layout_width="40sp"
-            android:layout_height="40sp"
-            android:onClick="volver"
-            android:src="@drawable/baseline_arrow_back_24"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+
         android:layout_marginBottom="20sp">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
+            android:textStyle="bold"
+            android:textColor="#00008B"
             android:textSize="40sp"
             android:text="@string/lekeitioko_eliza"/>
     </LinearLayout>
@@ -40,22 +32,33 @@
         android:orientation="vertical"
         android:padding="20sp"
         android:gravity="center">
-        <TextView
+
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/enunciadoAct1Parte1"
-            android:textSize="20sp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/enunciadoAct1Parte2"
-            android:textSize="20sp"/>
+            android:background="@drawable/borders"
+            android:orientation="vertical"
+            android:padding="10sp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/enunciadoAct1Parte1"
+                android:textSize="20sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/enunciadoAct1Parte2"
+                android:textSize="20sp"/>
+        </LinearLayout>
+
+
     </LinearLayout>
 
     <Button
         android:layout_width="200sp"
         android:layout_height="wrap_content"
-        android:text="@string/siguiente"
+        android:text="@string/jarraitu"
+        android:backgroundTint="#00008B"
         android:onClick="siguiente"/>
 
 </LinearLayout>
