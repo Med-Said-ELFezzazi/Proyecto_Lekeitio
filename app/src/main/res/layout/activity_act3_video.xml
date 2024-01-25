@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".Act3Video"
     android:orientation="vertical"
-    android:background="#9CDCFB"
+    android:background="@drawable/foto_fondo_2"
     android:id="@+id/contenedor_fragment_act3">
 
     <LinearLayout
