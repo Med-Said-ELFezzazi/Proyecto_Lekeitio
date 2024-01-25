@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun iniciar(view: View) {
-        var intent = Intent(this, MapaActivity::class.java)
+        var intent = Intent(this, Actividad7::class.java)
         startActivity(intent)
     }
 }
