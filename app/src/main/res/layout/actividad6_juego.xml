@@ -4,13 +4,20 @@
     android:background="@drawable/foto_fondo_2"
     android:padding="16dp">
 
-    <TextView
-        android:id="@+id/textViewInstructions"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sopa de letras: Encuentra los nombres de las mujeres que han hecho cosas históricas. ¡Te dejamos unas pistas de los nombres debajo de la sopa de letras!"
-        android:padding="16dp"
-        android:textSize="18sp" />
+        android:background="@drawable/borders"
+        >
+        <TextView
+            android:id="@+id/textViewInstructions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sopa de letras: Encuentra los nombres de las mujeres que han hecho cosas históricas. ¡Te dejamos unas pistas de los nombres debajo de la sopa de letras!"
+            android:padding="16dp"
+            android:textSize="18sp" />
+    </LinearLayout>
+
 
     <GridLayout
         android:id="@+id/gridLayout_word_search"
@@ -25,11 +32,13 @@
         <!-- Los TextViews se añadirán dinámicamente -->
     </GridLayout>
 
+
     <TextView
         android:id="@+id/textViewClues"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/gridLayout_word_search"
+
         android:padding="16dp"
         android:textSize="16sp"
         android:layout_marginTop="8dp" />
@@ -39,6 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Siguiente"
+        android:backgroundTint="#00008B"
         android:layout_below="@id/textViewClues"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="24dp"

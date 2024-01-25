@@ -18,6 +18,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Act5Preg1"
+            android:textColor="#00008B"
+            android:textStyle="bold"
             android:textSize="20sp"
             android:layout_marginBottom="20sp"/>
         <TableLayout
@@ -38,6 +40,7 @@
                     android:text="@string/Act5Pre1Res1"
                     android:textSize="18sp"
                     android:textAlignment="center"
+                    android:background="@drawable/borders"
                     android:layout_marginEnd="5sp"/>
 
                 <TextView
@@ -48,6 +51,7 @@
                     android:text="@string/Act5Pre1Res2"
                     android:textSize="18sp"
                     android:textAlignment="center"
+                    android:background="@drawable/borders"
                     android:layout_marginEnd="5sp"/>
 
                 <TextView
@@ -57,6 +61,7 @@
                     android:onClick="correcto1"
                     android:text="@string/Act5Pre1Res3"
                     android:textSize="18sp"
+                    android:background="@drawable/borders"
                     android:textAlignment="center"/>
             </TableRow>
 
@@ -66,6 +71,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Act5Preg2"
+            android:textColor="#00008B"
+            android:textStyle="bold"
             android:textSize="20sp"
             android:layout_marginBottom="20sp"/>
         <TableLayout
@@ -86,6 +93,7 @@
                     android:text="@string/Act5Preg2Res1"
                     android:textSize="18sp"
                     android:textAlignment="center"
+                    android:background="@drawable/borders"
                     android:layout_marginEnd="5sp"/>
 
                 <TextView
@@ -96,6 +104,7 @@
                     android:text="@string/Act5Pre2Res2"
                     android:textSize="18sp"
                     android:textAlignment="center"
+                    android:background="@drawable/borders"
                     android:layout_marginEnd="5sp"/>
 
                 <TextView
@@ -105,6 +114,7 @@
                     android:onClick="incorrecto4"
                     android:text="@string/Act5Pre2Res3"
                     android:textSize="18sp"
+                    android:background="@drawable/borders"
                     android:textAlignment="center"/>
             </TableRow>
 
@@ -114,6 +124,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Act5Pre3"
+            android:textColor="#00008B"
+            android:textStyle="bold"
             android:textSize="20sp"
             android:layout_marginBottom="20sp"/>
         <TableLayout
@@ -131,6 +143,7 @@
                     android:onClick="incorrecto5"
                     android:text="@string/Act5Pre3Res1"
                     android:textSize="18sp"
+                    android:background="@drawable/borders"
                     android:textAlignment="center"/>
 
                 <TextView
@@ -141,6 +154,7 @@
                     android:text="@string/Act5Pre3Res2"
                     android:textSize="18sp"
                     android:textAlignment="center"
+                    android:background="@drawable/borders"
                     android:layout_marginEnd="5sp"/>
 
                 <TextView
@@ -151,6 +165,7 @@
                     android:text="@string/Act5Pre3Res3"
                     android:textSize="18sp"
                     android:textAlignment="center"
+                    android:background="@drawable/borders"
                     android:layout_marginEnd="5sp"/>
             </TableRow>
 
@@ -160,6 +175,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Act5Pre4"
+            android:textColor="#00008B"
+            android:textStyle="bold"
             android:textSize="20sp"
             android:layout_marginBottom="20sp"/>
         <LinearLayout
@@ -176,6 +193,7 @@
                 android:text="@string/Act5Pre4Res1"
                 android:textSize="18sp"
                 android:textAlignment="center"
+                android:background="@drawable/borders"
                 android:layout_marginEnd="5sp"/>
 
             <TextView
@@ -186,6 +204,7 @@
                 android:text="@string/Act5Pre4Res2"
                 android:textSize="18sp"
                 android:textAlignment="center"
+                android:background="@drawable/borders"
                 android:layout_marginEnd="5sp"/>
 
             <TextView
@@ -195,6 +214,7 @@
                 android:onClick="incorrecto8"
                 android:text="@string/Act5Pre4Res3"
                 android:textSize="18sp"
+                android:background="@drawable/borders"
                 android:textAlignment="center"/>
         </LinearLayout>
 
@@ -202,6 +222,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Act5Pre5"
+            android:textColor="#00008B"
+            android:textStyle="bold"
             android:textSize="20sp"
             android:layout_marginBottom="20sp"/>
         <LinearLayout
@@ -218,6 +240,7 @@
                 android:text="@string/Act5Pre5Res1"
                 android:textSize="18sp"
                 android:textAlignment="center"
+                android:background="@drawable/borders"
                 android:layout_marginEnd="5sp"/>
 
             <TextView
@@ -228,6 +251,7 @@
                 android:text="@string/Act5Pre5Res2"
                 android:textSize="18sp"
                 android:textAlignment="center"
+                android:background="@drawable/borders"
                 android:layout_marginEnd="5sp"/>
 
             <TextView
@@ -237,6 +261,7 @@
                 android:onClick="incorrecto10"
                 android:text="@string/Act5Pre5Res3"
                 android:textSize="18sp"
+                android:background="@drawable/borders"
                 android:textAlignment="center"/>
         </LinearLayout>
     </LinearLayout>

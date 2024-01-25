@@ -28,7 +28,9 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="5sp"
         android:text="@string/EnunAct5"
+        android:background="@drawable/borders"
         android:textSize="25sp"
         android:layout_marginBottom="100sp" />
 
