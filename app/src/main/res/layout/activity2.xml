@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#9CDCFB"
     tools:context=".MainActivity">
 
     <!-- Título -->
@@ -10,22 +11,34 @@
         android:id="@+id/txtTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TÍTULO"
+        android:text="Leyenda de Aitxitxa Makurra"
         android:layout_marginTop="15dp"
         android:textSize="24sp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <TextView
+        android:id="@+id/txtEnunciado"
+        android:layout_width="363dp"
+        android:layout_height="91dp"
+        android:layout_margin="15dp"
+        android:text="En esta actividad tendreis que escuchar un audio y despues ordenar las frases que apareceran con su boton"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitulo" />
+
     <!-- Barra de Progreso para el Audio -->
     <SeekBar
         android:id="@+id/barraAudio"
-        android:layout_marginTop="15dp"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/txtTitulo"
+        android:layout_width="365dp"
+        android:layout_height="19dp"
+        android:layout_margin="10dp"
+        android:layout_marginTop="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/txtEnunciado" />
 
     <!-- Botones para Controlar el Audio -->
     <!-- Asumiendo tres botones: Play, Pause y Stop -->
@@ -58,14 +71,13 @@
             android:id="@+id/detenerBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Empezar de 0"/>
+            android:text="Reiniciar"/>
     </LinearLayout>
 
-    <!-- Frases con Botones para Ordenar -->
-    <!-- Ajusta según la cantidad de frases -->
     <LinearLayout
         android:id="@+id/frasesLayout"
         android:layout_width="0dp"
+        android:layout_margin="20dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintTop_toBottomOf="@+id/controlAudioLayout"
@@ -149,6 +161,7 @@
             android:id="@+id/btnReiniciar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
             android:text="Empezar de 0"/>
 
         <Button
