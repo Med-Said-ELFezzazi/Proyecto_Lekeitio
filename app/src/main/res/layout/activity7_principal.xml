@@ -37,15 +37,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#00008B"
-            android:layout_margin="15dp"
-            android:text="Play" />
+            android:text="Reproducir" />
 
         <Button
             android:id="@+id/btnPause"
             android:layout_width="wrap_content"
+            android:layout_marginLeft="10dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#00008B"
-            android:text="Pause" />
+            android:text="Parar" />
     </LinearLayout>
 
     <SeekBar
