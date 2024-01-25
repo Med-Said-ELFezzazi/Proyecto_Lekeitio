@@ -1,6 +1,7 @@
 package com.example.proyecto_lekeitio
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.widget.Button
@@ -59,7 +60,9 @@ class Actividad7Juego : AppCompatActivity() {
         }
 
         btnSiguiente.setOnClickListener {
-            finish()
+            intent = Intent(this, PantallaFinal::class.java) // Pasaremos a la pantalla final
+            startActivity(intent)
+            finish() // Finalizando esta pantalla
         }
 
     }

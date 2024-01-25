@@ -51,10 +51,7 @@ class Actividad6SopaDeLetras : AppCompatActivity() {
         buttonNext.isEnabled = true
 
         buttonNext.setOnClickListener {
-            //Pasar a la pantalla final
-            intent = Intent(this, PantallaFinal::class.java)
-            startActivity(intent)
-            finish()        // Y acabara con la pantalla de la actividad
+            finish()
         }
     }
 
