@@ -75,6 +75,7 @@ class Act1PuzzleActivity : AppCompatActivity() {
         iSeleccionado = img;
         this.bSeleccionado = true
         img.isEnabled= false
+        img.alpha = 0.7F
     }
 
     /**
@@ -85,6 +86,7 @@ class Act1PuzzleActivity : AppCompatActivity() {
         val draSeleccionado = imagen1.drawable
         imagen1.setImageDrawable(imagen2.drawable)
         imagen2.setImageDrawable(draSeleccionado)
+        imagen1.alpha = 1F
         imagen1.isEnabled = true
         bSeleccionado = false
 
@@ -100,7 +102,6 @@ class Act1PuzzleActivity : AppCompatActivity() {
         bSeleccionado = false
         img.isEnabled = false
         img.isClickable = false
-        img.alpha = 0.7F
         return img
     }
 
@@ -146,6 +147,7 @@ class Act1PuzzleActivity : AppCompatActivity() {
             respuestaCorrecta(img9)
         }
     }
+
     // METODOS ONCLICK DE LOS TEXTVIEW \\
     fun imagen1(view: View) {
         if (!bSeleccionado) {

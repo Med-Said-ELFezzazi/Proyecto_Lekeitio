@@ -13,11 +13,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="10sp"
+
         android:layout_marginBottom="20sp">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
+            android:textStyle="bold"
+            android:textColor="#00008B"
             android:textSize="40sp"
             android:text="@string/lekeitioko_eliza"/>
     </LinearLayout>
@@ -29,16 +32,26 @@
         android:orientation="vertical"
         android:padding="20sp"
         android:gravity="center">
-        <TextView
+
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/enunciadoAct1Parte1"
-            android:textSize="20sp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/enunciadoAct1Parte2"
-            android:textSize="20sp"/>
+            android:background="@drawable/borders"
+            android:orientation="vertical"
+            android:padding="10sp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/enunciadoAct1Parte1"
+                android:textSize="20sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/enunciadoAct1Parte2"
+                android:textSize="20sp"/>
+        </LinearLayout>
+
+
     </LinearLayout>
 
     <Button
