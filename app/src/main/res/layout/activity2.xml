@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/foto_fondo_2"
     tools:context=".MainActivity">
 
     <!-- Título -->
@@ -44,6 +45,7 @@
             android:id="@+id/playBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="#00008B"
             android:layout_marginRight="5dp"
             android:text="Empezar"/>
 
@@ -52,12 +54,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="5dp"
+            android:backgroundTint="#00008B"
             android:text="Parar"/>
 
         <Button
             android:id="@+id/detenerBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="#00008B"
             android:text="Empezar de 0"/>
     </LinearLayout>
 
@@ -90,6 +94,7 @@
                 android:id="@+id/btnFrase1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:backgroundTint="#00008B"
                 android:text="Botón 1"/>
         </LinearLayout>
 
@@ -110,6 +115,7 @@
                 android:id="@+id/btnFrase2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:backgroundTint="#00008B"
                 android:text="Botón 2"/>
         </LinearLayout>
 
@@ -130,6 +136,7 @@
                 android:id="@+id/btnFrase3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:backgroundTint="#00008B"
                 android:text="Botón 3"/>
         </LinearLayout>
     </LinearLayout>
@@ -149,12 +156,14 @@
             android:id="@+id/btnReiniciar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="#00008B"
             android:text="Empezar de 0"/>
 
         <Button
             android:id="@+id/btnComprobar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="#00008B"
             android:text="Comprobar"/>
     </LinearLayout>
 
@@ -167,6 +176,7 @@
         android:visibility="gone"
         app:layout_constraintTop_toBottomOf="@+id/botonesControlActividad"
         app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="#00008B"
         app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

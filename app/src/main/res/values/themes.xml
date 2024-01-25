@@ -4,6 +4,6 @@
     </style>
     <style name="Theme.Proyecto_Lekeitio" parent="Base.Theme.Proyecto_Lekeitio" >
     </style>
-    <style name ="pantallaDeFondo" parent="@style/Base.Theme.Proyecto_Lekeitio">
+    <style name ="colorDeBoton" parent="@style/Widget.AppCompat.Button">
     </style>
 </resources>
