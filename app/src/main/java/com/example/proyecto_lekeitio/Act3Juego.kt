@@ -10,6 +10,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.view.isVisible
 
@@ -21,7 +22,7 @@ class Act3Juego : AppCompatActivity() {
     private lateinit var btnSiguiente: Button
     private lateinit var txtFotoSeleccionda: TextView
 
-    private lateinit var respuestaCorrecta: String
+   // private lateinit var respuestaCorrecta: String
 
     private lateinit var txtNumPregunta: TextView
 
@@ -29,10 +30,23 @@ class Act3Juego : AppCompatActivity() {
     private lateinit var mpCorrecto: MediaPlayer
     private lateinit var mpIncorrecto: MediaPlayer
 
+
+    private lateinit var layImg1: LinearLayout
+    private lateinit var layImg2: LinearLayout
+    private lateinit var layImg3: LinearLayout
+    private lateinit var layImg4: LinearLayout
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_act3_juego)
+
+        //layout
+        layImg1 = findViewById(R.id.layoutImg1)
+        layImg2 = findViewById(R.id.layoutImg2)
+        layImg3 = findViewById(R.id.layoutImg3)
+        layImg4 = findViewById(R.id.layoutImg4)
+
 
         txtFotoSeleccionda = findViewById(R.id.txtFotoseleccionada)
         btnSiguiente = findViewById(R.id.btnSiguiente)
@@ -42,22 +56,21 @@ class Act3Juego : AppCompatActivity() {
 
         txtNumPregunta = findViewById(R.id.txtNumPregunta)      //pa cambiar el número de pregunta
 
-        // Establecer el texto predeterminado en el EditText
+        //¿Cuál es el instrumento utilizado en el video?
         val textoConFormato = """
         <html><body>
-        <h1 style="text-align:center; font-weight:bold;">¿Cuál es el instrumento utilizado en el video?</h1>
-        <p style="text-align:center; color: blue;">(Selección: silbido)</p>
+        <h1 style="text-align:center; font-weight:bold;">Zein da bideoan erabiltzen den tresna?</h1>
+        <p style="text-align:center; color: black;">'Putz egiten diogun zerbait'</p>
         </body></html>
          """.trimIndent()
-
-
+        //silbido
 
         cuadradoVacio.text = Html.fromHtml(textoConFormato, Html.FROM_HTML_MODE_LEGACY) as Editable?
         cuadradoVacio.isFocusable = false
         cuadradoVacio.isClickable = false
         cuadradoVacio.isCursorVisible = false
 
-        respuestaCorrecta = "silbido"   //Inicialización (respuesta de pregunta1)
+        //respuestaCorrecta = "silbido"   //Inicialización (respuesta de pregunta1)
 
         // Inicializa los objetos MediaPlayer
         mpCorrecto = MediaPlayer.create(this, R.raw.yeah)
@@ -67,16 +80,18 @@ class Act3Juego : AppCompatActivity() {
             if (contador == 2) {
                 finish()
             }
-//            respuestaCorrecta = "pandereta"
-            if (respuestaCorrecta == "silbido") {
+          /*  if (respuestaCorrecta == "silbido") {
                 respuestaCorrecta = "pandereta"
-            }
+                // Restablecer las banderas para la siguiente pregunta
+                imagen4Seleccionada = false
+                imagen2Seleccionada = false
+            }*/
             //Poner número de pregunto 2
-            txtNumPregunta.text = "Pregunta número 2"
+            txtNumPregunta.text = "2. Galdera"
             val textoConFormatoPregunta2 = """
             <html><body>
-            <h1 style="text-align:center; font-weight:bold;">¿Cuál es el instrumento utilizado en el video?</h1>
-            <p style="text-align:center; color: blue;">(Seleccióna: pandereta)</p>
+            <h1 style="text-align:center; font-weight:bold;">Zein da bideoan erabiltzen den tresna?</h1>
+            <p style="text-align:center; color: black;">'Eskuarekin ukitzen dugun zerbait'</p>
             </body></html>
             """.trimIndent()
 
@@ -124,59 +139,70 @@ class Act3Juego : AppCompatActivity() {
      * Metodo que quita el borde de respuesta (rojo/verde)
      */
     private fun resetBorders() {
-        val imageViews = listOf(R.id.imagen1, R.id.imagen2, R.id.imagen3, R.id.imagen4)
-        imageViews.forEach { id ->
-            findViewById<ImageView>(id).setBackgroundResource(0) // Quita cualquier borde
+        // Lista de LinearLayouts que necesitan ser reseteados
+        val layouts = listOf(layImg1, layImg2, layImg3, layImg4)
+
+        // Recorrer cada LinearLayout y quitar cualquier borde
+        layouts.forEach { layout ->
+            layout.setBackgroundResource(0)
         }
     }
+
+
 
     fun imagenSeleccionada(view: View) {
-        resetBorders()      //quitar el borde colorado de la eleccion anterior un vez pulsado la seguiente foto
+        resetBorders() // Quitar el borde colorado de la elección anterior
+
         val imageView = view as ImageView
+        var layoutSeleccionado: LinearLayout? = null
+
         when (view.id) {
-            R.id.imagen1, R.id.imagen3 -> {
-                txtFotoSeleccionda.setText("Seleccion incorrecta!")
-                txtFotoSeleccionda.setTextColor(resources.getColor(R.color.rojo)) //text
-                imageView.setBackgroundResource(R.drawable.borde_rojo)            //fondo
-                lanzarAudioIncorrecto()                                           //audio
-            }
+            R.id.imagen1 -> layoutSeleccionado = layImg1
+            R.id.imagen2 -> layoutSeleccionado = layImg2
+            R.id.imagen3 -> layoutSeleccionado = layImg3
+            R.id.imagen4 -> layoutSeleccionado = layImg4
+        }
 
-            //Caso correcto de la pregunta 1
-            R.id.imagen4 -> {
-                if (respuestaCorrecta == "silbido") {
-                    txtFotoSeleccionda.setText("Muy bien correcto")
-                    txtFotoSeleccionda.setTextColor(resources.getColor(R.color.verde))  //texto en verde
-                    imageView.setBackgroundResource(R.drawable.borde_verde)   //borde verde
-                    lanzarAudioCorrecto()                 //audio
-                    btnSiguiente.isVisible = true         //poner visible el bóton siguiente
-                    contador++
-                } else {
-                    txtFotoSeleccionda.setText("Seleccion incorrecta!")
-                    txtFotoSeleccionda.setTextColor(resources.getColor(R.color.rojo))
-                    imageView.setBackgroundResource(R.drawable.borde_rojo)
-                    lanzarAudioIncorrecto()                 //audio
+        if (layoutSeleccionado != null) {
+            when (imageView.id) {
+                // Casos incorrectos
+                R.id.imagen1, R.id.imagen3 -> {
+                    manejarSeleccionIncorrecta(layoutSeleccionado)
                 }
-            }
 
-            //Caso correcto de la pregunta 2
-            R.id.imagen2 -> {
-                if (respuestaCorrecta == "pandereta") {
-                    txtFotoSeleccionda.setText("Muy bien correcto")
-                    txtFotoSeleccionda.setTextColor(resources.getColor(R.color.verde))
-                    imageView.setBackgroundResource(R.drawable.borde_verde)
-                    btnSiguiente.isVisible = true
-                    lanzarAudioCorrecto()
-                    contador++
-                } else {
-                    txtFotoSeleccionda.setText("Seleccion incorrecta!")
-                    txtFotoSeleccionda.setTextColor(resources.getColor(R.color.rojo))
-                    imageView.setBackgroundResource(R.drawable.borde_rojo)
-                    lanzarAudioIncorrecto()
+                // Caso correcto de la pregunta
+                R.id.imagen4, R.id.imagen2 -> {
+                    manejarSeleccionCorrecta(imageView.id, layoutSeleccionado)
                 }
             }
         }
     }
 
+    private fun manejarSeleccionCorrecta(imageViewId: Int, layoutSeleccionado: LinearLayout) {
+        val esSeleccionCorrecta = (contador == 0 && imageViewId == R.id.imagen4) || (contador == 1 && imageViewId == R.id.imagen2)
+
+        if (esSeleccionCorrecta) {
+            txtFotoSeleccionda.setText("Muy bien correcto")
+            txtFotoSeleccionda.setTextColor(resources.getColor(R.color.verde))
+            lanzarAudioCorrecto()
+            layoutSeleccionado.setBackgroundResource(R.drawable.borde_verde)
+            btnSiguiente.isVisible = true
+            contador++
+        } else {
+            manejarSeleccionIncorrecta(layoutSeleccionado)
+        }
+    }
+
+    private fun manejarSeleccionIncorrecta(layoutSeleccionado: LinearLayout) {
+        txtFotoSeleccionda.setText("Seleccion incorrecta!")
+        txtFotoSeleccionda.setTextColor(resources.getColor(R.color.rojo))
+        lanzarAudioIncorrecto()
+        layoutSeleccionado.setBackgroundResource(R.drawable.borde_rojo)
+    }
+
+    /**
+     * Metodo que vuelve al mapa
+     */
     fun volverMapa(view: View) {
         finish()
     }
