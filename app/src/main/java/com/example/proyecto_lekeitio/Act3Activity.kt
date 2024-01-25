@@ -159,5 +159,5 @@ class Act3Activity : AppCompatActivity() {
         super.onDestroy()
         mp.release() // Libera los recursos del MediaPlayer al destruir la actividad
     }
-    
+
 }
