@@ -25,14 +25,10 @@
             android:gravity="center"
             android:padding="10dp"
             android:text="EGIA / GEZURRA"
-            android:textColor="#00008B"
+            android:textColor="@color/black"
             android:textSize="35dp"
             android:textStyle="italic" />
 
-        <!--    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Preguntas sobre el audio" /> -->
 
     </LinearLayout>
 

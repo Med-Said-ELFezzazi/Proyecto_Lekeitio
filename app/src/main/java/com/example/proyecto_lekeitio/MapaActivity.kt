@@ -47,7 +47,7 @@ class MapaActivity : AppCompatActivity() {
             4 -> intent = Intent(this, Act4Activity::class.java)
             5 -> intent = Intent(this, EnunAct5Activity::class.java)
             6 -> intent = Intent(this, Actividad6::class.java)
-            7 -> intent = Intent(this, PantallaFinal::class.java)
+            7 -> intent = Intent(this, Actividad7::class.java)
             else -> {
                 contador = 1
                 intent = Intent(this, Act1EnunActivity::class.java)

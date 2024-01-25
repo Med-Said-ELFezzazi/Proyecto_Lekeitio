@@ -7,4 +7,6 @@
     <color name="verde">#228B22</color>
     <color name="rojo">#FF0000</color>
     <color name="azul">#0000FF</color>
+    <color name="colorSelected">#9E9E9E</color>
+    <color name="colorOriginal">#FFFFFF</color>
 </resources>

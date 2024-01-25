@@ -11,10 +11,11 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Actividad 3"
+        android:text="Jarduera 3"
         android:layout_gravity="center"
         android:textSize="35sp"
-        android:layout_marginTop="20sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="10sp"
         android:textStyle="bold" />
 
     <TextView
@@ -23,64 +24,117 @@
         android:text="San Pedro 'Kaxarranka'"
         android:layout_gravity="center"
         android:textStyle="italic"
-        android:layout_marginTop="5sp" />
-
-    <TextView
-        android:layout_width="361dp"
-        android:layout_height="342dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="35sp"
-        android:text="El festival local 'San Pedro Kaxarranka' es un evento cultural único, donde se celebra una danza tradicional sobre un arca de pescadores, simbolizando la historia y la comunidad del pueblo. La naturaleza se muestra en todo su esplendor en la isla de San Nicolás, un pequeño paraíso accesible solo durante la marea baja.
-        \n La gastronomía local es un reflejo del mar, con platos de pescado fresco y pintxos que deleitan a los visitantes con su autenticidad y sabor."
-        android:textSize="20dp"
-        android:textStyle="italic"
-        android:textColor="@color/black"/>
-
-<!--
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnPlayAudio"
-        android:layout_gravity="center"
-        android:layout_marginTop="40sp"
-        android:text="Play"
-        android:onClick="playAudio"/>  -->
+        android:textColor="@color/black"
+        android:layout_marginTop="10sp"
+        android:layout_marginBottom="27dp" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_width="wrap_content"
+        android:layout_height="331dp"
+        android:layout_gravity="center"
+        android:background="@drawable/borders"
+        android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/imgPlayAudio"
-            android:layout_width="78dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginLeft="25dp"
-            android:onClick="playAudio"
-            android:src="@drawable/play_debujo" />
-
-
-        <SeekBar
-            android:id="@+id/seekBarAudio"
-            style="@style/CustomSeekBarStyle"
-            android:layout_width="0dp"
-            android:layout_height="66dp"
-            android:layout_marginTop="20sp"
-            android:layout_marginRight="20dp"
-            android:layout_weight="1"/>
+        <!-- El texto describe el festival 'San Pedro Kaxarranka', su danza tradicional y la isla de San Nicolás, así como la gastronomía local basada en pescado y pintxos.-->
+        <TextView
+            android:layout_width="361dp"
+            android:layout_height="330dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Bertako 'San Pedro Kaxarranka' kultur ekitaldi paregabea da, non arrantzaleen arkaren gainean dantza tradizionala ospatzen den, herriko historia eta komunitatea sinbolizatuz. Natura bere distira guztian ageri da San Nikolas uhartean, itsasbeheran soilik eskura daitekeen paradisu txiki batean.
+         \nBertako gastronomia itsasoaren isla da, arrain fresko platerekin eta bisitariak jatortasunarekin eta zaporearekin gozatzen dituzten pintxoekin."
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="italic" />
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btnSiguienteVideo"
-        android:layout_width="138dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:onClick="pasarAlVideo"
-        android:text="Siguiente"
-        android:layout_marginTop="-100dp"/>
+        android:orientation="horizontal"
+        android:layout_marginBottom="-5dp"
+        android:layout_marginTop="10dp">
 
 
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="97dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/currentTimeTextView"
+                android:layout_width="61dp"
+                android:layout_height="90dp"
+                android:gravity="center"
+                android:text="0:00"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <SeekBar
+                android:id="@+id/seekBarAudio"
+                style="@style/CustomSeekBarStyle"
+                android:layout_width="260dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="20sp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/totalTimeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="61dp"
+                android:text="0:00"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="393dp"
+        android:layout_height="81dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/imgPlayAudio"
+            android:layout_width="186dp"
+            android:layout_height="81dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="34dp"
+            android:onClick="playAudio"
+            android:src="@drawable/play_debujo" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:layout_gravity="top"
+        android:layout_marginBottom="30dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <!-- Siguiente-->
+        <Button
+            android:id="@+id/btnSiguienteVideo"
+            android:layout_width="110dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="40dp"
+            android:text="Jarraian"
+            android:visibility="invisible" />
+    </LinearLayout>
 
 </LinearLayout>

@@ -131,7 +131,6 @@ class Actividad2 : AppCompatActivity() {
                 buttonState.position = 0
             }
         }
-        // Ocultar el botón "Siguiente" si es necesario
         btnSiguiente.visibility = View.GONE
     }
 
@@ -158,7 +157,7 @@ class Actividad2 : AppCompatActivity() {
             } else {
                 if (!buttonState.isCorrectlySelected) {
                     button.setBackgroundColor(ContextCompat.getColor(this, R.color.colorIncorrect))
-                    button.isEnabled = true // Habilitar nuevamente el botón solo si no fue seleccionado correctamente antes
+                    button.isEnabled = true
                 }
                 isCorrect = false
             }
