@@ -60,6 +60,7 @@
             android:id="@+id/btnSiguienteJuego"
             android:layout_gravity="center"
             android:layout_marginTop="55sp"
+            android:backgroundTint="#00008B"
             android:onClick="siguienteJuego"/>
     </LinearLayout>
 

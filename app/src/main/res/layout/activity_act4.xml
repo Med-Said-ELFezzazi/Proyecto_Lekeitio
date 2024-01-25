@@ -144,6 +144,7 @@
             android:layout_marginBottom="30dp"
             android:onClick="pasarAlJuego"
             android:text="Siguiente"
+            android:backgroundTint="#00008B"
             android:visibility="invisible"/>
     </LinearLayout>
 

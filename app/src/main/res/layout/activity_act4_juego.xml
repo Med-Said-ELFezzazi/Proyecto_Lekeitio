@@ -372,17 +372,18 @@
             android:id="@+id/btnComprobar"
             android:textSize="15dp"
             android:visibility="invisible"
-            android:backgroundTint="#0776AE"
+            android:backgroundTint="#00008B"
             />
 
         <Button
             android:id="@+id/btnFinalizar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#0776AE"
+            android:backgroundTint="#00008B"
             android:text="Amaitu"
             android:textSize="15dp"
             android:visibility="invisible"
+
             android:onClick="volverAlmapa"/>
 
     </LinearLayout>
