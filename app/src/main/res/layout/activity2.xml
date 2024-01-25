@@ -108,7 +108,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Frase 1"/>
+                android:text="Arrantzaleak jendea sendatzen du."/>
 
             <Button
                 android:id="@+id/btnFrase1"
@@ -129,7 +129,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Frase 2"/>
+                android:text="Teilatuan belarra ateratzen da."/>
 
             <Button
                 android:id="@+id/btnFrase2"
@@ -150,7 +150,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Frase 3"/>
+                android:text="Marinelak bihotzeko bat pairatzen du."/>
 
             <Button
                 android:id="@+id/btnFrase3"
@@ -159,7 +159,81 @@
                 android:backgroundTint="#00008B"
                 android:text="Botón 3"/>
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Arrantzalea hondartzara doa."/>
+
+            <Button
+                android:id="@+id/btnFrase4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#00008B"
+                android:text="Botón 4"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Beltzezko gizonak harri bihurtzen du."/>
+
+            <Button
+                android:id="@+id/btnFrase5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#00008B"
+                android:text="Botón 5"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Beltzezko gizonak, arrantzalearekin hitz egiten du. "/>
+
+            <Button
+                android:id="@+id/btnFrase6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#00008B"
+                android:text="Botón 6"/>
+        </LinearLayout>
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/frasesLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
 
     <!-- Botón Empezar de 0 -->
     <LinearLayout
@@ -168,7 +242,7 @@
         android:orientation="horizontal"
         android:gravity="center"
         android:id="@+id/botonesControlActividad"
-        app:layout_constraintTop_toBottomOf="@+id/frasesLayout"
+        app:layout_constraintTop_toBottomOf="@+id/txtOrder"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
@@ -181,23 +255,12 @@
             android:text="Empezar de 0"/>
 
         <Button
-            android:id="@+id/btnComprobar"
+            android:id="@+id/btnSiguiente"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#00008B"
-            android:text="Comprobar"/>
+            android:text="Siguiente"
+            android:enabled="false"/>
     </LinearLayout>
-
-    <!-- Botón Siguiente (Oculto Inicialmente) -->
-    <Button
-        android:id="@+id/btnSiguiente"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Siguiente"
-        android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@+id/botonesControlActividad"
-        app:layout_constraintStart_toStartOf="parent"
-        android:backgroundTint="#00008B"
-        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

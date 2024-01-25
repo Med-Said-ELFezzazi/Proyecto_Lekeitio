@@ -7,6 +7,8 @@ import android.view.View
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.SeekBar
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 
@@ -18,10 +20,19 @@ class Actividad2 : AppCompatActivity() {
     private lateinit var stopButton: Button
     private lateinit var audioSeekBar: SeekBar
     private lateinit var resetButton: Button
-    private lateinit var checkButton: Button
     private lateinit var btnSiguiente: Button
 
-    data class ButtonState(val buttonId: Int, var isPressed: Boolean, var position: Int, var isCorrectlySelected: Boolean = false)
+    private val buttonToFraseText = mapOf(
+        R.id.btnFrase1 to "Arrantzaleak jendea sendatzen du.",
+        R.id.btnFrase2 to "Teilatuan belarra ateratzen da.",
+        R.id.btnFrase3 to "Marinelak bihotzeko bat pairatzen du.",
+        R.id.btnFrase4 to "Arrantzalea hondartzara doa.",
+        R.id.btnFrase5 to "Beltzezko gizonak harri bihurtzen du.",
+        R.id.btnFrase6 to "Beltzezko gizonak, arrantzalearekin hitz egiten du."
+    )
+
+    data class ButtonState(val buttonId: Int, var isPressed: Boolean, var selectionOrder: Int = 0, var isCorrectlySelected: Boolean = false, val fraseNum: Int)
+    private val correctOrder = listOf(R.id.btnFrase3, R.id.btnFrase6, R.id.btnFrase1, R.id.btnFrase2, R.id.btnFrase4, R.id.btnFrase5)
 
     private val buttonStates = mutableMapOf<Int, ButtonState>()
     private var currentOrder = 1
@@ -47,13 +58,11 @@ class Actividad2 : AppCompatActivity() {
         audioSeekBar = findViewById(R.id.barraAudio)
         val frasesLayout = findViewById<LinearLayout>(R.id.frasesLayout)
         resetButton = findViewById(R.id.btnReiniciar)
-        checkButton = findViewById(R.id.btnComprobar)
         btnSiguiente = findViewById(R.id.btnSiguiente)
 
         // Ocultar elementos inicialmente
         frasesLayout.visibility = View.GONE
         resetButton.visibility = View.GONE
-        checkButton.visibility = View.GONE
         btnSiguiente.visibility = View.GONE
 
         initializeButtonStates()
@@ -75,7 +84,7 @@ class Actividad2 : AppCompatActivity() {
         mediaPlayer.setOnCompletionListener {
             frasesLayout.visibility = View.VISIBLE
             resetButton.visibility = View.VISIBLE
-            checkButton.visibility = View.VISIBLE
+            btnSiguiente.visibility = View.VISIBLE
         }
 
         // Listener para la barra de progreso del audio
@@ -100,18 +109,9 @@ class Actividad2 : AppCompatActivity() {
             }
         })
 
-
-
         // Listener para el botón de reset
         resetButton.setOnClickListener {
             resetPhrases()
-        }
-
-        // Listener para el botón de comprobar
-        checkButton.setOnClickListener {
-            if (checkOrder()) {
-                btnSiguiente.visibility = View.VISIBLE
-            }
         }
 
         // Listener para el botón siguiente
@@ -122,70 +122,57 @@ class Actividad2 : AppCompatActivity() {
 
     private fun resetPhrases() {
         currentOrder = 1
-        buttonStates.keys.forEach { buttonId ->
-            val buttonState = buttonStates[buttonId]
-            if (buttonState != null && !buttonState.isCorrectlySelected) {
-                val button = findViewById<Button>(buttonId)
-                button.isEnabled = true
-                buttonState.isPressed = false
-                buttonState.position = 0
-            }
+        findViewById<TextView>(R.id.txtOrder).text = ""
+        correctOrder.forEach { buttonId ->
+            findViewById<Button>(buttonId).isEnabled = true
         }
         btnSiguiente.visibility = View.GONE
     }
 
-
     private fun checkOrder(): Boolean {
-        var isCorrect = true
-        val correctOrder = listOf(R.id.btnFrase1, R.id.btnFrase2, R.id.btnFrase3)
-        val unselectedButtons = buttonStates.filter { !it.value.isCorrectlySelected && !it.value.isPressed }
-        val incorrectlySelectedButtons = buttonStates.filter { !it.value.isCorrectlySelected && it.value.isPressed }
-
-
-        if (unselectedButtons.size == 1 && incorrectlySelectedButtons.isEmpty()) {
-            val lastButtonState = unselectedButtons.values.first()
-            lastButtonState.isCorrectlySelected = true
-            val lastButton = findViewById<Button>(lastButtonState.buttonId)
-            lastButton.setBackgroundColor(ContextCompat.getColor(this, R.color.colorCorrect))
+        if (currentOrder - 1 == correctOrder.size) {
+            btnSiguiente.visibility = View.VISIBLE
+            return true
+        } else {
+            Toast.makeText(this, "Todavía no has completado la secuencia.", Toast.LENGTH_SHORT).show()
+            return false
         }
-
-        buttonStates.values.sortedBy { it.position }.forEachIndexed { index, buttonState ->
-            val button = findViewById<Button>(buttonState.buttonId)
-            if (buttonState.buttonId == correctOrder[index]) {
-                button.setBackgroundColor(ContextCompat.getColor(this, R.color.colorCorrect))
-                buttonState.isCorrectlySelected = true
-            } else {
-                if (!buttonState.isCorrectlySelected) {
-                    button.setBackgroundColor(ContextCompat.getColor(this, R.color.colorIncorrect))
-                    button.isEnabled = true
-                }
-                isCorrect = false
-            }
-        }
-
-        return isCorrect
     }
 
-
     private fun initializeButtonStates() {
-        buttonStates[R.id.btnFrase1] = ButtonState(R.id.btnFrase1, false, 0)
-        buttonStates[R.id.btnFrase2] = ButtonState(R.id.btnFrase2, false, 0)
-        buttonStates[R.id.btnFrase3] = ButtonState(R.id.btnFrase3, false, 0)
+        buttonStates[R.id.btnFrase1] = ButtonState(R.id.btnFrase1, false, 0, false, 1)
+        buttonStates[R.id.btnFrase2] = ButtonState(R.id.btnFrase2, false, 0, false, 2)
+        buttonStates[R.id.btnFrase3] = ButtonState(R.id.btnFrase3, false, 0, false, 3)
+        buttonStates[R.id.btnFrase4] = ButtonState(R.id.btnFrase4, false, 0, false, 4)
+        buttonStates[R.id.btnFrase5] = ButtonState(R.id.btnFrase5, false, 0, false, 5)
+        buttonStates[R.id.btnFrase6] = ButtonState(R.id.btnFrase6, false, 0, false, 6)
     }
 
     private fun setupPhraseButtonListeners() {
-        val phraseButtons = listOf(R.id.btnFrase1, R.id.btnFrase2, R.id.btnFrase3)
+        val phraseButtons = listOf(R.id.btnFrase1, R.id.btnFrase2, R.id.btnFrase3, R.id.btnFrase4, R.id.btnFrase5, R.id.btnFrase6)
         phraseButtons.forEach { buttonId ->
             findViewById<Button>(buttonId).setOnClickListener { onPhraseButtonClicked(buttonId) }
         }
     }
 
     private fun onPhraseButtonClicked(buttonId: Int) {
-        val state = buttonStates[buttonId]
-        state?.let {
-            it.isPressed = true
-            it.position = currentOrder++
+        if (currentOrder <= correctOrder.size && buttonId == correctOrder[currentOrder - 1]) {
+            val phraseTextView = findViewById<TextView>(R.id.txtOrder)
+            val buttonText = "Frase ${buttonStates[buttonId]?.fraseNum}"
+            val currentText = phraseTextView.text.toString()
+            phraseTextView.text = if (currentText.isEmpty()) buttonText else "$currentText, $buttonText"
             findViewById<Button>(buttonId).isEnabled = false
+            currentOrder++
+
+            // Habilitar el botón "Comprobar" si todas las frases han sido seleccionadas
+            if (currentOrder > correctOrder.size) {
+                btnSiguiente.isEnabled = true
+            }
+        } else {
+            val correctButtonId = correctOrder[currentOrder - 1]
+            val correctFrase = buttonToFraseText[correctButtonId]
+            val incorrectFrase = buttonToFraseText[buttonId]
+            Toast.makeText(this, "La frase '$incorrectFrase' no va en la posición $currentOrder.", Toast.LENGTH_SHORT).show()
         }
     }
 }
