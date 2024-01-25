@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="#9CDCFB"
+    android:background="@drawable/foto_fondo_2"
     tools:context=".Act1PuzzleActivity"    >
 
     <LinearLayout
@@ -166,7 +166,7 @@
         android:id="@+id/btnMapa"
         android:layout_width="200sp"
         android:layout_height="wrap_content"
-        android:text="@string/siguiente"
+        android:text="@string/jarraitu"
         android:onClick="siguiente"/>
 
 </LinearLayout>
