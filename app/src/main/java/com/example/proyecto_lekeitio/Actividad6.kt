@@ -85,9 +85,17 @@ class Actividad6 : AppCompatActivity() {
     private fun playAudio() {
         if (!mediaPlayer.isPlaying) {
             mediaPlayer.start()
-            handler.post(updateSeekBar) // Inicia la actualización del SeekBar
+            updateSeekBar()
         }
     }
+
+    private fun updateSeekBar() {
+        seekBar.progress = mediaPlayer.currentPosition
+        if(mediaPlayer.isPlaying) {
+            handler.postDelayed(updateSeekBar, 1000)
+        }
+    }
+
 
     private fun pauseAudio() {
         if (mediaPlayer.isPlaying) {
