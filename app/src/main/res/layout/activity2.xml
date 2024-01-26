@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
     android:background="@drawable/foto_fondo_2"
     tools:context=".Actividad2">
@@ -10,11 +11,12 @@
     <!-- Título -->
     <TextView
         android:id="@+id/txtTitulo"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Leyenda de Aitxitxa Makurra"
-        android:layout_marginTop="15dp"
+        android:layout_margin="15dp"
         android:textSize="24sp"
+        android:gravity="center"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:textColor="#00008B"
@@ -22,12 +24,15 @@
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/borders">
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:id="@+id/layoutEnunciado"
+        android:background="@drawable/borders"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitulo">
 
-    </LinearLayout>
-    <TextView
+        <TextView
         android:id="@+id/txtEnunciado"
         android:layout_width="363dp"
         android:layout_height="91dp"
@@ -35,8 +40,9 @@
         android:text="En esta actividad tendreis que escuchar un audio y despues ordenar las frases que apareceran con su boton"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTitulo" />
+        app:layout_constraintStart_toStartOf="parent" />
+    </LinearLayout>
+
 
     <!-- Barra de Progreso para el Audio -->
     <SeekBar
@@ -47,7 +53,7 @@
         android:layout_marginTop="35dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEnunciado" />
+        app:layout_constraintTop_toBottomOf="@+id/layoutEnunciado" />
 
     <!-- Botones para Controlar el Audio -->
     <!-- Asumiendo tres botones: Play, Pause y Stop -->
@@ -90,6 +96,7 @@
         android:id="@+id/frasesLayout"
         android:layout_width="0dp"
         android:layout_margin="20dp"
+        android:background="@drawable/borders"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintTop_toBottomOf="@+id/controlAudioLayout"

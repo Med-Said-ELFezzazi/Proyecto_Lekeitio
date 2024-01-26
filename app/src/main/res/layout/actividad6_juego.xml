@@ -7,6 +7,8 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/layoutEnunciado"
+        android:layout_marginTop="15dp"
         android:background="@drawable/borders"
         >
         <TextView
@@ -23,24 +25,33 @@
         android:id="@+id/gridLayout_word_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:rowCount="10"
-        android:columnCount="10"
+        android:layout_marginTop="25dp"
+        android:layout_below="@id/layoutEnunciado"
+        android:layout_centerInParent="true"
         android:alignmentMode="alignMargins"
+        android:background="@drawable/borders"
+        android:columnCount="10"
         android:padding="16dp"
-        android:layout_below="@id/textViewInstructions"
-        android:layout_centerInParent="true">
-    </GridLayout>
+        android:rowCount="10"></GridLayout>
 
 
-    <TextView
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/borders"
+        android:layout_marginTop="25dp"
+        android:layout_below="@id/gridLayout_word_search"
+        android:id="@+id/txtAyuda">
+
+        <TextView
         android:id="@+id/textViewClues"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/gridLayout_word_search"
-
         android:padding="16dp"
         android:textSize="16sp"
         android:layout_marginTop="8dp" />
+    </LinearLayout>
+
 
     <Button
         android:id="@+id/button_next"
@@ -48,7 +59,7 @@
         android:layout_height="wrap_content"
         android:text="Siguiente"
         android:backgroundTint="#00008B"
-        android:layout_below="@id/textViewClues"
+        android:layout_below="@id/txtAyuda"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="24dp"
 

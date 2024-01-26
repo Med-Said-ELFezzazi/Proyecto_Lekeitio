@@ -10,7 +10,9 @@
         android:layout_height="wrap_content"
         android:text="Maria Diaz de Haro"
         android:gravity="center"
-        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#00008B"
+        android:textSize="40sp"
         android:padding="16dp" />
 
     <!-- Botones para controlar la reproducción del audio -->
@@ -27,6 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#00008B"
+            android:layout_marginRight="10dp"
             android:text="Reproducir" />
 
         <Button
@@ -34,6 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#00008B"
+            android:layout_marginRight="10dp"
             android:text="Parar" />
 
         <Button
@@ -47,29 +51,58 @@
     <SeekBar
         android:id="@+id/seekBar"
         android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/layoutBtnAudio" />
 
-    <TextView
-        android:id="@+id/textview_explanation"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/borders"
+        android:layout_marginTop="10dp"
+        android:padding="10sp"
+        android:orientation="vertical"
         android:layout_below="@id/seekBar"
-        android:layout_marginTop="0dp"
-        android:padding="16dp"
-        android:text="Maria de Maeztu: María de Maeztu maistra, pedagogoa, eskolako zuzendaria, hizlaria, feminista eta humanista izan zen, eta Andereñoen Egoitza zuzendu eta bultzatu zuen 1915etik 1936ra.
-        \n\nElvira Zipitria: Figura nabarmena izan zen euskarazko hezkuntza sustatzen eta Euskal Herrian haurrentzako eskolak sortzen. Etxe eskolak sortu zituen frankismo garaian.
-        \n\nDolores Ibarruri: Dolores Ibárruri, Pasionaria bezala ezaguna, borrokalari sozial, politiko eta idazle feminista izan zen.
-        \n\nMaria Dolores Bastida Zalbidea: 1930eko hamarkadan genero-berdintasunaren eta emakumeen hezkuntzaren alde borrokatu zuen euskal maistra eta feminista izan zen.
-        \n\nBicenta Moguel: Euskarazko lehen idazlea izan zen, euskarazko alegiak argitaratzen lehena eta euskarazko haur eta gazte literaturaren lehen egilea.
-        \n\nMaialen Lujanbio: Bertsolari Txapelketa Nazionala irabazi zuen lehen emakumea, 2009an." />
+        android:id="@+id/layoutTexto">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/act6Persona1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/act6Persona2"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/act6Persona3"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/act6Persona4"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/act6Persona5"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/act6Persona6"/>
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/btnSopaDeLetras"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Siguiente"
-        android:layout_below="@id/textview_explanation"
+        android:layout_below="@id/layoutTexto"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="24dp"
         android:backgroundTint="#00008B"
