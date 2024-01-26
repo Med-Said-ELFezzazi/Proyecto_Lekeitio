@@ -38,6 +38,12 @@ class Actividad7Juego : AppCompatActivity() {
         val tvWord4C2 = findViewById<TextView>(R.id.tvWord4C2)
         val tvWord5C1 = findViewById<TextView>(R.id.tvWord5C1)
         val tvWord5C2 = findViewById<TextView>(R.id.tvWord5C2)
+        val tvWord6C1 = findViewById<TextView>(R.id.tvWord6C1)
+        val tvWord6C2 = findViewById<TextView>(R.id.tvWord6C2)
+        val tvWord7C1 = findViewById<TextView>(R.id.tvWord7C1)
+        val tvWord7C2 = findViewById<TextView>(R.id.tvWord7C2)
+        val tvWord8C1 = findViewById<TextView>(R.id.tvWord8C1)
+        val tvWord8C2 = findViewById<TextView>(R.id.tvWord8C2)
         // Repite para cada TextView
 
         setupTextViews(tvWord1C1, tvWord1C2)
@@ -45,6 +51,9 @@ class Actividad7Juego : AppCompatActivity() {
         setupTextViews(tvWord3C1, tvWord3C2)
         setupTextViews(tvWord4C1, tvWord4C2)
         setupTextViews(tvWord5C1, tvWord5C2)
+        setupTextViews(tvWord6C1, tvWord6C2)
+        setupTextViews(tvWord7C1, tvWord7C2)
+        setupTextViews(tvWord8C1, tvWord8C2)
 
         // Define los pares correctos
         correctPairs.add(Pair(R.id.tvWord1C1, R.id.tvWord2C2))
@@ -52,6 +61,9 @@ class Actividad7Juego : AppCompatActivity() {
         correctPairs.add(Pair(R.id.tvWord3C1, R.id.tvWord1C2))
         correctPairs.add(Pair(R.id.tvWord4C1, R.id.tvWord5C2))
         correctPairs.add(Pair(R.id.tvWord5C1, R.id.tvWord4C2))
+        correctPairs.add(Pair(R.id.tvWord6C1, R.id.tvWord8C2))
+        correctPairs.add(Pair(R.id.tvWord7C1, R.id.tvWord6C2))
+        correctPairs.add(Pair(R.id.tvWord8C1, R.id.tvWord7C2))
 
         btnComprobar.setOnClickListener {
             if (currentSelection.first != null && currentSelection.second != null) {
