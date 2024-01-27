@@ -123,7 +123,7 @@ class Act3Activity : AppCompatActivity() {
         mp.setOnCompletionListener {
             // Habilitar el botón Siguiente cuando el audio termine
             imgPlayAudio.setImageResource(R.drawable.play_debujo)
-            btnSiguienteVideo.isVisible = true
+            btnSiguienteVideo.isEnabled = true
         }
 
         btnSiguienteVideo.setOnClickListener{

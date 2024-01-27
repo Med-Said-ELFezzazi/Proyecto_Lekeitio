@@ -50,7 +50,7 @@ class Act3Juego : AppCompatActivity() {
 
         txtFotoSeleccionda = findViewById(R.id.txtFotoseleccionada)
         btnSiguiente = findViewById(R.id.btnSiguiente)
-        btnSiguiente.isVisible = false
+        btnSiguiente.isEnabled = false
 
         cuadradoVacio = findViewById(R.id.cuadradoVacio)
 
@@ -100,7 +100,7 @@ class Act3Juego : AppCompatActivity() {
             cuadradoVacio.isClickable = false
             cuadradoVacio.isCursorVisible = false
 
-            btnSiguiente.isVisible=false
+            btnSiguiente.isEnabled =false
 
             txtFotoSeleccionda.setText("")          //quitar el texto indicativo al pasar a la segunda pregunta
 
@@ -182,11 +182,11 @@ class Act3Juego : AppCompatActivity() {
         val esSeleccionCorrecta = (contador == 0 && imageViewId == R.id.imagen4) || (contador == 1 && imageViewId == R.id.imagen2)
 
         if (esSeleccionCorrecta) {
-            txtFotoSeleccionda.setText("Muy bien correcto")
+            txtFotoSeleccionda.setText("Oso ondo zuzena") //Muy bien correcto
             txtFotoSeleccionda.setTextColor(resources.getColor(R.color.verde))
             lanzarAudioCorrecto()
             layoutSeleccionado.setBackgroundResource(R.drawable.borde_verde)
-            btnSiguiente.isVisible = true
+            btnSiguiente.isEnabled = true
             contador++
         } else {
             manejarSeleccionIncorrecta(layoutSeleccionado)
@@ -194,7 +194,7 @@ class Act3Juego : AppCompatActivity() {
     }
 
     private fun manejarSeleccionIncorrecta(layoutSeleccionado: LinearLayout) {
-        txtFotoSeleccionda.setText("Seleccion incorrecta!")
+        txtFotoSeleccionda.setText("Hautaketa okerra!") //Seleccion incorrecta!
         txtFotoSeleccionda.setTextColor(resources.getColor(R.color.rojo))
         lanzarAudioIncorrecto()
         layoutSeleccionado.setBackgroundResource(R.drawable.borde_rojo)

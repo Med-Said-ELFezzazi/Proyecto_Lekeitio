@@ -134,7 +134,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="40dp"
             android:text="Jarraian"
-            android:visibility="invisible" />
+            android:enabled="false"/>
     </LinearLayout>
 
 </LinearLayout>
