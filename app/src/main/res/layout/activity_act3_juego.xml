@@ -29,7 +29,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="191dp"
+        android:layout_height="220dp"
         android:orientation="vertical">
 
         <TextView
@@ -47,11 +47,13 @@
         <EditText
             android:id="@+id/cuadradoVacio"
             android:layout_width="356dp"
-            android:layout_height="110dp"
+            android:layout_height="122dp"
             android:layout_gravity="center"
+            android:layout_margin="0dp"
             android:background="@drawable/borde_cuadrado"
             android:gravity="center"
             android:inputType="textMultiLine"
+            android:padding="0dp"
             android:textColor="@color/azul"></EditText>
 
     </LinearLayout>
@@ -105,7 +107,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="158dp"
+        android:layout_height="138dp"
         android:layout_gravity="center"
         android:gravity="center"
         android:orientation="horizontal">

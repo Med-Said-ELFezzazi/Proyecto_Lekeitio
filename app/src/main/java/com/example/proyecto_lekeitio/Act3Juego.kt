@@ -2,10 +2,12 @@ package com.example.proyecto_lekeitio
 
 import android.annotation.SuppressLint
 import android.media.MediaPlayer
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.Html
+import android.text.method.LinkMovementMethod
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -29,7 +31,6 @@ class Act3Juego : AppCompatActivity() {
     //audios de respuestas
     private lateinit var mpCorrecto: MediaPlayer
     private lateinit var mpIncorrecto: MediaPlayer
-
 
     private lateinit var layImg1: LinearLayout
     private lateinit var layImg2: LinearLayout
@@ -63,8 +64,8 @@ class Act3Juego : AppCompatActivity() {
         <p style="text-align:center; color: black;">'Putz egiten diogun zerbait'</p>
         </body></html>
          """.trimIndent()
+        
         //silbido
-
         cuadradoVacio.text = Html.fromHtml(textoConFormato, Html.FROM_HTML_MODE_LEGACY) as Editable?
         cuadradoVacio.isFocusable = false
         cuadradoVacio.isClickable = false
