@@ -41,7 +41,7 @@ class MapaActivity : AppCompatActivity() {
      */
     fun pasarActividades(view: View) {
         when (contador) {
-            1 -> intent = Intent(this, Act3Activity::class.java)
+            1 -> intent = Intent(this, PantallaFinal::class.java)
             2 -> intent = Intent(this, Actividad2::class.java)
             3 -> intent = Intent(this, Act3Activity::class.java)
             4 -> intent = Intent(this, Act4Activity::class.java)
