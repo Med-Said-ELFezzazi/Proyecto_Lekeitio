@@ -115,7 +115,7 @@ class Act4Activity : AppCompatActivity() {
         mp.setOnCompletionListener {
             // Habilitar el botón Siguiente cuando el audio termine
             imgPlayAudio.setImageResource(R.drawable.play_debujo)
-            btnSiguiente.isVisible = true
+            btnSiguiente.isEnabled = true
         }
         btnSiguiente.setOnClickListener{
             pasarAlJuego()

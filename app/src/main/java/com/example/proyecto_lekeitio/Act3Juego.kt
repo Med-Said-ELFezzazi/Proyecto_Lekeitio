@@ -64,7 +64,7 @@ class Act3Juego : AppCompatActivity() {
         <p style="text-align:center; color: black;">'Putz egiten diogun zerbait'</p>
         </body></html>
          """.trimIndent()
-        
+
         //silbido
         cuadradoVacio.text = Html.fromHtml(textoConFormato, Html.FROM_HTML_MODE_LEGACY) as Editable?
         cuadradoVacio.isFocusable = false
