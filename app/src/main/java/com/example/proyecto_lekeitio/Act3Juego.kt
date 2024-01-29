@@ -109,6 +109,14 @@ class Act3Juego : AppCompatActivity() {
 
             btnSiguiente.setText("Finalizar")      //Cambiar el nombre del bóton a finalizar
 
+            btnSiguiente.setOnClickListener {
+                val intent = Intent(this, MapaActivity::class.java)
+                intent.putExtra("VIDEO_ID", R.raw.mapa4)
+                intent.putExtra("CONTADOR", 4)
+                startActivity(intent)
+                finish()
+            }
+
         }
     }
 
@@ -204,11 +212,11 @@ class Act3Juego : AppCompatActivity() {
     /**
      * Metodo que vuelve al mapa
      */
-    fun volverMapa(view: View) {
+  /*  fun volverMapa(view: View) {
         val intent = Intent(this, MapaActivity::class.java)
         intent.putExtra("VIDEO_ID", R.raw.mapa4)
         intent.putExtra("CONTADOR", 4)
         startActivity(intent)
         finish()
-    }
+    }*/
 }
