@@ -1,5 +1,6 @@
 package com.example.proyecto_lekeitio
 
+import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.Handler
@@ -116,6 +117,10 @@ class Actividad2 : AppCompatActivity() {
 
         // Listener para el botón siguiente
         btnSiguiente.setOnClickListener {
+            val intent = Intent(this, MapaActivity::class.java)
+            intent.putExtra("VIDEO_ID", R.raw.mapa3)
+            intent.putExtra("CONTADOR", 3)
+            startActivity(intent)
             finish()
         }
     }

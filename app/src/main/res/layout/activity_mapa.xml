@@ -11,7 +11,6 @@
 
     <TextView
         android:gravity="center"
-        android:id="@+id/lblTituloMapa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Lekeitio Mapa"
@@ -20,13 +19,10 @@
         android:layout_marginBottom="150sp"
         android:textSize="55dp"/>
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/imgMapa"
-        android:layout_marginBottom="50sp"
-        android:src="@mipmap/mapita"
-        android:onClick="mostrarDatos" />
+    <VideoView
+        android:id="@+id/videoMapa1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/lblInstruccion"
@@ -34,6 +30,9 @@
         android:layout_height="wrap_content"
         android:text="Instruccion de pulsar el marcador"
         android:layout_marginBottom="50sp"/>
+
+
+
 
     <!-- Nombre del botón luego hay que ponerlo en euskera-->
     <Button

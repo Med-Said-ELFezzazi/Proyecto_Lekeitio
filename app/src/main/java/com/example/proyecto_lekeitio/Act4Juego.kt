@@ -2,6 +2,7 @@ package com.example.proyecto_lekeitio
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -236,6 +237,10 @@ class Act4Juego : AppCompatActivity() {
 
     //Cuando se hacer click en finalizar se cierra la pantalla y vuelve al mapa
     fun volverAlmapa(view: View) {
+        val intent = Intent(this, MapaActivity::class.java)
+        intent.putExtra("VIDEO_ID", R.raw.mapa5)
+        intent.putExtra("CONTADOR", 5)
+        startActivity(intent)
         finish()
     }
 }

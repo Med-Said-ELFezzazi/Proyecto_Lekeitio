@@ -1,6 +1,7 @@
 package com.example.proyecto_lekeitio
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -204,6 +205,10 @@ class Act3Juego : AppCompatActivity() {
      * Metodo que vuelve al mapa
      */
     fun volverMapa(view: View) {
+        val intent = Intent(this, MapaActivity::class.java)
+        intent.putExtra("VIDEO_ID", R.raw.mapa4)
+        intent.putExtra("CONTADOR", 4)
+        startActivity(intent)
         finish()
     }
 }
