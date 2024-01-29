@@ -96,7 +96,8 @@ class Pregunta1Act5Activity : AppCompatActivity() {
      * desactiva.
      */
     private fun incorrecto(lbResp: TextView) {
-        lbResp.setBackgroundColor(Color.RED)
+        lbResp.setBackgroundResource(R.drawable.boton_rojo)
+        lbResp.setTextColor(Color.WHITE)
         lbResp.isEnabled = false
     }
 
@@ -106,7 +107,8 @@ class Pregunta1Act5Activity : AppCompatActivity() {
      * el botón siguiente.
      */
     private fun correcto (lbResp: TextView){
-        lbResp.setBackgroundColor(Color.GREEN)
+        lbResp.setBackgroundResource(R.drawable.boton_verde)
+        lbResp.setTextColor(Color.WHITE)
         lbResp.isEnabled = false
         nCont++
         if (nCont==5){
