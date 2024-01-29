@@ -7,40 +7,64 @@
     tools:context=".MapaActivity"
     android:orientation="vertical"
     android:background="@drawable/foto_fondo_2"
-    android:padding="10sp">
+    >
 
-    <TextView
-        android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Lekeitio Mapa"
-        android:textColor="#00008B"
-        android:textStyle="bold"
-        android:layout_marginBottom="150sp"
-        android:textSize="55dp"/>
-
-    <VideoView
-        android:id="@+id/videoMapa1"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:id="@+id/lblInstruccion"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Instruccion de pulsar el marcador"
-        android:layout_marginBottom="50sp"/>
+        android:orientation="vertical"
+        android:layout_gravity="center">
+
+        <TextView
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lekeitio Mapa"
+            android:textColor="#00008B"
+            android:textStyle="bold"
+            android:textSize="55dp"/>
+
+    </LinearLayout>
 
 
-
-
-    <!-- Nombre del botón luego hay que ponerlo en euskera-->
-    <Button
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/bot_n"
-        android:onClick="pasarActividades"
-        android:backgroundTint="#00008B"
-        android:id="@+id/btnsiguienteActividad"/>
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp">
+
+
+        <VideoView
+            android:id="@+id/videoMapa1"
+            android:layout_width="wrap_content"
+            android:layout_height="376dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:id="@+id/lblInstruccion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Instruccion de pulsar el marcador"
+            android:layout_marginBottom="50sp"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <!-- Nombre del botón luego hay que ponerlo en euskera-->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bot_n"
+            android:onClick="pasarActividades"
+            android:backgroundTint="#00008B"
+            android:id="@+id/btnsiguienteActividad"/>
+    </LinearLayout>
 
 </LinearLayout>
