@@ -1,65 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/foto_fondo_2"
-    android:padding="20sp"
     tools:context=".EnunAct5Activity">
-    <LinearLayout
+    <View
         android:layout_width="match_parent"
-        android:layout_height="100sp"
-        android:gravity="center_horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#00008B"
-            android:textStyle="bold"
-            android:text="@string/antzarrak"
-            android:textSize="50sp"/>
-    </LinearLayout>
-
+        android:layout_height="match_parent"
+        android:background="#66000000"/>
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="500sp"
-        android:orientation="vertical"
-        android:gravity="center">
-    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5sp"
-        android:text="@string/EnunAct5"
-        android:background="@drawable/borders"
-        android:textSize="25sp"
-        android:layout_marginBottom="100sp" />
-
-        <Button
-            android:id="@+id/videoAct5"
+        android:padding="20sp"
+        android:orientation="vertical">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/bideoa"
-            android:onClick="mostrarVideo"
-            android:backgroundTint="#00008B"
-            android:textSize="30sp"/>
+            android:layout_height="100sp"
+            android:gravity="center_horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#00008B"
+                android:textStyle="bold"
+                android:text="@string/antzarrak"
+                android:textSize="50sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="500sp"
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5sp"
+                android:text="@string/EnunAct5"
+                android:background="@drawable/borders"
+                android:textSize="25sp"
+                android:layout_marginBottom="100sp" />
+
+            <Button
+                android:id="@+id/videoAct5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/bideoa"
+                android:onClick="mostrarVideo"
+                android:backgroundTint="#00008B"
+                android:textSize="30sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100sp"
+            android:gravity="center"
+            >
+            <Button
+                android:id="@+id/btnSiguienteAct5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/jarraitu"
+                android:textSize="25sp"
+                android:onClick="siguiente"
+                android:backgroundTint="#00008B"
+                />
+        </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="100sp"
-        android:gravity="center"
-        >
-        <Button
-            android:id="@+id/btnSiguienteAct5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/jarraitu"
-            android:textSize="25sp"
-            android:onClick="siguiente"
-            android:backgroundTint="#00008B"
-            />
-    </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

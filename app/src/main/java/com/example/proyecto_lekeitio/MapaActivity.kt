@@ -41,7 +41,7 @@ class MapaActivity : AppCompatActivity() {
      */
     fun pasarActividades(view: View) {
         when (contador) {
-            1 -> intent = Intent(this, PantallaFinal::class.java)
+            1 -> intent = Intent(this, Act1EnunActivity::class.java)
             2 -> intent = Intent(this, Actividad2::class.java)
             3 -> intent = Intent(this, Act3Activity::class.java)
             4 -> intent = Intent(this, Act4Activity::class.java)
@@ -49,11 +49,13 @@ class MapaActivity : AppCompatActivity() {
             6 -> intent = Intent(this, Actividad6::class.java)
             7 -> intent = Intent(this, Actividad7::class.java)
             else -> {
-                contador = 1
-                intent = Intent(this, Act1EnunActivity::class.java)
+                contador = 0
+                intent = Intent(this, PantallaFinal::class.java)
             }
         }
         contador++
         startActivity(intent)
+        btnsiguienteActividad.isVisible =false
+        lblInstruccion.isVisible = true
     }
 }

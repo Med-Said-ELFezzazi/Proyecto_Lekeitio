@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,279 +7,302 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/foto_fondo_2"
-    android:padding="20sp"
     tools:context=".Pregunta1Act5Activity">
 
-    <LinearLayout
+    <View
         android:layout_width="match_parent"
-        android:layout_height="600sp"
+        android:layout_height="match_parent"
+        android:background="#66000000"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20sp"
         android:orientation="vertical">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/Act5Preg1"
-            android:textColor="#00008B"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:layout_marginBottom="20sp"/>
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:layout_marginBottom="30sp">
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:gravity="center_horizontal">
-
-                <TextView
-                    android:id="@+id/tvPre1Res1"
-                    android:layout_width="120sp"
-                    android:layout_height="wrap_content"
-                    android:onClick="incorrecto1"
-                    android:text="@string/Act5Pre1Res1"
-                    android:textSize="18sp"
-                    android:textAlignment="center"
-                    android:background="@drawable/borders"
-                    android:layout_marginEnd="5sp"/>
-
-                <TextView
-                    android:id="@+id/tvPre1Res2"
-                    android:layout_width="120sp"
-                    android:layout_height="wrap_content"
-                    android:onClick="incorrecto2"
-                    android:text="@string/Act5Pre1Res2"
-                    android:textSize="18sp"
-                    android:textAlignment="center"
-                    android:background="@drawable/borders"
-                    android:layout_marginEnd="5sp"/>
-
-                <TextView
-                    android:id="@+id/tvPre1Res3"
-                    android:layout_width="120sp"
-                    android:layout_height="wrap_content"
-                    android:onClick="correcto1"
-                    android:text="@string/Act5Pre1Res3"
-                    android:textSize="18sp"
-                    android:background="@drawable/borders"
-                    android:textAlignment="center"/>
-            </TableRow>
-
-        </TableLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/Act5Preg2"
-            android:textColor="#00008B"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:layout_marginBottom="20sp"/>
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:layout_marginBottom="30sp">
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:gravity="center_horizontal">
-
-                <TextView
-                    android:id="@+id/tvPre2Res1"
-                    android:layout_width="120sp"
-                    android:layout_height="wrap_content"
-                    android:onClick="correcto2"
-                    android:text="@string/Act5Preg2Res1"
-                    android:textSize="18sp"
-                    android:textAlignment="center"
-                    android:background="@drawable/borders"
-                    android:layout_marginEnd="5sp"/>
-
-                <TextView
-                    android:id="@+id/tvPre2Res2"
-                    android:layout_width="120sp"
-                    android:layout_height="wrap_content"
-                    android:onClick="incorrecto3"
-                    android:text="@string/Act5Pre2Res2"
-                    android:textSize="18sp"
-                    android:textAlignment="center"
-                    android:background="@drawable/borders"
-                    android:layout_marginEnd="5sp"/>
-
-                <TextView
-                    android:id="@+id/tvPre2Res3"
-                    android:layout_width="120sp"
-                    android:layout_height="wrap_content"
-                    android:onClick="incorrecto4"
-                    android:text="@string/Act5Pre2Res3"
-                    android:textSize="18sp"
-                    android:background="@drawable/borders"
-                    android:textAlignment="center"/>
-            </TableRow>
-
-        </TableLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/Act5Pre3"
-            android:textColor="#00008B"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:layout_marginBottom="20sp"/>
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:layout_marginBottom="30sp">
-            <TableRow
-                android:gravity="center_horizontal">
-
-                <TextView
-                    android:id="@+id/tvPre3Res1"
-                    android:layout_width="120sp"
-                    android:layout_height="wrap_content"
-                    android:onClick="incorrecto5"
-                    android:text="@string/Act5Pre3Res1"
-                    android:textSize="18sp"
-                    android:background="@drawable/borders"
-                    android:textAlignment="center"/>
-
-                <TextView
-                    android:id="@+id/tvPre3Res2"
-                    android:layout_width="120sp"
-                    android:layout_height="wrap_content"
-                    android:onClick="incorrecto6"
-                    android:text="@string/Act5Pre3Res2"
-                    android:textSize="18sp"
-                    android:textAlignment="center"
-                    android:background="@drawable/borders"
-                    android:layout_marginEnd="5sp"/>
-
-                <TextView
-                    android:id="@+id/tvPre3Res3"
-                    android:layout_width="120sp"
-                    android:layout_height="wrap_content"
-                    android:onClick="correcto3"
-                    android:text="@string/Act5Pre3Res3"
-                    android:textSize="18sp"
-                    android:textAlignment="center"
-                    android:background="@drawable/borders"
-                    android:layout_marginEnd="5sp"/>
-            </TableRow>
-
-        </TableLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/Act5Pre4"
-            android:textColor="#00008B"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:layout_marginBottom="20sp"/>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:layout_marginBottom="30sp">
-
+            android:layout_height="600sp"
+            android:orientation="vertical">
             <TextView
-                android:id="@+id/tvPre4Res1"
-                android:layout_width="120sp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="correcto4"
-                android:text="@string/Act5Pre4Res1"
-                android:textSize="18sp"
+                android:text="@string/Act5Preg1"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:background="@drawable/borders"
+                android:paddingLeft="5sp"
                 android:textAlignment="center"
-                android:background="@drawable/borders"
-                android:layout_marginEnd="5sp"/>
+                android:layout_marginBottom="20sp"/>
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="30sp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/tvPre1Res1"
+                        android:layout_width="120sp"
+                        android:layout_height="wrap_content"
+                        android:onClick="incorrecto1"
+                        android:text="@string/Act5Pre1Res1"
+                        android:textSize="18sp"
+                        android:textAlignment="center"
+                        android:background="@drawable/borders"
+                        android:layout_marginEnd="5sp"/>
+
+                    <TextView
+                        android:id="@+id/tvPre1Res2"
+                        android:layout_width="120sp"
+                        android:layout_height="wrap_content"
+                        android:onClick="incorrecto2"
+                        android:text="@string/Act5Pre1Res2"
+                        android:textSize="18sp"
+                        android:textAlignment="center"
+                        android:background="@drawable/borders"
+                        android:layout_marginEnd="5sp"/>
+
+                    <TextView
+                        android:id="@+id/tvPre1Res3"
+                        android:layout_width="120sp"
+                        android:layout_height="wrap_content"
+                        android:onClick="correcto1"
+                        android:text="@string/Act5Pre1Res3"
+                        android:textSize="18sp"
+                        android:background="@drawable/borders"
+                        android:textAlignment="center"/>
+                </TableRow>
+
+            </TableLayout>
 
             <TextView
-                android:id="@+id/tvPre4Res2"
-                android:layout_width="120sp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="incorrecto7"
-                android:text="@string/Act5Pre4Res2"
-                android:textSize="18sp"
+                android:text="@string/Act5Preg2"
+                android:textColor="#000000"
+                android:background="@drawable/borders"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:paddingLeft="5sp"
                 android:textAlignment="center"
-                android:background="@drawable/borders"
-                android:layout_marginEnd="5sp"/>
+                android:layout_marginBottom="20sp"/>
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="30sp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/tvPre2Res1"
+                        android:layout_width="120sp"
+                        android:layout_height="wrap_content"
+                        android:onClick="correcto2"
+                        android:text="@string/Act5Preg2Res1"
+                        android:textSize="18sp"
+                        android:textAlignment="center"
+                        android:background="@drawable/borders"
+                        android:layout_marginEnd="5sp"/>
+
+                    <TextView
+                        android:id="@+id/tvPre2Res2"
+                        android:layout_width="120sp"
+                        android:layout_height="wrap_content"
+                        android:onClick="incorrecto3"
+                        android:text="@string/Act5Pre2Res2"
+                        android:textSize="18sp"
+                        android:textAlignment="center"
+                        android:background="@drawable/borders"
+                        android:layout_marginEnd="5sp"/>
+
+                    <TextView
+                        android:id="@+id/tvPre2Res3"
+                        android:layout_width="120sp"
+                        android:layout_height="wrap_content"
+                        android:onClick="incorrecto4"
+                        android:text="@string/Act5Pre2Res3"
+                        android:textSize="18sp"
+                        android:background="@drawable/borders"
+                        android:textAlignment="center"/>
+                </TableRow>
+
+            </TableLayout>
 
             <TextView
-                android:id="@+id/tvPre4Res3"
-                android:layout_width="120sp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="incorrecto8"
-                android:text="@string/Act5Pre4Res3"
-                android:textSize="18sp"
+                android:text="@string/Act5Pre3"
+                android:textColor="#000000"
                 android:background="@drawable/borders"
-                android:textAlignment="center"/>
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:paddingLeft="5sp"
+                android:textAlignment="center"
+                android:layout_marginBottom="20sp"/>
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="30sp">
+                <TableRow
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/tvPre3Res1"
+                        android:layout_width="120sp"
+                        android:layout_height="wrap_content"
+                        android:onClick="incorrecto5"
+                        android:text="@string/Act5Pre3Res1"
+                        android:textSize="18sp"
+                        android:background="@drawable/borders"
+                        android:textAlignment="center"/>
+
+                    <TextView
+                        android:id="@+id/tvPre3Res2"
+                        android:layout_width="120sp"
+                        android:layout_height="wrap_content"
+                        android:onClick="incorrecto6"
+                        android:text="@string/Act5Pre3Res2"
+                        android:textSize="18sp"
+                        android:textAlignment="center"
+                        android:background="@drawable/borders"
+                        android:layout_marginEnd="5sp"/>
+
+                    <TextView
+                        android:id="@+id/tvPre3Res3"
+                        android:layout_width="120sp"
+                        android:layout_height="wrap_content"
+                        android:onClick="correcto3"
+                        android:text="@string/Act5Pre3Res3"
+                        android:textSize="18sp"
+                        android:textAlignment="center"
+                        android:background="@drawable/borders"
+                        android:layout_marginEnd="5sp"/>
+                </TableRow>
+
+            </TableLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Act5Pre4"
+                android:textColor="#000000"
+                android:background="@drawable/borders"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:paddingLeft="5sp"
+                android:textAlignment="center"
+                android:layout_marginBottom="20sp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="30sp">
+
+                <TextView
+                    android:id="@+id/tvPre4Res1"
+                    android:layout_width="120sp"
+                    android:layout_height="wrap_content"
+                    android:onClick="correcto4"
+                    android:text="@string/Act5Pre4Res1"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:background="@drawable/borders"
+                    android:layout_marginEnd="5sp"/>
+
+                <TextView
+                    android:id="@+id/tvPre4Res2"
+                    android:layout_width="120sp"
+                    android:layout_height="wrap_content"
+                    android:onClick="incorrecto7"
+                    android:text="@string/Act5Pre4Res2"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:background="@drawable/borders"
+                    android:layout_marginEnd="5sp"/>
+
+                <TextView
+                    android:id="@+id/tvPre4Res3"
+                    android:layout_width="120sp"
+                    android:layout_height="wrap_content"
+                    android:onClick="incorrecto8"
+                    android:text="@string/Act5Pre4Res3"
+                    android:textSize="18sp"
+                    android:background="@drawable/borders"
+                    android:textAlignment="center"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Act5Pre5"
+                android:textColor="#000000"
+                android:background="@drawable/borders"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:paddingLeft="5sp"
+                android:textAlignment="center"
+                android:layout_marginBottom="20sp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="30sp">
+
+                <TextView
+                    android:id="@+id/tvPre5Res1"
+                    android:layout_width="120sp"
+                    android:layout_height="wrap_content"
+                    android:onClick="incorrecto9"
+                    android:text="@string/Act5Pre5Res1"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:background="@drawable/borders"
+                    android:layout_marginEnd="5sp"/>
+
+                <TextView
+                    android:id="@+id/tvPre5Res2"
+                    android:layout_width="120sp"
+                    android:layout_height="wrap_content"
+                    android:onClick="correcto5"
+                    android:text="@string/Act5Pre5Res2"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:background="@drawable/borders"
+                    android:layout_marginEnd="5sp"/>
+
+                <TextView
+                    android:id="@+id/tvPre5Res3"
+                    android:layout_width="120sp"
+                    android:layout_height="wrap_content"
+                    android:onClick="incorrecto10"
+                    android:text="@string/Act5Pre5Res3"
+                    android:textSize="18sp"
+                    android:background="@drawable/borders"
+                    android:textAlignment="center"/>
+            </LinearLayout>
         </LinearLayout>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/Act5Pre5"
-            android:textColor="#00008B"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:layout_marginBottom="20sp"/>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:layout_marginBottom="30sp">
-
-            <TextView
-                android:id="@+id/tvPre5Res1"
-                android:layout_width="120sp"
+            android:layout_height="100sp"
+            android:gravity="center"
+            >
+            <Button
+                android:id="@+id/btnSiguienteAct5"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="incorrecto9"
-                android:text="@string/Act5Pre5Res1"
-                android:textSize="18sp"
-                android:textAlignment="center"
-                android:background="@drawable/borders"
-                android:layout_marginEnd="5sp"/>
-
-            <TextView
-                android:id="@+id/tvPre5Res2"
-                android:layout_width="120sp"
-                android:layout_height="wrap_content"
-                android:onClick="correcto5"
-                android:text="@string/Act5Pre5Res2"
-                android:textSize="18sp"
-                android:textAlignment="center"
-                android:background="@drawable/borders"
-                android:layout_marginEnd="5sp"/>
-
-            <TextView
-                android:id="@+id/tvPre5Res3"
-                android:layout_width="120sp"
-                android:layout_height="wrap_content"
-                android:onClick="incorrecto10"
-                android:text="@string/Act5Pre5Res3"
-                android:textSize="18sp"
-                android:background="@drawable/borders"
-                android:textAlignment="center"/>
+                android:text="@string/jarraitu"
+                android:textSize="25sp"
+                android:onClick="siguiente"
+                android:backgroundTint="#00008B"
+                />
         </LinearLayout>
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="100sp"
-        android:gravity="center"
-        >
-        <Button
-            android:id="@+id/btnSiguienteAct5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/jarraitu"
-            android:textSize="25sp"
-            android:onClick="siguiente"
-            android:backgroundTint="#00008B"
-            />
-    </LinearLayout>
-
-</LinearLayout>
+</RelativeLayout>

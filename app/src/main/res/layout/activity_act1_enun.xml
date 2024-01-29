@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,57 +8,62 @@
     android:gravity="center"
     android:background="@drawable/foto_fondo_2"
     tools:context=".Act1EnunActivity">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#66000000"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="10sp"
-
-        android:layout_marginBottom="20sp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:textStyle="bold"
-            android:textColor="#00008B"
-            android:textSize="40sp"
-            android:text="@string/lekeitioko_eliza"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="450sp"
-        android:layout_marginBottom="30sp"
         android:orientation="vertical"
-        android:padding="20sp"
-        android:gravity="center">
-
+        android:gravity="center_horizontal"
+        android:padding="20sp">
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:background="@drawable/borders"
-            android:orientation="vertical"
-            android:padding="10sp"
-            android:layout_height="wrap_content">
+            android:layout_width="match_parent"
+            android:layout_height="100sp">
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/enunciadoAct1Parte1"
-                android:textSize="20sp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/enunciadoAct1Parte2"
-                android:textSize="20sp"/>
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textColor="#00008B"
+                android:textSize="40sp"
+                android:text="@string/lekeitioko_eliza"/>
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="500sp"
+            android:layout_marginBottom="30sp"
+            android:orientation="vertical"
+            android:padding="20sp"
+            android:gravity="center">
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:background="@drawable/borders"
+                android:orientation="vertical"
+                android:padding="10sp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/enunciadoAct1Parte1"
+                    android:textSize="20sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/enunciadoAct1Parte2"
+                    android:textSize="20sp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:layout_width="200sp"
+            android:layout_height="wrap_content"
+            android:text="@string/jarraitu"
+            android:backgroundTint="#00008B"
+            android:onClick="siguiente"/>
     </LinearLayout>
-
-    <Button
-        android:layout_width="200sp"
-        android:layout_height="wrap_content"
-        android:text="@string/jarraitu"
-        android:backgroundTint="#00008B"
-        android:onClick="siguiente"/>
-
-</LinearLayout>
+</RelativeLayout>
