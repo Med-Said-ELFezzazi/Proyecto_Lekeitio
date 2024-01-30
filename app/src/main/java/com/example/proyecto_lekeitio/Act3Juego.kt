@@ -186,7 +186,7 @@ class Act3Juego : AppCompatActivity() {
         val esSeleccionCorrecta = (contador == 0 && imageViewId == R.id.imagen4) || (contador == 1 && imageViewId == R.id.imagen2)
         if (esSeleccionCorrecta) {
             txtFotoSeleccionda.setText("Oso ondo zuzena") //Muy bien correcto
-            txtFotoSeleccionda.setTextColor(resources.getColor(R.color.colorCorrect))
+            txtFotoSeleccionda.setTextColor(resources.getColor(R.color.verde_fuerte))
             lanzarAudioCorrecto()
             layoutSeleccionado.setBackgroundResource(R.drawable.borde_verde)
             btnSiguiente.isVisible = true
