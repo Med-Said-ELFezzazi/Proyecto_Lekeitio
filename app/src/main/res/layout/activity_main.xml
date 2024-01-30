@@ -66,6 +66,7 @@
             android:textSize="15sp"
             android:textStyle="bold"
             android:textColor="@color/white"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:layout_marginTop="120dp"/>
     </LinearLayout>
 </RelativeLayout>
