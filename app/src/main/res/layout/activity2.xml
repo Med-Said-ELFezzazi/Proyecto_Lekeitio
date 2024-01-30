@@ -5,8 +5,19 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    android:background="@drawable/foto_fondo_2"
     tools:context=".Actividad2">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/foto_fondo_2"
+        android:scaleType="centerCrop"/>
+
+    <!-- View para oscurecer el fondo -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#66000000"/>
 
     <!-- Título -->
     <TextView
