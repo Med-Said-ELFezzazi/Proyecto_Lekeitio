@@ -18,6 +18,7 @@ class MapaActivity : AppCompatActivity() {
     lateinit var btnsiguienteActividad: Button
     lateinit var lblInstruccion : TextView
     lateinit var videoMapa1 : VideoView
+    private var sUbicaciones:Array<String> = arrayOf("Mapa ukitu helbidea ikusteko","Abaroa Kalea","Isuntza hondartza","Txatxo kaia, 17","Txatxo Kaia Kaia, 2","Txatxo Kaia Kaia, 34","Maria Diaz de Haro Kalea","Paskual Abaroa Etorbidea, 41")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +26,8 @@ class MapaActivity : AppCompatActivity() {
 
         lblInstruccion = findViewById(R.id.lblInstruccion)
         btnsiguienteActividad = findViewById(R.id.btnsiguienteActividad)
+
+        lblInstruccion.text = sUbicaciones[0]
         btnsiguienteActividad.isVisible = false
 
         /*  videoMapa1 = findViewById(R.id.videoMapa1)
@@ -49,7 +52,7 @@ class MapaActivity : AppCompatActivity() {
 
         // Manejar clics en el video (opcional, dependiendo de tu flujo de usuario)
         videoMapa1.setOnClickListener {
-            lblInstruccion.isVisible = false
+            lblInstruccion.text = sUbicaciones[contador]
             btnsiguienteActividad.isVisible = true
         }
 
@@ -60,7 +63,6 @@ class MapaActivity : AppCompatActivity() {
             pasarActividades(it) // Continúa con la siguiente actividad
         }
     }
-
 
     fun mostrarDatos(view: View) {
         lblInstruccion.isVisible = false
@@ -88,8 +90,8 @@ class MapaActivity : AppCompatActivity() {
         val intent = Intent(this, siguienteActivityClass)
         intent.putExtra("CONTADOR", contador + 1) // Pasar el contador incrementado para la próxima actividad
         startActivity(intent)
+        lblInstruccion.text = sUbicaciones[0]
         finish()  // Finaliza MapaActivity para que no vuelva a ella al presionar el botón de volver
 
     }
-
 }

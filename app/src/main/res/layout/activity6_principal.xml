@@ -8,11 +8,11 @@
         android:id="@+id/textview_titulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Maria Diaz de Haro"
+        android:text="MARIA DIAZ DE HARO"
         android:gravity="center"
         android:textStyle="bold"
-        android:textColor="#00008B"
-        android:textSize="40sp"
+        android:textColor="#03A9F4"
+        android:textSize="24sp"
         android:padding="16dp" />
 
     <!-- Botones para controlar la reproducción del audio -->
@@ -28,7 +28,7 @@
             android:id="@+id/button_play_audio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#00008B"
+            android:backgroundTint="#03A9F4"
             android:layout_marginRight="10dp"
             android:text="Reproducir" />
 
@@ -36,7 +36,7 @@
             android:id="@+id/button_pause_audio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#00008B"
+            android:backgroundTint="#03A9F4"
             android:layout_marginRight="10dp"
             android:text="Parar" />
 
@@ -44,7 +44,7 @@
             android:id="@+id/button_stop_audio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#00008B"
+            android:backgroundTint="#03A9F4"
             android:text="Empezar de 0" />
     </LinearLayout>
 
@@ -105,7 +105,7 @@
         android:layout_below="@id/layoutTexto"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="24dp"
-        android:backgroundTint="#00008B"
+        android:backgroundTint="#03A9F4"
         android:enabled="false" />
 
 </RelativeLayout>

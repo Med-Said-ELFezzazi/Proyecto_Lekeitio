@@ -52,7 +52,7 @@ class Act3Juego : AppCompatActivity() {
 
         txtFotoSeleccionda = findViewById(R.id.txtFotoseleccionada)
         btnSiguiente = findViewById(R.id.btnSiguiente)
-        btnSiguiente.isEnabled = false
+        btnSiguiente.isVisible = false
 
         cuadradoVacio = findViewById(R.id.cuadradoVacio)
 
@@ -102,7 +102,7 @@ class Act3Juego : AppCompatActivity() {
             cuadradoVacio.isClickable = false
             cuadradoVacio.isCursorVisible = false
 
-            btnSiguiente.isEnabled =false
+            btnSiguiente.isVisible =false
 
             txtFotoSeleccionda.setText("")          //quitar el texto indicativo al pasar a la segunda pregunta
 
@@ -196,7 +196,7 @@ class Act3Juego : AppCompatActivity() {
             txtFotoSeleccionda.setTextColor(resources.getColor(R.color.verde))
             lanzarAudioCorrecto()
             layoutSeleccionado.setBackgroundResource(R.drawable.borde_verde)
-            btnSiguiente.isEnabled = true
+            btnSiguiente.isVisible = true
             contador++
         } else {
             manejarSeleccionIncorrecta(layoutSeleccionado)

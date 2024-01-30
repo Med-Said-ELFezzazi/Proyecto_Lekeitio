@@ -58,7 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Siguiente"
-        android:backgroundTint="#00008B"
+        android:backgroundTint="#03A9F4"
         android:layout_below="@id/txtAyuda"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="24dp"

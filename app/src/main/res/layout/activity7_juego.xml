@@ -14,11 +14,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:text="Relaciona las Palabras"
+        android:text="HITZAK ERLAZIONATU"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:textColor="#00008B"
+        android:textColor="#03A9F4"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -261,7 +261,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            android:backgroundTint="#00008B"
+            android:backgroundTint="#03A9F4"
             android:text="Comprobar" />
 
         <!-- Botón de Siguiente, visible pero no clickable inicialmente -->
@@ -271,7 +271,7 @@
             android:layout_height="wrap_content"
             android:clickable="false"
             android:enabled="false"
-            android:backgroundTint="#00008B"
+            android:backgroundTint="#03A9F4"
             android:text="Siguiente" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

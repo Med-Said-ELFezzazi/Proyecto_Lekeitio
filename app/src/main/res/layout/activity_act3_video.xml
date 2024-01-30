@@ -34,18 +34,19 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Kaxarranka bideoa"
-            android:textSize="35sp"
+            android:text="KAXARRANKA BIDEOA"
+            android:textSize="24sp"
+            android:layout_marginTop="10dp"
             android:layout_gravity="center"
             android:textStyle="bold"
-            android:textColor="#00008B"/>
+            android:textColor="#03A9F4"/>
 
         <TextView
-            android:layout_marginTop="10sp"
+            android:layout_marginTop="15sp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Kaxarranka jaietako dantza herrikoia"
-            android:textColor="#00008B"
+            android:textColor="#03A9F4"
             android:gravity="center"
             android:textStyle="italic" />
 
@@ -67,7 +68,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="-10dp"
                 android:text="Adi bideoari!"
-                android:textColor="@color/azul"
+                android:textColor="@color/rojo"
                 android:textSize="18dp"
                 android:visibility="invisible" />
 
@@ -93,7 +94,7 @@
                 android:id="@+id/btnSiguienteJuego"
                 android:layout_gravity="top"
                 android:layout_marginTop="55sp"
-                android:backgroundTint="#00008B"
+                android:backgroundTint="#03A9F4"
                 android:onClick="siguienteJuego"/>
         </LinearLayout>
 

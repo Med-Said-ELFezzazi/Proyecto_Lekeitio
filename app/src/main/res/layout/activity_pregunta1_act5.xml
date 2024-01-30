@@ -17,7 +17,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="20sp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginTop="20dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="600sp"
@@ -46,10 +47,9 @@
                     <TextView
                         android:id="@+id/tvPre1Res1"
                         android:layout_width="120sp"
-                        android:layout_height="wrap_content"
                         android:onClick="incorrecto1"
                         android:text="@string/Act5Pre1Res1"
-                        android:textSize="18sp"
+                        android:textSize="20sp"
                         android:textAlignment="center"
                         android:background="@drawable/borders"
                         android:layout_marginEnd="5sp"/>
@@ -60,7 +60,7 @@
                         android:layout_height="wrap_content"
                         android:onClick="incorrecto2"
                         android:text="@string/Act5Pre1Res2"
-                        android:textSize="18sp"
+                        android:textSize="20sp"
                         android:textAlignment="center"
                         android:background="@drawable/borders"
                         android:layout_marginEnd="5sp"/>
@@ -71,7 +71,7 @@
                         android:layout_height="wrap_content"
                         android:onClick="correcto1"
                         android:text="@string/Act5Pre1Res3"
-                        android:textSize="18sp"
+                        android:textSize="20sp"
                         android:background="@drawable/borders"
                         android:textAlignment="center"/>
                 </TableRow>
@@ -301,7 +301,7 @@
                 android:text="@string/jarraitu"
                 android:textSize="25sp"
                 android:onClick="siguiente"
-                android:backgroundTint="#00008B"
+                android:backgroundTint="#03A9F4"
                 />
         </LinearLayout>
     </LinearLayout>

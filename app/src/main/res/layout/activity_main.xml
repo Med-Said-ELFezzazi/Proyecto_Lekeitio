@@ -24,11 +24,12 @@
             android:layout_height="wrap_content"
             android:gravity="center">
             <TextView
+                android:layout_marginTop="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/patrimonio_lekeitio"
-                android:textSize="43dp"
-                android:textColor="#00008B"
+                android:textSize="35dp"
+                android:textColor="#03A9F4"
                 android:textStyle="bold"/>
         </LinearLayout>
         <pl.droidsonroids.gif.GifImageView
@@ -48,7 +49,7 @@
                 android:id="@+id/btnIniciar"
                 android:layout_width="match_parent"
                 android:layout_height="70sp"
-                android:backgroundTint="#00008B"
+                android:backgroundTint="#03A9F4"
                 android:onClick="iniciar"
                 android:text="Hasiera"
                 android:textSize="35sp"
@@ -60,10 +61,11 @@
             android:id="@+id/lblAutores"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hecho por: Joseba , Mohamed said, Jonathan"
-            android:backgroundTint="#00008B"
+            android:text="Hecho por: Joseba , Mohamed Said, Jonathan"
+            android:backgroundTint="#03A9F4"
+            android:textSize="15sp"
             android:textStyle="bold"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textAlignment="center" />
     </LinearLayout>
 </RelativeLayout>

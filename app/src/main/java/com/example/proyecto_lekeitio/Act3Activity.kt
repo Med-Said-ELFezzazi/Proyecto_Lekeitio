@@ -53,6 +53,7 @@ class Act3Activity : AppCompatActivity() {
         txtTiempoTotal = findViewById(R.id.totalTimeTextView)
 
         seekBarAudio.max = mp.duration
+        btnSiguienteVideo.isVisible = false
 
 
         /**
@@ -123,7 +124,7 @@ class Act3Activity : AppCompatActivity() {
         mp.setOnCompletionListener {
             // Habilitar el botón Siguiente cuando el audio termine
             imgPlayAudio.setImageResource(R.drawable.play_debujo)
-            btnSiguienteVideo.isEnabled = true
+            btnSiguienteVideo.isVisible = true
         }
 
         btnSiguienteVideo.setOnClickListener{

@@ -12,6 +12,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 
 class Actividad2 : AppCompatActivity() {
 
@@ -131,7 +132,7 @@ class Actividad2 : AppCompatActivity() {
         correctOrder.forEach { buttonId ->
             findViewById<Button>(buttonId).isEnabled = true
         }
-        btnSiguiente.visibility = View.GONE
+        btnSiguiente.isEnabled = false
     }
 
     private fun checkOrder(): Boolean {

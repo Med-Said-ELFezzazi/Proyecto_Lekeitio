@@ -37,9 +37,9 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10sp"
                 android:layout_marginBottom="30dp"
-                android:text="Hautatu zuzena"
-                android:textColor="#00008B"
-                android:textSize="40sp"
+                android:text="HAUTATU ZUZENA"
+                android:textColor="#03A9F4"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -57,8 +57,8 @@
                 android:gravity="center"
                 android:padding="10dp"
                 android:text="1. Galdera"
-                android:textColor="#00008B"
-                android:textSize="35dp"
+                android:textColor="#03A9F4"
+                android:textSize="24sp"
                 android:textStyle="italic" />
 
             <EditText
@@ -189,7 +189,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="55dp"
-                android:backgroundTint="#00008B"
+                android:backgroundTint="#03A9F4"
                 android:text="@string/jarraitu" />
         </LinearLayout>
     </LinearLayout>

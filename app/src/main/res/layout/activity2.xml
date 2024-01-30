@@ -13,14 +13,15 @@
         android:id="@+id/txtTitulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Leyenda de Aitxitxa Makurra"
+        android:text="AITXITXA MAKURRAREN KONDAIRA"
         android:layout_margin="15dp"
-        android:textSize="24sp"
+        android:layout_marginBottom="10sp"
+        android:textSize="23sp"
         android:gravity="center"
+        android:textColor="#03A9F4"
+        android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:textColor="#00008B"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <LinearLayout
@@ -38,7 +39,7 @@
         android:layout_height="91dp"
         android:layout_margin="15dp"
         android:text="En esta actividad tendreis que escuchar un audio y despues ordenar las frases que apareceran con su boton"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
     </LinearLayout>
@@ -72,7 +73,7 @@
             android:id="@+id/playBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#00008B"
+            android:backgroundTint="#03A9F4"
             android:layout_marginRight="5dp"
             android:text="Empezar"/>
 
@@ -81,14 +82,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="5dp"
-            android:backgroundTint="#00008B"
+            android:backgroundTint="#03A9F4"
             android:text="Parar"/>
 
         <Button
             android:id="@+id/detenerBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#00008B"
+            android:backgroundTint="#03A9F4"
             android:text="Reiniciar"/>
     </LinearLayout>
 
@@ -121,8 +122,9 @@
                 android:id="@+id/btnFrase1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#00008B"
-                android:text="Botón 1"/>
+                android:backgroundTint="#03A9F4"
+                android:textSize="20sp"
+                android:text="1"/>
         </LinearLayout>
 
         <LinearLayout
@@ -142,8 +144,9 @@
                 android:id="@+id/btnFrase2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#00008B"
-                android:text="Botón 2"/>
+                android:backgroundTint="#03A9F4"
+                android:textSize="20sp"
+                android:text="2"/>
         </LinearLayout>
 
         <LinearLayout
@@ -163,8 +166,9 @@
                 android:id="@+id/btnFrase3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#00008B"
-                android:text="Botón 3"/>
+                android:backgroundTint="#03A9F4"
+                android:textSize="20sp"
+                android:text="3"/>
         </LinearLayout>
 
         <LinearLayout
@@ -184,8 +188,9 @@
                 android:id="@+id/btnFrase4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#00008B"
-                android:text="Botón 4"/>
+                android:backgroundTint="#03A9F4"
+                android:textSize="20sp"
+                android:text="4"/>
         </LinearLayout>
 
         <LinearLayout
@@ -205,8 +210,9 @@
                 android:id="@+id/btnFrase5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#00008B"
-                android:text="Botón 5"/>
+                android:backgroundTint="#03A9F4"
+                android:textSize="20sp"
+                android:text="5"/>
         </LinearLayout>
 
         <LinearLayout
@@ -226,8 +232,9 @@
                 android:id="@+id/btnFrase6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#00008B"
-                android:text="Botón 6"/>
+                android:textSize="20sp"
+                android:backgroundTint="#03A9F4"
+                android:text="6"/>
         </LinearLayout>
     </LinearLayout>
 
@@ -257,7 +264,7 @@
             android:id="@+id/btnReiniciar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#00008B"
+            android:backgroundTint="#03A9F4"
             android:layout_marginRight="10dp"
             android:text="Empezar de 0"/>
 
@@ -265,7 +272,7 @@
             android:id="@+id/btnSiguiente"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#00008B"
+            android:backgroundTint="#03A9F4"
             android:text="Siguiente"
             android:enabled="false"/>
     </LinearLayout>

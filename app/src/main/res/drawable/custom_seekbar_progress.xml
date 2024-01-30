@@ -18,7 +18,7 @@
             <item android:id="@android:id/progress">
                 <clip>
                     <shape>
-                        <solid android:color="#00008B"/> <!-- Color de progreso -->
+                        <solid android:color="#03A9F4"/> <!-- Color de progreso -->
                         <corners android:radius="2dp"/>
                         <size android:height="1dp"/> <!-- Altura del progreso -->
                     </shape>

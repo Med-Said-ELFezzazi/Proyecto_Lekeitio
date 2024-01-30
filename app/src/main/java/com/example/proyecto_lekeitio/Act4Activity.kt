@@ -44,6 +44,7 @@ class Act4Activity : AppCompatActivity() {
         //btnSiguiente.isVisible = false //poner el botón soguiente invisible al principio
 
         seekBarAudio.max = mp.duration
+        btnSiguiente.isVisible = false
 
         //Funcionamiento de tiempo de reporducción
         txtTiempoActual = findViewById(R.id.currentTimeTextView)
@@ -115,7 +116,7 @@ class Act4Activity : AppCompatActivity() {
         mp.setOnCompletionListener {
             // Habilitar el botón Siguiente cuando el audio termine
             imgPlayAudio.setImageResource(R.drawable.play_debujo)
-            btnSiguiente.isEnabled = true
+            btnSiguiente.isVisible = true
         }
         btnSiguiente.setOnClickListener{
             pasarAlJuego()
