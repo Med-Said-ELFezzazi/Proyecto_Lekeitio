@@ -189,11 +189,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="55dp"
-                android:onClick="volverMapa"
-                android:text="Siguiente" />
+                android:backgroundTint="#00008B"
+                android:text="@string/jarraitu" />
         </LinearLayout>
-
-
     </LinearLayout>
-
 </RelativeLayout>
+

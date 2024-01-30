@@ -1,5 +1,6 @@
 package com.example.proyecto_lekeitio
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.Gravity
@@ -55,6 +56,10 @@ class Actividad6SopaDeLetras : AppCompatActivity() {
         updateCluesDisplay()
 
         buttonNext.setOnClickListener {
+            val intent = Intent(this, MapaActivity::class.java)
+            intent.putExtra("VIDEO_ID", R.raw.mapa7)
+            intent.putExtra("CONTADOR", 7)
+            startActivity(intent)
             finish()
         }
     }

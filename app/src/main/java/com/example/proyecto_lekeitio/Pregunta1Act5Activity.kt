@@ -1,5 +1,6 @@
 package com.example.proyecto_lekeitio
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -88,6 +89,10 @@ class Pregunta1Act5Activity : AppCompatActivity() {
 
 
     fun siguiente(view: View) {
+        val intent = Intent(this, MapaActivity::class.java)
+        intent.putExtra("VIDEO_ID", R.raw.mapa6)
+        intent.putExtra("CONTADOR", 6)
+        startActivity(intent)
         finish()
     }
 

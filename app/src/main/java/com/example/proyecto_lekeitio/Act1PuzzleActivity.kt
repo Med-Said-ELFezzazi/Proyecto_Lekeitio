@@ -1,6 +1,7 @@
 package com.example.proyecto_lekeitio
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.os.Build
@@ -63,9 +64,21 @@ class Act1PuzzleActivity : AppCompatActivity() {
     /**
      * Cierra la ventana. Método onClick del botón.
      */
+  /* fun siguiente(view: View) {
+        val intent = Intent(this, MapaActivity::class.java)
+        intent.putExtra("VIDEO_ID", R.raw.mapa2)
+        startActivity(intent)
+        finish()
+
+    }*/
     fun siguiente(view: View) {
+        val intent = Intent(this, MapaActivity::class.java)
+        intent.putExtra("VIDEO_ID", R.raw.mapa2) // ID del video a reproducir
+        intent.putExtra("CONTADOR", 2) // Actualizar el contador para la próxima actividad
+        startActivity(intent)
         finish()
     }
+
 
     /**
      * Guarda la imagen e indica al programa que ya hay un ImageView seleccionada. Desactiva el

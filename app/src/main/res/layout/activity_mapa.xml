@@ -5,51 +5,65 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MapaActivity"
-    android:background="@drawable/foto_fondo_2">
 
+    android:background="@drawable/foto_fondo_2"
+    >
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#66000000"/>
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="10sp">
+        android:padding="10dp">
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="100sp">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+
             <TextView
                 android:gravity="center"
-                android:id="@+id/lblTituloMapa"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="LEKEITIO MAPA"
+                android:text="Lekeitio Mapa"
                 android:textColor="#00008B"
                 android:textStyle="bold"
-                android:textSize="50dp"/>
+                android:textSize="55dp"/>
+
         </LinearLayout>
+
+
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="500sp"
-            android:gravity="center">
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/imgMapa"
-                android:src="@mipmap/mapita"
-                android:onClick="mostrarDatos" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="100sp"
-            android:orientation="vertical">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp">
+
+
+            <VideoView
+                android:id="@+id/videoMapa1"
+                android:layout_width="wrap_content"
+                android:layout_height="376dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp" />
+
             <TextView
                 android:id="@+id/lblInstruccion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Instruccion de pulsar el marcador"/>
+                android:text="Instruccion de pulsar el marcador"
+                android:layout_marginBottom="50sp"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
 
             <!-- Nombre del botón luego hay que ponerlo en euskera-->
             <Button
@@ -61,4 +75,10 @@
                 android:id="@+id/btnsiguienteActividad"/>
         </LinearLayout>
     </LinearLayout>
+
+
+
+
+
+
 </RelativeLayout>
