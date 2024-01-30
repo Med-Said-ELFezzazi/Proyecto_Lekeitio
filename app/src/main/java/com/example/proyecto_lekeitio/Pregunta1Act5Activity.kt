@@ -86,7 +86,9 @@ class Pregunta1Act5Activity : AppCompatActivity() {
         incorrecto(lbResp15)
     }
 
-
+    /**
+     * Cierra la ventana.
+     */
     fun siguiente(view: View) {
         finish()
     }
