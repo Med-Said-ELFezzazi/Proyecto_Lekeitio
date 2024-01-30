@@ -14,7 +14,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
-
+//Clase del juego de la actividad 4
 class Act4Juego : AppCompatActivity() {
 
     private lateinit var btnComprobar: Button
@@ -59,6 +59,7 @@ class Act4Juego : AppCompatActivity() {
         btnComprobar = findViewById(R.id.btnComprobar)
         btnFinalizar = findViewById(R.id.btnFinalizar)
 
+        //Botones
         btnP1Verdadero = findViewById(R.id.btnP1Verdadero)
         btnP2Verdadero = findViewById(R.id.btnP2Verdadero)
         btnP3Verdadero = findViewById(R.id.btnP3Verdadero)
@@ -92,7 +93,6 @@ class Act4Juego : AppCompatActivity() {
             } else {
                 btnComprobar.visibility = Button.INVISIBLE
             }
-//'otra forma corta' btnComprobar.visibility = if (verificarSeleccionEnTodosLosGrupos()) Button.VISIBLE else Button.INVISIBLE
         }
 
         rgP1.setOnCheckedChangeListener(listenerGrupos)
@@ -118,7 +118,6 @@ class Act4Juego : AppCompatActivity() {
             actualizarFondoPregunta(txtPregunta4, R.id.btnP4Verdadero, rgP4.checkedRadioButtonId)
             actualizarFondoPregunta(txtPregunta5, R.id.btnP5Falso, rgP5.checkedRadioButtonId)
 
-            //Toast.makeText(this, "Correctas: $contadorCorrectas Incorrectas: $contadorIncorrectas", Toast.LENGTH_SHORT).show()
             mostrarVentanaResultado(contadorCorrectas)
         }
     }
@@ -174,6 +173,7 @@ class Act4Juego : AppCompatActivity() {
         }
         return contador
     }
+
     /**
      * Metodo que comprueba si todos los radioGroups están seleccionados
      */
@@ -215,7 +215,6 @@ class Act4Juego : AppCompatActivity() {
         } else {
             Glide.with(this).load(R.drawable.gif_enhorabuena).into(fotoGif)
             txtObservacion.setText("ZORIONAK!")   //ENHORABUENA!
-            //txtObservacion viene en color verde.
         }
 
         //Encontrar el layout del titulo custimazado para poner en la alerta
@@ -230,12 +229,13 @@ class Act4Juego : AppCompatActivity() {
             btnComprobar.visibility = Button.INVISIBLE
             btnFinalizar.visibility = Button.VISIBLE
         }
-
         alertDialogBuilder.setCancelable(false)
         alertDialogBuilder.show()
     }
 
-    //Cuando se hacer click en finalizar se cierra la pantalla y vuelve al mapa
+    /**
+     * Metodo a pasar al mapa
+     */
     fun volverAlmapa(view: View) {
         val intent = Intent(this, MapaActivity::class.java)
         intent.putExtra("VIDEO_ID", R.raw.mapa5)

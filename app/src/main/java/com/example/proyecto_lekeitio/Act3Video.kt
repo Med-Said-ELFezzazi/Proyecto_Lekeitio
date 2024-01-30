@@ -11,7 +11,33 @@
     import android.widget.VideoView
     import androidx.appcompat.app.AppCompatActivity
 
+    //Clase de la pantalla que reproduce el video
     class Act3Video : AppCompatActivity() {
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(R.layout.activity_act3_video)
+            // Inicialización del TextView y comienza el efecto de parpadeo
+            txtAtencion = findViewById(R.id.txtAtencion)
+
+            // Iniciar el parpadeo
+            handler.post(runnable)
+
+            // Inicialización de VideoView y Button con sus IDs de la interfaz de usuario
+            videoKaxarranka = findViewById(R.id.videoKaxarranka)
+            btnSiguienteJuego = findViewById(R.id.btnSiguienteJuego)
+
+            // Configurando el MediaController
+            val mediaController = MediaController(this)
+            mediaController.setAnchorView(videoKaxarranka)
+            videoKaxarranka.setMediaController(mediaController)
+
+            // Establece la ruta del video y comienza la reproducción
+            val path = "android.resource://" + packageName + "/" + R.raw.video_kaxarranka
+            videoKaxarranka.setVideoPath(path)
+            videoKaxarranka.requestFocus()
+            videoKaxarranka.start()
+        }
 
         //Mensaje de atención al niño
         private lateinit var txtAtencion: TextView
@@ -39,36 +65,12 @@
         private lateinit var videoKaxarranka: VideoView
         private lateinit var btnSiguienteJuego: Button
 
-        override fun onCreate(savedInstanceState: Bundle?) {
-            super.onCreate(savedInstanceState)
-            setContentView(R.layout.activity_act3_video)
-            // Inicialización del TextView y comienza el efecto de parpadeo
-            txtAtencion = findViewById(R.id.txtAtencion)
-
-            // Iniciar el parpadeo
-            handler.post(runnable)
-
-            // Inicialización de VideoView y Button con sus IDs de la interfaz de usuario
-            videoKaxarranka = findViewById(R.id.videoKaxarranka)
-            btnSiguienteJuego = findViewById(R.id.btnSiguienteJuego)
-
-            // Configurando el MediaController
-            val mediaController = MediaController(this)
-            mediaController.setAnchorView(videoKaxarranka)
-            videoKaxarranka.setMediaController(mediaController)
-
-            // Establece la ruta del video y comienza la reproducción
-            val path = "android.resource://" + packageName + "/" + R.raw.video_kaxarranka
-            videoKaxarranka.setVideoPath(path)
-            videoKaxarranka.requestFocus()
-            videoKaxarranka.start()
-        }
-
-        // Método para a la siguiente actividad
+        /**
+         * Método para ir a la siguiente actividad
+         */
         fun siguienteJuego(view: View) {
             var intent = Intent(this,Act3Juego::class.java)
             startActivity(intent)
-
             //Acabar con esa pantalla
             finish()
 

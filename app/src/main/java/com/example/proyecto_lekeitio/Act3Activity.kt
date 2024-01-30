@@ -11,12 +11,15 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.SeekBar
 import android.widget.TextView
+import androidx.core.view.isVisible
+
+
+//Clase de la primera pantalla de la actividad3
 
 class Act3Activity : AppCompatActivity() {
 
     private lateinit var mp: MediaPlayer
     private lateinit var btnSiguienteVideo: Button
-    //private lateinit var btnPlayAudio: Button
 
     private lateinit var imgPlayAudio: ImageView
     private lateinit var seekBarAudio: SeekBar
@@ -24,8 +27,8 @@ class Act3Activity : AppCompatActivity() {
 
     private var estabaPlayAntes: Boolean = false //Variable para controlar el estado del audio (play/pause)
 
-    private lateinit var txtTiempoActual: TextView      //textviews de la duracion de reproducción
-    private lateinit var txtTiempoTotal: TextView
+    private lateinit var txtTiempoActual: TextView      //Textviews de la duracion de reproducción
+    private lateinit var txtTiempoTotal: TextView       //TextView de la duración total del audio
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,8 +46,8 @@ class Act3Activity : AppCompatActivity() {
         txtTiempoTotal = findViewById(R.id.totalTimeTextView)
 
         seekBarAudio.max = mp.duration
-        btnSiguienteVideo.isVisible = false
 
+        btnSiguienteVideo.isVisible = false
 
         /**
          * Actualiza el SeekBar para reflejar la posición actual del audio
@@ -71,18 +74,13 @@ class Act3Activity : AppCompatActivity() {
 
                 imgPlayAudio.setImageResource(R.drawable.play_debujo) // Cambiar a imagen de play
                 handler.removeCallbacks(updateSeekBar)
-                //Toast.makeText(this, "Pause", Toast.LENGTH_SHORT).show()
             } else {
                 // Si el audio no está reproduciéndose, iniciarlo o reanudarlo
                 mp.start()
 
                 imgPlayAudio.setImageResource(R.drawable.pause_debujo) // Cambiar a imagen de pause
                 handler.postDelayed(updateSeekBar, 0)
-
-                //Toast.makeText(this, "Play", Toast.LENGTH_SHORT).show()
             }
-            // Actualizar la visibilidad del botón btnSiguienteVideo según el estado de reproducción
-            //btnSiguiente.isVisible = true
         }
         seekBarAudio.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             //Cuando el progreso se cambia
@@ -131,6 +129,9 @@ class Act3Activity : AppCompatActivity() {
         return String.format("%d:%02d", minutes, seconds)
     }
 
+    /**
+     * Metodo que lleva a la siguiente pantalla
+     */
     private fun pasarAlVideo() {
         val intent = Intent(this, Act3Video::class.java)
         startActivity(intent)
@@ -138,7 +139,9 @@ class Act3Activity : AppCompatActivity() {
         finish()
     }
 
-
+    /**
+     * Metodo para pausar el audio si esta en reproducción
+     */
     override fun onPause() {
         super.onPause()
         if (mp.isPlaying) {
@@ -146,6 +149,9 @@ class Act3Activity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Metodo que libera los recursos del media
+     */
     override fun onDestroy() {
         super.onDestroy()
         mp.release() // Libera los recursos del MediaPlayer al destruir la actividad

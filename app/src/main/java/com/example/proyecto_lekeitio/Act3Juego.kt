@@ -16,17 +16,13 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.view.isVisible
-
+//Clase de la pantalla del juego
 class Act3Juego : AppCompatActivity() {
 
     private var contador: Int = 0
-
     private lateinit var cuadradoVacio: EditText
     private lateinit var btnSiguiente: Button
     private lateinit var txtFotoSeleccionda: TextView
-
-   // private lateinit var respuestaCorrecta: String
-
     private lateinit var txtNumPregunta: TextView
 
     //audios de respuestas
@@ -72,7 +68,6 @@ class Act3Juego : AppCompatActivity() {
         cuadradoVacio.isClickable = false
         cuadradoVacio.isCursorVisible = false
 
-        //respuestaCorrecta = "silbido"   //Inicialización (respuesta de pregunta1)
 
         // Inicializa los objetos MediaPlayer
         mpCorrecto = MediaPlayer.create(this, R.raw.yeah)
@@ -82,12 +77,7 @@ class Act3Juego : AppCompatActivity() {
             if (contador == 2) {
                 finish()
             }
-          /*  if (respuestaCorrecta == "silbido") {
-                respuestaCorrecta = "pandereta"
-                // Restablecer las banderas para la siguiente pregunta
-                imagen4Seleccionada = false
-                imagen2Seleccionada = false
-            }*/
+
             //Poner número de pregunto 2
             txtNumPregunta.text = "2. Galdera"
             val textoConFormatoPregunta2 = """
@@ -117,7 +107,6 @@ class Act3Juego : AppCompatActivity() {
                 startActivity(intent)
                 finish()
             }
-
         }
     }
 
@@ -158,8 +147,9 @@ class Act3Juego : AppCompatActivity() {
         }
     }
 
-
-
+    /**
+     * Metodo que
+     */
     fun imagenSeleccionada(view: View) {
         resetBorders() // Quitar el borde colorado de la elección anterior
 
@@ -172,7 +162,6 @@ class Act3Juego : AppCompatActivity() {
             R.id.imagen3 -> layoutSeleccionado = layImg3
             R.id.imagen4 -> layoutSeleccionado = layImg4
         }
-
         if (layoutSeleccionado != null) {
             when (imageView.id) {
                 // Casos incorrectos
@@ -188,9 +177,13 @@ class Act3Juego : AppCompatActivity() {
         }
     }
 
+    /**
+     * Metodo que maneja las respuestas correctacas, dependiendo de la imagen seleccionada
+     * Pone el texto informativo en color verde, con el texto muy bien
+     * Pone el fondo de la imagen en color verde
+     */
     private fun manejarSeleccionCorrecta(imageViewId: Int, layoutSeleccionado: LinearLayout) {
         val esSeleccionCorrecta = (contador == 0 && imageViewId == R.id.imagen4) || (contador == 1 && imageViewId == R.id.imagen2)
-
         if (esSeleccionCorrecta) {
             txtFotoSeleccionda.setText("Oso ondo zuzena") //Muy bien correcto
             txtFotoSeleccionda.setTextColor(resources.getColor(R.color.colorCorrect))
@@ -203,19 +196,15 @@ class Act3Juego : AppCompatActivity() {
         }
     }
 
+    /**
+     * Metodo que maneja las respuestas incorrectas, dependiendo de la imagen seleccionada
+     * Pone el texto informativo en color rojo, con el texto seleccion no correcta
+     * Pone el fondo de la imagen en color rojo
+     */
     private fun manejarSeleccionIncorrecta(layoutSeleccionado: LinearLayout) {
         txtFotoSeleccionda.setText("Hautaketa okerra!") //Seleccion incorrecta!
         txtFotoSeleccionda.setTextColor(resources.getColor(R.color.rojo))
         lanzarAudioIncorrecto()
         layoutSeleccionado.setBackgroundResource(R.drawable.borde_rojo)
     }
-
-
-  /*  fun volverMapa(view: View) {
-        val intent = Intent(this, MapaActivity::class.java)
-        intent.putExtra("VIDEO_ID", R.raw.mapa4)
-        intent.putExtra("CONTADOR", 4)
-        startActivity(intent)
-        finish()
-    }*/
 }

@@ -10,7 +10,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.VideoView
 import androidx.core.view.isVisible
-
+//Clase del mapa
 class MapaActivity : AppCompatActivity() {
 
     private var contador: Int = 1
@@ -19,7 +19,6 @@ class MapaActivity : AppCompatActivity() {
     lateinit var lblInstruccion : TextView
     lateinit var videoMapa1 : VideoView
     private var sUbicaciones:Array<String> = arrayOf("Mapa ukitu helbidea ikusteko","Abaroa Kalea","Isuntza hondartza","Txatxo kaia, 17","Txatxo Kaia Kaia, 2","Txatxo Kaia Kaia, 34","Maria Diaz de Haro Kalea","Paskual Abaroa Etorbidea, 41")
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mapa)
@@ -29,11 +28,6 @@ class MapaActivity : AppCompatActivity() {
 
         lblInstruccion.text = sUbicaciones[0]
         btnsiguienteActividad.isVisible = false
-
-        /*  videoMapa1 = findViewById(R.id.videoMapa1)
-          videoMapa1.setVideoPath("android.resource://" + packageName + "/" + R.raw.mapa1)
-          videoMapa1.requestFocus()
-          videoMapa1.start() */
 
         // Obtener el ID del video del intent, si no hay ninguno, usar mapa1 como predeterminado
         val videoResId = intent.getIntExtra("VIDEO_ID", R.raw.mapa1)
@@ -64,13 +58,9 @@ class MapaActivity : AppCompatActivity() {
         }
     }
 
-    fun mostrarDatos(view: View) {
-        lblInstruccion.isVisible = false
-        btnsiguienteActividad.isVisible = true
-    }
 
     /**
-     * Metodo para pasar entre actividades
+     * Metodo para pasar entre actividades secuencialmente
      */
     fun pasarActividades(view: View) {
         val siguienteActivityClass = when (contador) {

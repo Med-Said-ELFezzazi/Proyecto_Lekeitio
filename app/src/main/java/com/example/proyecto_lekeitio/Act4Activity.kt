@@ -13,19 +13,15 @@ import android.widget.SeekBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.view.isVisible
-
+//Clase de la primera pantalla de la actividad4
 class Act4Activity : AppCompatActivity() {
 
     private lateinit var mp: MediaPlayer
     private lateinit var btnSiguiente: Button
-
     private lateinit var imgPlayAudio: ImageView
     private lateinit var seekBarAudio: SeekBar
     private val handler = Handler()
-
     private var estabaPlayAntes: Boolean = false //Variable para controlar el estado del audio (play/pause)
-
-
     private lateinit var txtTiempoActual: TextView      //textviews de la duracion de reproducción
     private lateinit var txtTiempoTotal: TextView
 
@@ -40,8 +36,6 @@ class Act4Activity : AppCompatActivity() {
         btnSiguiente = findViewById(R.id.btnSiguiente)
         imgPlayAudio = findViewById(R.id.imgPlayAudio)
         seekBarAudio = findViewById(R.id.seekBarAudio)
-
-        //btnSiguiente.isVisible = false //poner el botón soguiente invisible al principio
 
         seekBarAudio.max = mp.duration
         btnSiguiente.isVisible = false
@@ -70,21 +64,14 @@ class Act4Activity : AppCompatActivity() {
             if (mp.isPlaying) {
                 // Si el audio está reproduciéndose, pausarlo
                 mp.pause()
-
                 imgPlayAudio.setImageResource(R.drawable.play_debujo) // Cambiar a imagen de play
                 handler.removeCallbacks(updateSeekBar)
-                //Toast.makeText(this, "Pause", Toast.LENGTH_SHORT).show()
             } else {
                 // Si el audio no está reproduciéndose, iniciarlo o reanudarlo
                 mp.start()
-
                 imgPlayAudio.setImageResource(R.drawable.pause_debujo) // Cambiar a imagen de pause
                 handler.postDelayed(updateSeekBar, 0)
-
-                //Toast.makeText(this, "Play", Toast.LENGTH_SHORT).show()
             }
-            // Actualizar la visibilidad del botón btnSiguienteVideo según el estado de reproducción
-            //btnSiguiente.isVisible = true
         }
         seekBarAudio.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             //Cuando el progreso se cambia
@@ -118,10 +105,10 @@ class Act4Activity : AppCompatActivity() {
             imgPlayAudio.setImageResource(R.drawable.play_debujo)
             btnSiguiente.isVisible = true
         }
+        //Llamara al metodo que lleva al siguiente pantalla
         btnSiguiente.setOnClickListener{
             pasarAlJuego()
         }
-
     }
 
     /**
@@ -142,7 +129,6 @@ class Act4Activity : AppCompatActivity() {
         // Pasar a la siguiente pantalla
         val intent = Intent(this, Act4Juego::class.java)
         startActivity(intent)
-
         // Finalizar la actividad actual
         finish()
     }
