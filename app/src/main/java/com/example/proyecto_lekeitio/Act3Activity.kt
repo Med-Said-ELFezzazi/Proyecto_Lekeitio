@@ -1,26 +1,16 @@
 package com.example.proyecto_lekeitio
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.content.Intent
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.util.AttributeSet
-import android.util.Log
-import android.view.View
 import android.widget.Button
 
 import android.widget.ImageView
 import android.widget.SeekBar
 import android.widget.TextView
-
-import android.widget.Toast
-import androidx.core.view.isVisible
-import androidx.fragment.app.FragmentTransaction
-import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
-import androidx.navigation.fragment.findNavController
 
 class Act3Activity : AppCompatActivity() {
 

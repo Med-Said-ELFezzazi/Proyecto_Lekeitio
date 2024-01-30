@@ -62,7 +62,7 @@ class Act1PuzzleActivity : AppCompatActivity() {
     }
 
     /**
-     * Cierra la ventana. Método onClick del botón.
+     * Vuelve al mapa y cierra la ventana. Método onClick del botón.
      */
   /* fun siguiente(view: View) {
         val intent = Intent(this, MapaActivity::class.java)
@@ -88,7 +88,6 @@ class Act1PuzzleActivity : AppCompatActivity() {
         iSeleccionado = img;
         this.bSeleccionado = true
         img.isEnabled= false
-        img.alpha = 0.7F
     }
 
     /**
@@ -118,6 +117,10 @@ class Act1PuzzleActivity : AppCompatActivity() {
         return img
     }
 
+    /**
+     * Comprueba que todas las imagenes están en la posición correcta. Si es así, bloqueará las
+     * imagenes y visualizará el botón para continuar.
+     */
     private fun comprobarImagenes(){
         bCorrecto = true
         if (!img1.drawable.equals(dra[0])){

@@ -25,12 +25,18 @@ class EnunAct5Activity : AppCompatActivity() {
 
     }
 
+    /**
+     * Pasa a la siguiente actividad.
+     */
     fun siguiente(view: View) {
         val intent = Intent(this, Pregunta1Act5Activity::class.java)
         startActivity(intent)
         finish()
     }
 
+    /**
+     * Abre el video en la aplicación Youtube. Si no la tiene instalada, lo abrirá con el navegador.
+     */
     fun mostrarVideo(view: View) {
         val youtubeVideoId:String ="Ao26rDejfvQ" //Id video.
         val appIntent:Intent = Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:" + youtubeVideoId))
@@ -44,15 +50,4 @@ class EnunAct5Activity : AppCompatActivity() {
         }
         btnSiguiente.isVisible = true
     }
-
-    /*String youtubeVideoId = "t6LbzHMDVUg"; //Id video.
-        Intent appIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:" + youtubeVideoId));
-        try {
-            startActivity(appIntent);  //Abre con aplicación.
-        } catch (ActivityNotFoundException ex) {
-            //En caso de no existir la aplicación instalada se abre mediante el navegador.
-            Intent webIntent = new Intent(Intent.ACTION_VIEW,
-                Uri.parse("http://www.youtube.com/watch?v=" + youtubeVideoId));
-            startActivity(webIntent);
-    }*/
 }

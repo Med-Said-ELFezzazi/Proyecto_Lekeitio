@@ -87,7 +87,9 @@ class Pregunta1Act5Activity : AppCompatActivity() {
         incorrecto(lbResp15)
     }
 
-
+    /**
+     * Cierra la ventana.
+     */
     fun siguiente(view: View) {
         val intent = Intent(this, MapaActivity::class.java)
         intent.putExtra("VIDEO_ID", R.raw.mapa6)
